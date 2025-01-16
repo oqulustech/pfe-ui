@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './left-menu.component.html',
-  styleUrl: './left-menu.component.css'
+  styleUrl: './left-menu.component.scss'
 })
 export class LeftMenuComponent {
 

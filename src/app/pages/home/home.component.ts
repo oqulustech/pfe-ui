@@ -32,7 +32,7 @@ import { IssuesLogComponent } from '../issues-log/issues-log.component';{}
     IssuesLogComponent],
   
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
