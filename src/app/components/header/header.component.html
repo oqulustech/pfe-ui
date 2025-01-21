@@ -1,3 +1,30 @@
 <omni-app-header variant="dark">
-    <omni-app-header-title>PFE UI</omni-app-header-title>
-  </omni-app-header>
+  <omni-app-header-logo>
+    <svg viewBox="0 0 36 36" height="36px">
+      <circle
+        cx="18"
+        cy="18"
+        r="14"
+        stroke="${omni.colorWhite}"
+        stroke-width="2"
+        fill="${omni.colorAccentBlue35}"
+      />
+    </svg>
+  </omni-app-header-logo>
+  <omni-app-header-title>PFE UI</omni-app-header-title>
+  <omni-select variant="text">
+      <option value="" hidden>OMNI</option>
+      <option value="make" selected>Make</option>
+      <option value="share">Share</option>
+      <option value="repeat">Repeat</option>
+    </omni-select>
+
+  <omni-flex direction="row" gap="medium">
+      <omni-text-body>One</omni-text-body>
+      <omni-text-body>Two</omni-text-body>
+      <omni-text-body>Three</omni-text-body>
+    </omni-flex>
+    <div>
+      <input omni-input type="search" placeholder="Search" />
+    </div>
+</omni-app-header>
