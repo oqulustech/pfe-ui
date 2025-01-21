@@ -1,0 +1,44 @@
+/* Ensure the body and html fill the full screen */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Make the root and layout components take 100% height */
+  omni-app-root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  omni-app-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  /* Make the header and footer size based on content, but stretch the main content */
+  app-header {
+    flex: 0 1 auto; /* Allows header to adjust based on its content size */
+  }
+  
+  app-footer {
+    flex: 0 1 auto; /* Allows footer to adjust based on its content size */
+  }
+  
+  /* The content area should fill remaining space */
+  omni-app-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px; /* Optional, can be customized */
+  }
+  
+  /* For full-screen rendering of router-outlet, the content must take full height */
+  router-outlet {
+    width: 100%;
+    height: 100%;
+  }
+  
