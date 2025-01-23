@@ -20,6 +20,45 @@
       <omni-text-body>DBMS PgBlazor</omni-text-body>
     </omni-flex>
   </omni-app-header-title>
+  <omni-flex direction="row" gap="medium">
+      <omni-text-body>One</omni-text-body>
+      <omni-text-body>Two</omni-text-body>
+      <omni-text-body>Three</omni-text-body>
+    </omni-flex>
+    <omni-flex
+      height="100%"
+      padding="huge"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <omni-menu-button
+        variant="outlineBlue"
+        label="Export as ..."
+        icon="ArrowDown"
+      >
+        <omni-menu-item > PDF </omni-menu-item>
+        <omni-menu-item > JPEG </omni-menu-item>
+        <omni-menu-item > PNG </omni-menu-item>
+      </omni-menu-button>
+    </omni-flex>
+
+    <omni-flex
+      height="100%"
+      padding="huge"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <button omniButton [omniMenuToggle]="menu">Menu</button>
+      <omni-menu #menu>
+        <omni-menu-item > Normal </omni-menu-item>
+        <omni-menu-item  highlight>
+          Highlight
+        </omni-menu-item>
+        <omni-menu-item disabled>
+          Disabled
+        </omni-menu-item>
+      </omni-menu>
+    </omni-flex>
     <div>
       Welcome Rosalind!
     </div>
