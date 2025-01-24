@@ -1,0 +1,38 @@
+<omni-row [childWidth]="[1, 1 / 2]">  
+    <!-- Job Monitor Container -->
+    <omni-container padding="medium">
+      <omni-app-header-logo>
+        <img src="./CORE.svg" alt="logo" title="logo" width="80" height="40" />
+      </omni-app-header-logo>
+      <omni-flex omniButton>
+        <omni-flex
+            height="100%"
+            justifyContent="center"
+            alignItems="center"
+        >
+          <omni-menu-button
+              variant="outlineBlue"
+              label="Job Monitor"
+              icon="ArrowDown"
+          >
+              <omni-menu-item > Job Monitor </omni-menu-item>
+              <omni-menu-item > Risk Reports </omni-menu-item>
+              <omni-menu-item > Package Tracker </omni-menu-item>
+              <omni-menu-item > Issue Log </omni-menu-item>
+              <omni-menu-item > DBMS PgBlazor </omni-menu-item>
+          </omni-menu-button>
+        </omni-flex>
+      </omni-flex>
+    </omni-container>
+
+    <!-- Risk Reports Container -->
+    <omni-container padding="medium">
+      <div>
+        Welcome Rosalind!
+      </div>
+      <div>
+        <input omni-input type="search" placeholder="Search" />
+      </div>
+    </omni-container>
+  </omni-row>
+
