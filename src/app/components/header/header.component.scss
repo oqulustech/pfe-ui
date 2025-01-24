@@ -1,6 +1,7 @@
 .flex-container {
     display: flex;
     justify-content: flex-start; /* Align items to the start */
+    width: 100% !important;
   }
   
   .flex-items {
