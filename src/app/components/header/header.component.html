@@ -11,54 +11,25 @@
       />
     </svg>
   </omni-app-header-logo>
-  <omni-app-header-title>
-    <omni-flex direction="row" gap="medium">
-      <omni-text-body>Job Monitor</omni-text-body>
-      <omni-text-body>Risk Reports</omni-text-body>
-      <omni-text-body>Package Tracker</omni-text-body>
-      <omni-text-body>Issue Log</omni-text-body>
-      <omni-text-body>DBMS PgBlazor</omni-text-body>
-    </omni-flex>
-  </omni-app-header-title>
-  <omni-flex direction="row" gap="medium">
-      <omni-text-body>One</omni-text-body>
-      <omni-text-body>Two</omni-text-body>
-      <omni-text-body>Three</omni-text-body>
-    </omni-flex>
-    <omni-flex
+  <omni-flex
       height="100%"
       padding="huge"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <omni-menu-button
-        variant="outlineBlue"
-        label="Export as ..."
-        icon="ArrowDown"
-      >
-        <omni-menu-item > PDF </omni-menu-item>
-        <omni-menu-item > JPEG </omni-menu-item>
-        <omni-menu-item > PNG </omni-menu-item>
-      </omni-menu-button>
-    </omni-flex>
+      justifyContent="left"
+      alignItems="left"
+  >
+  <omni-menu-button
+      variant="outlineBlue"
+      label="Export as ..."
+      icon="ArrowDown"
+  >
+      <omni-menu-item > Job Monitor </omni-menu-item>
+      <omni-menu-item > Risk Reports </omni-menu-item>
+      <omni-menu-item > Package Tracker </omni-menu-item>
+      <omni-menu-item > Issue Log </omni-menu-item>
+      <omni-menu-item > DBMS PgBlazor </omni-menu-item>
+  </omni-menu-button>
+  </omni-flex>
 
-    <omni-flex
-      height="100%"
-      padding="huge"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <button omniButton [omniMenuToggle]="menu">Menu</button>
-      <omni-menu #menu>
-        <omni-menu-item > Normal </omni-menu-item>
-        <omni-menu-item  highlight>
-          Highlight
-        </omni-menu-item>
-        <omni-menu-item disabled>
-          Disabled
-        </omni-menu-item>
-      </omni-menu>
-    </omni-flex>
     <div>
       Welcome Rosalind!
     </div>
