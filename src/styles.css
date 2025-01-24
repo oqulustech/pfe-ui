@@ -3,3 +3,69 @@
 
 @include omni-Reset;
 @include omni-Optimist;
+
+
+
+.omni-gqydin, .omni-ysufa2 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.omni-ysufa2{
+    padding-left: 75px !important;
+    padding-right: 75px !important;
+}
+
+#homepage .omni-178zswc {
+    font-size: 17px;
+  }
+  #homepage .omni-15gm2gy {
+    padding-top: 10px !important;
+    text-align: center;
+  }
+  #homepage .omni-kgqrxe a {
+    color: #397c99;
+    text-decoration: none;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: flex-start; /* Align items to the start */
+    width: 100% !important
+  }
+  
+  .flex-items {
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .flex-container .flex-items:last-child {
+    margin-left: auto; /* This pushes the last item to the end */
+  }
+  
+  .group-start, .group-end {
+    display: flex;
+    justify-content: flex-start; 
+    width: 100% !important;
+  }
+  
+  .group-end {
+    margin-left: auto; /* Push the second group to the end */
+    width: 100% !important;
+  }
+  
+  .flex-container-row {
+    display: flex;
+    justify-content: space-evenly; /* Distribute space equally between items */
+    width: 100% !important;
+  }
+  
+  .flex-grow {
+    padding: 10px;
+    background-color: lightblue;
+    margin: 5px;
+    flex-grow: 1; /* Ensure each item grows equally */
+  }
