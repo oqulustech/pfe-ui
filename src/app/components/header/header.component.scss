@@ -1,0 +1,34 @@
+.flex-container {
+    display: flex;
+    justify-content: flex-start; /* Align items to the start */
+  }
+  
+  .flex-items {
+    padding: 10px;
+    background-color: lightblue;
+    margin: 5px;
+  }
+  
+  .flex-container .flex-items:last-child {
+    margin-left: auto; /* This pushes the last item to the end */
+  }
+  
+  .group-start, .group-end {
+    display: flex;
+  }
+  
+  .group-end {
+    margin-left: auto; /* Push the second group to the end */
+  }
+  
+  .flex-container-row {
+    display: flex;
+    justify-content: space-evenly; /* Distribute space equally between items */
+  }
+  
+  .flex-grow {
+    padding: 10px;
+    background-color: lightblue;
+    margin: 5px;
+    flex-grow: 1; /* Ensure each item grows equally */
+  }
