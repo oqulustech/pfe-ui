@@ -1,51 +1,19 @@
-@Component({
-  selector: 'omni-flex-items-example',
-  template: `
-    <omni-flex
-      style="background-color:${omni.colorCommercialBlue20};"
-      direction="row"
-      justifyContent="flex-start"
-      padding="medium"
-      childMarginLeft="small"
-    >
-      <omni-flex
-        style="background-color:${omni.colorAccentBlue35};color:${omni.colorWhite};"
-        flex="2 1 auto"
-        padding="small"
-      >
-        Child 1
-      </omni-flex>
-      <omni-flex
-        style="background-color:${omni.colorAccentBlue35};color:${omni.colorWhite};"
-        order="2"
-        padding="small"
-      >
-        Child 2
-      </omni-flex>
-      <omni-flex
-        style="background-color:${omni.colorAccentBlue35};color:${omni.colorWhite};"
-        padding="small"
-      >
-        Child 3
-      </omni-flex>
-    </omni-flex>
-  `,
-})
-class OmniFlexItemsExampleComponent {}
-__________________
-@Component({
-  selector: 'omni-flex-spacing-example',
-  template: `
-    <omni-flex
-      [direction]="['column', 'column', 'row']"
-      justifyContent="flex-start"
-      [childMarginLeft]="['zero', 'zero', 'small']"
-      [childMarginTop]="['small', 'small', 'zero']"
-    >
-      <button omniButton>Child</button>
-      <button omniButton>Child</button>
-      <button omniButton>Child</button>
-    </omni-flex>
-  `,
-})
-class OmniFlexSpacingExampleComponent {}
+<omni-app-header _ngcontent-ng-c2046933249="" variant="dark" ng-reflect-variant="dark" class="omni-1hw0h50" data-omni-sticky-active="false" data-omni-app-layout-area="header"><div ng-reflect-ng-class="omni-ysufa2" class="omni-ysufa2"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><div _ngcontent-ng-c2046933249="" class="flex-container"><div _ngcontent-ng-c2046933249="" class="flex-items"><div _ngcontent-ng-c2046933249="" class="flex-container"><div _ngcontent-ng-c2046933249="" class="flex-items"><img _ngcontent-ng-c2046933249="" src="./CORE.svg" alt="logo" title="logo" width="80" height="40"></div><div _ngcontent-ng-c2046933249="" class="flex-items"><omni-menu-button _ngcontent-ng-c2046933249="" variant="outlineBlue" label="Job Monitor" icon="ArrowDown" ng-reflect-variant="outlineBlue" ng-reflect-label="Job Monitor" ng-reflect-icon="ArrowDown" class="omni-233int"><button omnibutton="" ng-reflect-theme="light" ng-reflect-shape="button" ng-reflect-rank="secondary" ng-reflect-variant="outlineBlue" ng-reflect-size="default" ng-reflect-menu="[object Object]" class="omni-2yw4e1" aria-haspopup="menu" aria-expanded="false"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->Job Monitor<omni-icon ng-reflect-svg="ArrowDown" ng-reflect-svg-small="<svg width=&quot;16&quot; height=&quot;16&quot; vi" ng-reflect-margin-left="small" ng-reflect-size="small" class="omni-1h06npp"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" data-omni-part="icon-svg" data-omni-icon-size="small">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.707 6.293a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 1.414-1.414L8 8.586l2.293-2.293a1 1 0 0 1 1.414 0Z"></path>
+</svg></omni-icon><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--></button><!--container--><omni-menu><!--container--></omni-menu><!--container--><!--container--></omni-menu-button></div></div></div><div _ngcontent-ng-c2046933249="" class="flex-items"> Welcome Rosalind! <omni-icon _ngcontent-ng-c2046933249="" ng-reflect-svg="<svg width=&quot;24&quot; height=&quot;24&quot; vi" class="omni-153s84x"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" data-omni-part="icon-svg" data-omni-icon-size="small"><path fillrule="evenodd" cliprule="evenOdd" d="M3 6a3 3 0 013-3h1.5a1 1 0 010 2H6a1 1 0 00-1 1v1.5a1 1 0 01-2 0V6zm12.5-2a1 1 0 011-1H18a3 3 0 013 3v1.5a1 1 0 11-2 0V6a1 1 0 00-1-1h-1.5a1 1 0 01-1-1zM4 15.5a1 1 0 011 1V18a1 1 0 001 1h1.5a1 1 0 110 2H6a3 3 0 01-3-3v-1.5a1 1 0 011-1zm16 0a1 1 0 011 1V18a3 3 0 01-3 3h-1.5a1 1 0 110-2H18a1 1 0 001-1v-1.5a1 1 0 011-1z"></path></svg><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" data-omni-part="icon-svg" data-omni-icon-size="medium">
+  <path d="M13.25 8.25a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0Z"></path>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12Zm2 0c0 4.41 3.59 8 8 8s8-3.59 8-8-3.59-8-8-8-8 3.59-8 8Z"></path>
+  <path d="M11 12a1 1 0 1 1 2 0v4a1 1 0 1 1-2 0v-4Z"></path>
+</svg></omni-icon><omni-icon _ngcontent-ng-c2046933249="" ng-reflect-svg="<svg width=&quot;24&quot; height=&quot;24&quot; vi" class="omni-153s84x"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" data-omni-part="icon-svg" data-omni-icon-size="small"><path fillrule="evenodd" cliprule="evenOdd" d="M3 6a3 3 0 013-3h1.5a1 1 0 010 2H6a1 1 0 00-1 1v1.5a1 1 0 01-2 0V6zm12.5-2a1 1 0 011-1H18a3 3 0 013 3v1.5a1 1 0 11-2 0V6a1 1 0 00-1-1h-1.5a1 1 0 01-1-1zM4 15.5a1 1 0 011 1V18a1 1 0 001 1h1.5a1 1 0 110 2H6a3 3 0 01-3-3v-1.5a1 1 0 011-1zm16 0a1 1 0 011 1V18a3 3 0 01-3 3h-1.5a1 1 0 110-2H18a1 1 0 001-1v-1.5a1 1 0 011-1z"></path></svg><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" data-omni-part="icon-svg" data-omni-icon-size="medium">
+  <path d="M12 21.8c-.3 0-.5-.1-.7-.3l-8.4-8.4C1.7 11.9 1 10.2 1 8.5 1 4.9 3.9 2 7.5 2c2 0 3.5 1.1 4.5 2.5C13 3.1 14.5 2 16.5 2 20.1 2 23 4.9 23 8.5c0 1.8-.9 3.6-2.5 5.2l-7.8 7.7c-.2.3-.5.4-.7.4ZM7.5 4C5 4 3 6 3 8.5c0 1.2.5 2.3 1.3 3.2l7.7 7.7 7.1-7c1.3-1.3 2-2.6 2-3.8C21 6 19 4 16.5 4c-1.7 0-3 1.5-3.6 2.9-.2.4-.5.6-.9.6s-.8-.2-.9-.6C10.5 5.5 9.2 4 7.5 4Z"></path>
+</svg></omni-icon><omni-icon _ngcontent-ng-c2046933249="" ng-reflect-svg="<svg width=&quot;24&quot; height=&quot;24&quot; vi" class="omni-153s84x"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" data-omni-part="icon-svg" data-omni-icon-size="small"><path fillrule="evenodd" cliprule="evenOdd" d="M3 6a3 3 0 013-3h1.5a1 1 0 010 2H6a1 1 0 00-1 1v1.5a1 1 0 01-2 0V6zm12.5-2a1 1 0 011-1H18a3 3 0 013 3v1.5a1 1 0 11-2 0V6a1 1 0 00-1-1h-1.5a1 1 0 01-1-1zM4 15.5a1 1 0 011 1V18a1 1 0 001 1h1.5a1 1 0 110 2H6a3 3 0 01-3-3v-1.5a1 1 0 011-1zm16 0a1 1 0 011 1V18a3 3 0 01-3 3h-1.5a1 1 0 110-2H18a1 1 0 001-1v-1.5a1 1 0 011-1z"></path></svg><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" data-omni-part="icon-svg" data-omni-icon-size="medium">
+  <path d="M21.97 9a.501.501 0 0 0-.47-.32h-6.76L12.47 2.3c-.14-.4-.8-.4-.94 0L9.26 8.67H2.5c-.21 0-.39.13-.47.33a.5.5 0 0 0 .14.55l5.36 4.72-2.16 7.06c-.06.21.01.43.19.55.17.12.41.12.58 0l5.86-4.3 5.85 4.29c.09.06.19.1.3.1a.494.494 0 0 0 .48-.64l-2.16-7.06 5.36-4.72a.5.5 0 0 0 .14-.55Zm-7.06 3.98-.73.64.28.93.93 3.05-2.51-1.84-.88-.66-.89.65-2.51 1.84.93-3.05.28-.93-.73-.64-2.62-2.3h4.19l.36-1L12 6.93l.98 2.74.36 1h4.19l-2.62 2.31Z"></path>
+</svg></omni-icon></div></div></div></omni-app-header>
