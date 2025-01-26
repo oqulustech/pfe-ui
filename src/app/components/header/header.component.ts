@@ -12,5 +12,5 @@ import { OmniFormsModule, OmniMenuButtonModule } from '@cof/omni-ng';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  value: string = '';
+  selectedValue = 'Job Monitor';
 }
