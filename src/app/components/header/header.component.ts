@@ -16,7 +16,14 @@ export class HeaderComponent {
   value: string = '';
   selectedValue = 'Select The Pfe Module';
 
-    iconInfo = icons.UiInfoLined
-    iconHeart = icons.UiHeartLined
-    iconStar = icons.UiStarLined
+  iconInfo = icons.UiInfoLined
+  iconHeart = icons.UiHeartLined
+  iconStar = icons.UiStarLined
+  options: string[] = [
+    'Job Monitor',
+    'Risk Reports',
+    'Package Tracker',
+    'Issue Log',
+    'DBMS PgBlazor'
+  ];
 }
