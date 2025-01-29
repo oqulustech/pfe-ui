@@ -1,3 +1,4 @@
+
 /* You can add global styles to this file, and also import other style files */
 @import '@cof/omni-styles/index.scss';
 
@@ -6,70 +7,69 @@
 
 body  {
     font-family: 'Optimist', Courier, monospace;
-    font-weight: 400 !important;
-    font-size: 14px !important;
+    font-weight: 400;
+    font-size: 14px;
     line-height: 21px;
-    color: #141414 !important;
+    color: #141414;
 }
 
-
-.omni-gqydin, .omni-ysufa2 {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-    width: 100% !important;
-    max-width: 100% !important;
+#apppage .omni-gqydin, #apppage .omni-ysufa2 {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    max-width: 100%;
     
 }
-.omni-ysufa2{
-    padding-left: 75px !important;
-    padding-right: 75px !important;
-    background-color: #007F98 !important;
+#apppage .omni-ysufa2{
+    padding-left: 75px;
+    padding-right: 75px;
+    background-color: #007F98;
 }
 
 #homepage .omni-178zswc {
-    font-size: 24px;
-    font-weight: normal;
-  }
-  #homepage .omni-15gm2gy {
-    padding-top: 10px !important;
-    text-align: center;
-  }
-  #homepage .omni-kgqrxe a {
-    color: #397c99;
-    text-decoration: none;
-  }
-
-  .omni-178zswc{
-    font-family: 'Optimist', Courier, monospace;
-    font-weight: 300 !important;
-    font-size: 24px !important;
-    line-height: 36px  !important;
-    color: #141414 !important;
+  font-size: 24px;
+  font-weight: normal;
+}
+#homepage .omni-15gm2gy {
+  padding-top: 10px;
+  text-align: center;
+}
+#homepage .omni-kgqrxe a {
+  color: #397c99;
+  text-decoration: none;
 }
 
-   #homepage .homeBoxTxt{
+#homepage  .omni-178zswc{
+    font-family: 'Optimist', Courier, monospace;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px ;
+    color: #141414;
+}
+
+ #homepage .homeBoxTxt{
     height: 100px ;
     font-family: 'Optimist', Courier, monospace;
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
     color: #141414;
-  }
+}
 
 
   #header img {
     margin-right: 60px;
   }
   #header .omni-2lzp0v select{
-    border: 5px solid #007F98 !important;
-    outline: none !important;
+    border: 5px solid #007F98;
+    outline: none;
     color: #fff;
-    background-color: #007F98 !important;
+    background-color: #007F98;
     font-family: 'Optimist', Courier, monospace;
-    font-weight: 600 !important;
-    font-size: 16px !important;
+    font-weight: 600;
+    font-size: 16px;
     line-height: 24px;
     text-transform: uppercase;
     margin-top: 0px;
@@ -83,7 +83,7 @@ body  {
   .flex-container {
     display: flex;
     justify-content: flex-start; /* Align items to the start */
-    width: 100% !important;
+    width: 100% ;
     align-items: center;
   }
   
@@ -99,18 +99,18 @@ body  {
   .group-start, .group-end {
     display: flex;
     justify-content: flex-start; 
-    width: 100% !important;
+    width: 100%;
   }
   
   .group-end {
     margin-left: auto; /* Push the second group to the end */
-    width: 100% !important;
+    width: 100%;
   }
   
   .flex-container-row {
     display: flex;
     justify-content: space-evenly; /* Distribute space equally between items */
-    width: 100% !important;
+    width: 100%;
   }
   
   .flex-grow {
