@@ -4,6 +4,13 @@
 @include omni-Reset;
 @include omni-Optimist;
 
+body  {
+    font-family: 'Optimist', Courier, monospace;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 21px;
+    color: #141414 !important;
+}
 
 
 .omni-gqydin, .omni-ysufa2 {
@@ -13,14 +20,17 @@
     margin-right: 0px !important;
     width: 100% !important;
     max-width: 100% !important;
+    
 }
 .omni-ysufa2{
     padding-left: 75px !important;
     padding-right: 75px !important;
+    background-color: #007F98 !important;
 }
 
 #homepage .omni-178zswc {
-    font-size: 17px;
+    font-size: 24px;
+    font-weight: normal;
   }
   #homepage .omni-15gm2gy {
     padding-top: 10px !important;
@@ -31,10 +41,50 @@
     text-decoration: none;
   }
 
+  .omni-178zswc{
+    font-family: 'Optimist', Courier, monospace;
+    font-weight: 300 !important;
+    font-size: 24px !important;
+    line-height: 36px  !important;
+    color: #141414 !important;
+}
+
+   #homepage .homeBoxTxt{
+    height: 100px ;
+    font-family: 'Optimist', Courier, monospace;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #141414;
+  }
+
+
+  #header img {
+    margin-right: 60px;
+  }
+  #header .omni-2lzp0v select{
+    border: 5px solid #007F98 !important;
+    outline: none !important;
+    color: #fff;
+    background-color: #007F98 !important;
+    font-family: 'Optimist', Courier, monospace;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-top: 0px;
+
+  }
+ 
+  #header .profile {
+    margin: 5px 0 0 5px;
+  }
+
   .flex-container {
     display: flex;
     justify-content: flex-start; /* Align items to the start */
-    width: 100% !important
+    width: 100% !important;
+    align-items: center;
   }
   
   .flex-items {
@@ -68,9 +118,4 @@
     background-color: lightblue;
     margin: 5px;
     flex-grow: 1; /* Ensure each item grows equally */
-  }
-
-
-  .profile {
-    margin: 5px 0 0 5px;
   }

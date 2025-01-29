@@ -1,4 +1,108 @@
-<omni-container variant="light" id = "homepage" [padding]="['medium', 'huge', 'giant']" style="width: 100%; ">
+<omni-container variant="light" id = "homepage" [padding]="['medium', 'huge', 'giant']">
+  <omni-row [childWidth]="[1, 1 / 5]">  
+
+    <!-- Job Monitor Container -->
+    <omni-container padding="medium">
+      <omni-flex direction="row" gap="medium">
+        <omni-status-container width="100%" status="information" variant="white" padding="medium">
+          <omni-column gap="medium">
+            <omni-title-action title="Job Monitor"></omni-title-action>
+            <omni-container>
+              <omni-text-label class="homeBoxTxt">Job monitor is a tool for overseeing the execution of scheduled jobs, scripts, and automated tasks critical to generating LMCRO Risk Reports</omni-text-label>
+              <omni-text-metric stack="medium" padding="medium">
+                <img src="./Maintainence.svg" alt="logo" title="logo" width="50" height="50" />
+              </omni-text-metric>
+              <omni-flex direction="row" justifyContent="space-between">
+                <omni-text-body><a href="javascript:void(0)"> Launch Job Monitor > </a></omni-text-body>
+              </omni-flex>
+            </omni-container>                    
+          </omni-column>
+        </omni-status-container>
+      </omni-flex>
+    </omni-container>
+
+    <!-- Risk Reports Container -->
+    <omni-container padding="medium">
+      <omni-flex direction="row" gap="medium">
+        <omni-status-container width="100%" status="information" variant="white" padding="medium">
+          <omni-column gap="medium">
+            <omni-title-action title="Risk Reports"></omni-title-action>
+            <omni-container>
+              <omni-text-label class="homeBoxTxt">Provides detailed reports on potential future exposure depending on the selected trading desk</omni-text-label>
+              <omni-text-metric stack="medium" padding="medium">
+                <img src="./Statements.svg" alt="logo" title="logo" width="50" height="50" />
+              </omni-text-metric>
+              <omni-flex direction="row" justifyContent="space-between">
+                <omni-text-body><a href="javascript:void(0)"> Launch Risk Reports > </a></omni-text-body>
+              </omni-flex>
+            </omni-container>                    
+          </omni-column>
+        </omni-status-container>
+      </omni-flex>
+    </omni-container>
+
+    <!-- Package Tracker Container -->
+    <omni-container padding="medium">
+      <omni-flex direction="row" gap="medium">
+        <omni-status-container width="100%" status="information" variant="white" padding="medium">
+          <omni-column gap="medium">
+            <omni-title-action title="Package Tracker"></omni-title-action>
+            <omni-container>
+              <omni-text-label class="homeBoxTxt">Provides functionality to monitor and control the deployment lifecycle of Risk Reports</omni-text-label>
+              <omni-text-metric stack="medium" padding="medium">
+                <img src="./Review.svg" alt="logo" title="logo" width="50" height="50" />
+              </omni-text-metric>
+              <omni-flex direction="row" justifyContent="space-between">
+                <omni-text-body><a href="javascript:void(0)"> Launch Package Tracker > </a></omni-text-body>
+              </omni-flex>
+            </omni-container>                    
+          </omni-column>
+        </omni-status-container>
+      </omni-flex>
+    </omni-container>
+
+    <!-- Issue Log Container -->
+    <omni-container padding="medium">
+      <omni-flex direction="row" gap="medium">
+        <omni-status-container width="100%" status="information" variant="white" padding="medium">
+          <omni-column gap="medium">
+            <omni-title-action title="Issue Log"></omni-title-action>
+            <omni-container>
+              <omni-text-label class="homeBoxTxt">A centralized system for documenting, tracking, and resolving PFE system issues</omni-text-label>
+              <omni-text-metric stack="medium" padding="medium">
+                <img src="./Caution.svg" alt="logo" title="logo" width="50" height="50" />
+              </omni-text-metric>
+              <omni-flex direction="row" justifyContent="space-between">
+                <omni-text-body><a href="javascript:void(0)"> Launch Issue Log > </a></omni-text-body>
+              </omni-flex>
+            </omni-container>                    
+          </omni-column>
+        </omni-status-container>
+      </omni-flex>
+    </omni-container>
+
+    <!-- Additional Section -->
+    <omni-container padding="medium">
+      <omni-flex direction="row" gap="medium">
+        <omni-status-container width="100%" status="information" variant="white" padding="medium">
+          <omni-column gap="medium">
+            <omni-title-action title="DBMS PgBlazer"></omni-title-action>
+            <omni-container>
+              <omni-text-label class="homeBoxTxt">Database management tool</omni-text-label>
+              <omni-text-metric stack="medium" padding="medium">
+                <img src="./Migration.svg" alt="logo" title="logo" width="50" height="50" />
+              </omni-text-metric>
+              <omni-flex direction="row" justifyContent="space-between">
+                <omni-text-body><a href="javascript:void(0)"> Launch DBMS PgBlazer > </a></omni-text-body>
+              </omni-flex>
+            </omni-container>                    
+          </omni-column>
+        </omni-status-container>
+      </omni-flex>
+    </omni-container>
+
+  </omni-row>
+</omni-container>  <omni-container variant="light" id = "homepage" [padding]="['medium', 'huge', 'giant']">
   <omni-row [childWidth]="[1, 1 / 5]">  
 
     <!-- Job Monitor Container -->

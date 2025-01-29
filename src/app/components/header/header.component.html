@@ -1,4 +1,4 @@
-<omni-app-header variant="dark">
+<omni-app-header variant="dark" id="header">
   <div class="flex-container">
     <div class="flex-items">
       <div class="flex-container">
@@ -8,12 +8,13 @@
 
         <div class="flex-items">
           <omni-select [(ngModel)]="selectedValue">
-            <option value="Job Monitor" hidden> Job Monitor </option>
-            <option value="Risk Reports"> Risk Reports </option>
-            <option value="Package Tracker"> Package Tracker </option>
-            <option value="Issue Log "> Issue Log </option>
-            <option value="Issue Log "> DBMS PgBlazor </option>
-          </omni-select>
+              <option value="Select The Pfe Module" hidden> Select The Pfe Module </option>
+              <option value="Job Monitor"> Job Monitor </option>
+              <option value="Risk Reports"> Risk Reports </option>
+              <option value="Package Tracker"> Package Tracker </option>
+              <option value="Issue Log "> Issue Log </option>
+              <option value="Issue Log "> DBMS PgBlazor </option>
+            </omni-select>
         </div>
       </div>
     </div>
