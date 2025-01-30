@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './job-monitor.component.html',
-  styleUrl: './job-monitor.component.css'
+  styleUrl: './job-monitor.component.scss'
 })
 export class JobMonitorComponent {
 

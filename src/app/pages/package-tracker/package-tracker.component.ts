@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './package-tracker.component.html',
-  styleUrl: './package-tracker.component.css'
+  styleUrl: './package-tracker.component.scss'
 })
 export class PackageTrackerComponent {
 

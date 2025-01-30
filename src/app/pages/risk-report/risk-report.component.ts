@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './risk-report.component.html',
-  styleUrl: './risk-report.component.css'
+  styleUrl: './risk-report.component.scss'
 })
 export class RiskReportComponent {
 
