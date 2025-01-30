@@ -1,18 +1,3 @@
-// import { Component } from '@angular/core';
-// import { RouterModule } from '@angular/router';
-// import { OmniNgModule } from '@cof/omni-ng'
-
-// @Component({
-//   selector: 'app-root',
-//   imports: [
-//     OmniNgModule,
-//     RouterModule
-//   ],
-//   templateUrl: './app.component.html',
-//   styleUrl: './app.component.scss'
-// })
-// export class AppComponent {
-// }
 
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
