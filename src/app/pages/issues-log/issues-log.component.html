@@ -1,1 +1,64 @@
-<p>issues-log works!</p>
+import { NgModule } from '@angular/core'
+import { OmniFlexModule, OmniFormsModule } from '@cof/omni-ng'
+import * as omni from '@cof/omni-tokens'
+
+@NgModule({
+  imports: [OmniFlexModule, OmniFormsModule],
+})
+export class OmniExampleFlexModule {}
+
+.==================
+<omni-flex
+      style="background-color:${omni.colorCommercialBlue20};"
+      direction="row"
+      justifyContent="flex-start"
+      padding="medium"
+      childMarginLeft="small"
+    >
+      <omni-flex
+        style="background-color:${omni.colorAccentBlue35};color:${omni.colorWhite};"
+        flex="2 1 auto"
+        padding="small"
+      >
+        Child 1
+      </omni-flex>
+      <omni-flex
+        style="background-color:${omni.colorAccentBlue35};color:${omni.colorWhite};"
+        order="2"
+        padding="small"
+      >
+        Child 2
+      </omni-flex>
+      <omni-flex
+        style="background-color:${omni.colorAccentBlue35};color:${omni.colorWhite};"
+        padding="small"
+      >
+        Child 3
+      </omni-flex>
+    </omni-flex>
+
+    .================
+    <omni-flex
+    [direction]="['column', 'column', 'row']"
+    justifyContent="flex-start"
+    [childMarginLeft]="['zero', 'zero', 'small']"
+    [childMarginTop]="['small', 'small', 'zero']"
+  >
+    <button omniButton>Child</button>
+    <button omniButton>Child</button>
+    <button omniButton>Child</button>
+  </omni-flex>
+
+  .====================
+  import { NgModule } from '@angular/core'
+import { OmniFlexModule, OmniFormsModule } from '@cof/omni-ng'
+
+@NgModule({
+  imports: [OmniFlexModule, OmniFormsModule],
+})
+
+  <omni-flex direction="row" justifyContent="flex-start">
+    <button omniButton>Child</button>
+    <button omniButton>Child</button>
+    <button omniButton>Child</button>
+  </omni-flex>
