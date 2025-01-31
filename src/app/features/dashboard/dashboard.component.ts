@@ -39,5 +39,5 @@ export class DashboardComponent {
         status: "40 seconds ago",
         action: ""
     }
-]
+  ]
 }
