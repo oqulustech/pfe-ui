@@ -81,11 +81,21 @@ body  {
   }
 
   /*------------ Section for Table css ------------*/
- .border-green{
+ .border-complete{
   border-left: 3px  solid #12bd6a;
   background-color: #fff;
   padding-left: 10px;
 }
+.border-waiting {
+  border-left: 3px  solid #0e77d2;
+}
+.border-running {
+  border-left: 3px  solid #e09321;
+}
+.border-failed {
+  border-left: 3px  solid #ff0000;
+}
+
 /* Style for the table */
 .box-table {
   width: 100%;
@@ -107,14 +117,15 @@ body  {
   color: #ffffff;
   text-align: left;
   padding: 5px 10px;
+  border-radius: 3px;
 }
-.box-table th span.running {
+.box-table th span.textWaiting {
   background-color: #0e77d2;
 }
-.box-table th span.waiting {
+.box-table th span.textRunning {
   background-color: #e09321;
 }
-.box-table th span.failed {
+.box-table th span.textFailed {
   background-color: #ff0000;
 }
 /* Style for table rows */
@@ -138,7 +149,6 @@ body  {
   border-top: none;
 }
   /*------------ End Section for Table css ------------*/
-
 
   .flex-container {
     display: flex;
