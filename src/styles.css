@@ -83,6 +83,7 @@ body  {
   /*------------ Section for Table css ------------*/
  .border-green{
   border-left: 3px  solid #12bd6a;
+  background-color: #fff;
   padding-left: 10px;
 }
 /* Style for the table */
@@ -139,7 +140,6 @@ body  {
   /*------------ End Section for Table css ------------*/
 
 
-
   .flex-container {
     display: flex;
     justify-content: flex-start; /* Align items to the start */
@@ -171,7 +171,7 @@ body  {
     display: flex;
     justify-content: space-evenly; /* Distribute space equally between items */
     width: 100%;
-  }/home/oqulustech/pfe-ui/src/app/pages/features
+  }
   
   .flex-grow {
     padding: 10px;

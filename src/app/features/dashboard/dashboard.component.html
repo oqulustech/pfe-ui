@@ -5,59 +5,103 @@
     <!-- Box1 -->
     <omni-container padding="medium">
       <omni-flex direction="row" gap="medium">
-        <omni-status-container width="100%" status="information" variant="white" padding="medium">
-            
           <div class="border-green">
-            <table cellpadding="0" cellspacing="0" border="0" class="box-table">
-                <tr>
-                    <th>361 <span class="textCompleted">Complete</span> </th>
-                    <th>&nbsp;</th>
-                    <th><omni-icon [svg]="iconInfo" class="profile"></omni-icon> </th>
-                </tr>
-                <tr>
-                    <th>Job</th>
-                    <th>Completed</th>
-                    <th>&nbsp;</th>
-                </tr>
-                <tr *ngFor="let row of dataCompleted">
-                    <td>{{ row.name }}</td>
-                    <td>{{ row.status }}</td>
-                    <td>&nbsp;</td> 
-                </tr>
-            </table>
-        </div>
-
-        </omni-status-container>
+              <table cellpadding="0" cellspacing="0" border="0" class="box-table">
+                  <tr>
+                      <th>361 <span class="textCompleted">Complete</span> </th>
+                      <th>&nbsp;</th>
+                      <th><omni-icon [svg]="iconsetting" class="profile"></omni-icon> </th>
+                  </tr>
+                  <tr>
+                      <th>Job</th>
+                      <th>Completed</th>
+                      <th>&nbsp;</th>
+                  </tr>
+                  <tr *ngFor="let row of dataCompleted">
+                      <td>{{ row.name }}</td>
+                      <td>{{ row.status }}</td>
+                      <td>&nbsp;</td> 
+                  </tr>
+              </table>
+          </div>
       </omni-flex>
     </omni-container>
 
     <!-- Box2 -->
     <omni-container padding="medium">
       <omni-flex direction="row" gap="medium">
-        <omni-status-container width="100%" status="information" variant="white" padding="medium">
-           b
-        </omni-status-container>
+          <div class="border-green">
+              <table cellpadding="0" cellspacing="0" border="0" class="box-table">
+                  <tr>
+                      <th>39 <span class="textCompleted">Waiting</span> </th>
+                      <th>&nbsp;</th>
+                      <th><omni-icon [svg]="iconsetting" class="profile"></omni-icon> </th>
+                  </tr>
+                  <tr>
+                      <th>Job</th>
+                      <th>Completed</th>
+                      <th>&nbsp;</th>
+                  </tr>
+                  <tr *ngFor="let row of dataCompleted">
+                      <td>{{ row.name }}</td>
+                      <td>{{ row.status }}</td>
+                      <td>&nbsp;</td> 
+                  </tr>
+              </table>
+          </div>
       </omni-flex>
     </omni-container>
 
     <!-- Box3 -->
     <omni-container padding="medium">
       <omni-flex direction="row" gap="medium">
-        <omni-status-container width="100%" status="information" variant="white" padding="medium">
-            c
-        </omni-status-container>
+          <div class="border-green">
+              <table cellpadding="0" cellspacing="0" border="0" class="box-table">
+                  <tr>
+                      <th>23 <span class="textCompleted">Running</span> </th>
+                      <th>&nbsp;</th>
+                      <th><omni-icon [svg]="iconsetting" class="profile"></omni-icon> </th>
+                  </tr>
+                  <tr>
+                      <th>Job</th>
+                      <th>Completed</th>
+                      <th>&nbsp;</th>
+                  </tr>
+                  <tr *ngFor="let row of dataCompleted">
+                      <td>{{ row.name }}</td>
+                      <td>{{ row.status }}</td>
+                      <td>&nbsp;</td> 
+                  </tr>
+              </table>
+          </div>
       </omni-flex>
     </omni-container>
 
     <!-- Box4 -->
     <omni-container padding="medium">
       <omni-flex direction="row" gap="medium">
-        <omni-status-container width="100%" status="information" variant="white" padding="medium">
-            4
-        </omni-status-container>
+          <div class="border-green">
+              <table cellpadding="0" cellspacing="0" border="0" class="box-table">
+                  <tr>
+                      <th>25 <span class="textCompleted">Failed</span> </th>
+                      <th>&nbsp;</th>
+                      <th><omni-icon [svg]="iconsetting" class="profile"></omni-icon> </th>
+                  </tr>
+                  <tr>
+                      <th>Job</th>
+                      <th>Completed</th>
+                      <th>&nbsp;</th>
+                  </tr>
+                  <tr *ngFor="let row of dataCompleted">
+                      <td>{{ row.name }}</td>
+                      <td>{{ row.status }}</td>
+                      <td>&nbsp;</td> 
+                  </tr>
+              </table>
+          </div>
       </omni-flex>
     </omni-container>
 
 
   </omni-row>
-</omni-container> 
+</omni-container>  
