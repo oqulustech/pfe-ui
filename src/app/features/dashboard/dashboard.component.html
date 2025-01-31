@@ -1,43 +1,70 @@
 
+
+<table>
+
+
+</table>
+
+
+/* 
 <omni-container variant="light" id = "homepage" [padding]="['medium', 'huge', 'giant']" style="width: 100%; ">
-    <omni-row [childWidth]="[1, 1 / 4]">  
-  
-      <!-- Box1 -->
-      <omni-container padding="medium">
-        <omni-flex direction="row" gap="medium">
-          <omni-status-container width="100%" status="information" variant="white" padding="medium">
-              a
-          </omni-status-container>
-        </omni-flex>
-      </omni-container>
-  
-      <!-- Box2 -->
-      <omni-container padding="medium">
-        <omni-flex direction="row" gap="medium">
-          <omni-status-container width="100%" status="information" variant="white" padding="medium">
-             b
-          </omni-status-container>
-        </omni-flex>
-      </omni-container>
-  
-      <!-- Box3 -->
-      <omni-container padding="medium">
-        <omni-flex direction="row" gap="medium">
-          <omni-status-container width="100%" status="information" variant="white" padding="medium">
-              c
-          </omni-status-container>
-        </omni-flex>
-      </omni-container>
-  
-      <!-- Box4 -->
-      <omni-container padding="medium">
-        <omni-flex direction="row" gap="medium">
-          <omni-status-container width="100%" status="information" variant="white" padding="medium">
-              4
-          </omni-status-container>
-        </omni-flex>
-      </omni-container>
-  
-  
-    </omni-row>
-  </omni-container>  
+  <omni-row [childWidth]="[1, 1 / 4]">  
+
+    <!-- Box1 -->
+    <omni-container padding="medium">
+      <omni-flex direction="row" gap="medium">
+        <omni-status-container width="100%" status="information" variant="white" padding="medium">
+            
+            <table cellspadding="0" cellsspacing="0" border="0" id="box-table">
+                <tr>
+                    <th>361</th>
+                    <th>Complete</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <th>Job</th>
+                    <th>Completed</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr *ngFor="let row of dataCompleted">
+                    <td> {{row.name}} </td>
+                    <td> {{row.name}} </td>
+                    <td> &nbsp; </td>
+                </tr>
+            </table>
+
+
+        </omni-status-container>
+      </omni-flex>
+    </omni-container>
+
+    <!-- Box2 -->
+    <omni-container padding="medium">
+      <omni-flex direction="row" gap="medium">
+        <omni-status-container width="100%" status="information" variant="white" padding="medium">
+           b
+        </omni-status-container>
+      </omni-flex>
+    </omni-container>
+
+    <!-- Box3 -->
+    <omni-container padding="medium">
+      <omni-flex direction="row" gap="medium">
+        <omni-status-container width="100%" status="information" variant="white" padding="medium">
+            c
+        </omni-status-container>
+      </omni-flex>
+    </omni-container>
+
+    <!-- Box4 -->
+    <omni-container padding="medium">
+      <omni-flex direction="row" gap="medium">
+        <omni-status-container width="100%" status="information" variant="white" padding="medium">
+            4
+        </omni-status-container>
+      </omni-flex>
+    </omni-container>
+
+
+  </omni-row>
+</omni-container>   */
