@@ -7,10 +7,11 @@
       <omni-flex direction="row" gap="medium">
         <omni-status-container width="100%" status="information" variant="white" padding="medium">
             
-            <table cellspadding="0" cellsspacing="0" border="0" id="box-table">
+          <div class="border-green">
+            <table cellpadding="0" cellspacing="0" border="0" class="box-table">
                 <tr>
-                    <th>361</th>
-                    <th>Complete</th>
+                    <th>361 <span class="textCompleted">Complete</span> </th>
+                    <th>&nbsp;</th>
                     <th>&nbsp;</th>
                 </tr>
                 <tr>
@@ -19,12 +20,12 @@
                     <th>&nbsp;</th>
                 </tr>
                 <tr *ngFor="let row of dataCompleted">
-                    <td> {{row.name}} </td>
-                    <td> {{row.name}} </td>
-                    <td> &nbsp; </td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.status }}</td>
+                    <td>&nbsp;</td> 
                 </tr>
             </table>
-
+        </div>
 
         </omni-status-container>
       </omni-flex>

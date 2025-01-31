@@ -80,6 +80,66 @@ body  {
     margin: 5px 0 0 5px;
   }
 
+  /*------------ Section for Table css ------------*/
+ .border-green{
+  border-left: 3px  solid #12bd6a;
+  padding-left: 10px;
+}
+/* Style for the table */
+.box-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for table headers */
+.box-table th {
+  background-color: #fff;
+  color: #333;
+  text-align: left;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.box-table th span.textCompleted {
+  background-color: #12bd6a;
+  color: #ffffff;
+  text-align: left;
+  padding: 5px 10px;
+}
+.box-table th span.running {
+  background-color: #0e77d2;
+}
+.box-table th span.waiting {
+  background-color: #e09321;
+}
+.box-table th span.failed {
+  background-color: #ff0000;
+}
+/* Style for table rows */
+.box-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* Alternate row color for better readability */
+.box-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect for rows */
+.box-table tr:hover {
+  background-color: #ddd;
+}
+
+/* Style for the first row (for headers) */
+.box-table tr:first-child th {
+  border-top: none;
+}
+  /*------------ End Section for Table css ------------*/
+
+
+
   .flex-container {
     display: flex;
     justify-content: flex-start; /* Align items to the start */
