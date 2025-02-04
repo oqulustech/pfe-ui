@@ -17,24 +17,30 @@
       <omni-container padding="medium">
         <omni-flex direction="row" gap="medium">
             <div class="border-complete">
-                <table cellpadding="0" cellspacing="0" border="0" class="box-table">
-                    <tr>
-                        <th>361 <span class="textCompleted">Complete</span> </th>
-                        <th>&nbsp;</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    <tr>
-                        <th>Job</th>
-                        <th>Completed</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    <tr *ngFor="let row of dataCompleted">
-                        <td>{{ row.name }}</td>
-                        <td>{{ row.status }}</td>
-                        <td>&nbsp;</td> 
-                    </tr>
-                </table>
-            </div>
+                <div class="table-wrapper">
+                    <table cellpadding="0" cellspacing="0" border="0" class="box-table">
+                        <thead>
+                            <tr>
+                                <th>361 <span class="textCompleted">Complete</span></th>
+                                <th>&nbsp;</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            <tr>
+                                <th>Job</th>
+                                <th>Completed</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of dataCompleted">
+                                <td>{{ row.name }}</td>
+                                <td>{{ row.status }}</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
         </omni-flex>
       </omni-container>
   
