@@ -146,6 +146,23 @@ body  {
   text-align: left;
 }
 
+.box-table th span.textCompleted {
+  background-color: #1F7D08;
+  color: #ffffff;
+  text-align: left;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.box-table th span.textWaiting {
+  background-color: #00AFD4;
+}
+.box-table th span.textRunning {
+  background-color: #E8AD11;
+}
+.box-table th span.textFailed {
+  background-color: #CC2427;
+}
+
 .box-table thead  {   
   border: 1px solid #ddd;
 }
