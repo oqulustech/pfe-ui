@@ -32,11 +32,11 @@ export class HeaderComponent {
   onChange() { 
     // Handle the change event 
     console.log('Selected value:', this.selectedValue); 
-    if (this.selectedValue === 'Job Monitor') 
-      { 
+      if (this.selectedValue === 'Select The Pfe Module') { 
+        this.router.navigate(['home']); 
+      } else if (this.selectedValue === 'Job Monitor') { 
         this.router.navigate(['job-monitor']); 
-      }
-      else if(this.selectedValue == 'Risk Reports'){
+      } else if(this.selectedValue == 'Risk Reports'){
         this.router.navigate(['dashboard'])
       }
      }
