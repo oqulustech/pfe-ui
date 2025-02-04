@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { OmniNgModule } from '@cof/omni-ng';
 import { OmniFormsModule, OmniMenuButtonModule, OmniIconModule } from '@cof/omni-ng';
@@ -26,4 +27,17 @@ export class HeaderComponent {
     'Issue Log',
     'DBMS PgBlazor'
   ];
+  constructor(private router: Router) {}
+
+  onChange() { 
+    // Handle the change event 
+    console.log('Selected value:', this.selectedValue); 
+    if (this.selectedValue === 'Job Monitor') 
+      { 
+        this.router.navigate(['job-monitor']); 
+      }
+      else if(this.selectedValue == 'Risk Reports'){
+        this.router.navigate(['dashboard'])
+      }
+     }
 }

@@ -7,10 +7,14 @@
       </div>
 
         <div class="flex-items">
-          <omni-select [(ngModel)]="selectedValue">
+          <!-- <omni-select [(ngModel)]="selectedValue">
             <option value="Select The Pfe Module" hidden> Select The Pfe Module </option>
             <option *ngFor="let option of options" [value]="option">{{ option }}</option>
-          </omni-select>
+          </omni-select> -->
+          <omni-select [(ngModel)]="selectedValue" (change)="onChange()">
+             <option value="Select The Pfe Module" hidden>Select The Pfe Module</option> 
+             <option *ngFor="let option of options" [value]="option">{{ option }}</option> 
+            </omni-select>
         </div>
       </div>
     </div>

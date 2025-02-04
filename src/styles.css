@@ -11,6 +11,7 @@ body  {
     font-size: 14px;
     line-height: 21px;
     color: #141414;
+    background: #FFF;
 }
 
 #apppage .omni-gqydin, #apppage .omni-ysufa2 {
@@ -26,6 +27,13 @@ body  {
     padding-left: 75px;
     padding-right: 75px;
     background-color: #007F98;
+}
+
+#homepage  {
+  background: #fff;
+  width: 100%;
+  padding-top: 0px;
+  width: 100%;
 }
 
 #homepage .omni-178zswc {
@@ -80,20 +88,41 @@ body  {
     margin: 5px 0 0 5px;
   }
 
+  .breadcrumb {
+    padding: 8px;
+    margin: 0px;
+    background: #E1F5FF;
+    width: 100%;
+    border-left: 3px  solid #0276B1;
+  }
+  .breadcrumb li{
+    padding: 0 15px;
+    margin: 0px;
+    display: inline-block;
+  }
+  .breadcrumb li a{
+    text-decoration: underline;
+    color: #000;
+    font-size: 14px;
+
+  }
+
   /*------------ Section for Table css ------------*/
  .border-complete{
-  border-left: 3px  solid #12bd6a;
+  border-left: 3px  solid #1F7D08;
   background-color: #fff;
   padding-left: 10px;
+  overflow-y: scroll;
+  height: 500px;
 }
 .border-waiting {
-  border-left: 3px  solid #0e77d2;
+  border-left: 3px  solid #00AFD4;
 }
 .border-running {
-  border-left: 3px  solid #e09321;
+  border-left: 3px  solid #E8AD11;
 }
 .border-failed {
-  border-left: 3px  solid #ff0000;
+  border-left: 3px  solid #CC2427;
 }
 
 /* Style for the table */
@@ -113,20 +142,20 @@ body  {
   text-transform: uppercase;
 }
 .box-table th span.textCompleted {
-  background-color: #12bd6a;
+  background-color: #1F7D08;
   color: #ffffff;
   text-align: left;
   padding: 5px 10px;
   border-radius: 3px;
 }
 .box-table th span.textWaiting {
-  background-color: #0e77d2;
+  background-color: #00AFD4;
 }
 .box-table th span.textRunning {
-  background-color: #e09321;
+  background-color: #E8AD11;
 }
 .box-table th span.textFailed {
-  background-color: #ff0000;
+  background-color: #CC2427;
 }
 /* Style for table rows */
 .box-table td {

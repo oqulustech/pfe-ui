@@ -4,7 +4,7 @@ import { JobMonitorComponent } from './features/job-monitor/job-monitor.componen
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 export const routes: Routes = [
-    { path: '', component: JobMonitorComponent },
+    { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path : "job-monitor", component: JobMonitorComponent },
     { path : "dashboard", component: DashboardComponent }
