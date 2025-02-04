@@ -28,6 +28,9 @@ body  {
     padding-right: 75px;
     background-color: #007F98;
 }
+#apppage .omni-o6ludv {
+  background-color: #FFF;
+}
 
 #homepage  {
   background: #fff;
@@ -87,6 +90,9 @@ body  {
   #header .profile {
     margin: 5px 0 0 5px;
   }
+  .setting svg {
+    color: #007F98;
+  }
 
   .breadcrumb {
     padding: 8px;
@@ -113,7 +119,7 @@ body  {
   background-color: #fff;
   padding-left: 10px;
   overflow-y: scroll;
-  height: 500px;
+  height: 440px;
 }
 .border-waiting {
   border-left: 3px  solid #00AFD4;
@@ -124,6 +130,10 @@ body  {
 .border-failed {
   border-left: 3px  solid #CC2427;
 }
+#dashboard .omni-854m7t {
+  display: block;
+}
+
 
 .border-complete {
   max-width: 100%;
@@ -131,7 +141,7 @@ body  {
 }
 
 .table-wrapper {
-  max-height: 300px;  /* Set the height for scrolling */
+  max-height: 425px;  /* Set the height for scrolling */
   overflow-y: auto;
   display: block;
 }
@@ -142,7 +152,7 @@ body  {
 }
 
 .box-table th, .box-table td {
-  padding: 8px;
+  padding: 10px 5px;
   text-align: left;
 }
 
@@ -164,7 +174,7 @@ body  {
 }
 
 .box-table thead  {   
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 .box-table thead th {
   position: sticky;
@@ -213,4 +223,8 @@ body  {
     background-color: lightblue;
     margin: 5px;
     flex-grow: 1; /* Ensure each item grows equally */
+  }
+
+  .footer{
+    text-align: center;
   }
