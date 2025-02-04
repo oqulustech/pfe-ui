@@ -1,137 +1,141 @@
 
 
 <omni-container variant="light" id = "homepage" [padding]="[ 'huge', 'giant']" >
-    <omni-row padding="medium">
-      <ul class="breadcrumb">
-        <li><omni-icon [svg]="iconInfo" class="profile"></omni-icon></li>
-          <li><a href="#"> Forex: <span>98%</span> </a> </li>
-          <li><a href="#"> Commodities: <span>89%</span> </a> </li>
-          <li><a href="#"> Interest Rates: <span>97%</span> </a> </li>
-          <li><a href="#"> All: <span>85%</span> </a> </li>
-      </ul> 
-  </omni-row>
-  
-    <omni-row id="dashboard"[childWidth]="[1, 1 / 4]">  
-  
-      <!-- Box1 -->
-      <omni-container padding="medium">
-        <omni-flex>
-            <div class="border-complete">
-                <div class="table-wrapper">
-                  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="box-table">
-                    <thead>
-                        <tr>
-                            <th width="60%">361 <span class="textCompleted">Complete</span></th>
-                            <th width="30%">&nbsp;</th>
-                            <th width="10%">&nbsp;</th>
-                        </tr>
-                        <tr>
-                            <th>Job</th>
-                            <th>Completed</th>
-                            <th>&nbsp;</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let row of dataCompleted">
-                            <td width="60%">{{ row.name }}</td>
-                            <td width="30%">{{ row.status }}</td>
-                            <td width="10%">&nbsp;</td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div>
+  <omni-row padding="medium">
+    <ul class="breadcrumb">
+      <li><omni-icon [svg]="iconInfo" class="profile"></omni-icon></li>
+        <li><a href="#"> Forex: <span>98%</span> </a> </li>
+        <li><a href="#"> Commodities: <span>89%</span> </a> </li>
+        <li><a href="#"> Interest Rates: <span>97%</span> </a> </li>
+        <li><a href="#"> All: <span>85%</span> </a> </li>
+    </ul> 
+</omni-row>
+
+  <omni-row id="dashboard"[childWidth]="[1, 1 / 4]">  
+
+    <!-- Box1 -->
+    <omni-container padding="medium">
+      <omni-flex>
+          <div class="border-complete">
+              <div class="table-wrapper">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" class="box-table">
+                  <thead>
+                      <tr>
+                          <th width="60%">361 <span class="textCompleted">Complete</span></th>
+                          <th width="30%">&nbsp;</th>
+                          <th width="10%">&nbsp;</th>
+                      </tr>
+                      <tr>
+                          <th>Job</th>
+                          <th>Completed</th>
+                          <th>&nbsp;</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let row of dataCompleted">
+                          <td width="60%">{{ row.name }}</td>
+                          <td width="30%">{{ row.status }}</td>
+                          <td width="10%">&nbsp;</td>
+                      </tr>
+                  </tbody>
+              </table>
               </div>
-        </omni-flex>
-      </omni-container>
-  
-      <!-- Box2 -->
-      <omni-container padding="medium">
-        <omni-flex direction="row" gap="medium">
-            <div class="border-complete border-waiting">
-                <table cellpadding="0" cellspacing="0" border="0" class="box-table">
+            </div>
+      </omni-flex>
+    </omni-container>
+
+    <!-- Box2 -->
+    <omni-container padding="medium">
+      <omni-flex>
+          <div class="border-complete border-waiting">
+              <div class="table-wrapper">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" class="box-table">
                   <thead>
-                    <tr>
-                        <th>39 <span class="textCompleted textWaiting">Waiting</span> </th>
-                        <th>&nbsp;</th>
-                        <th><omni-icon [svg]="iconsetting" class="profile"></omni-icon> </th>
-                    </tr>
-                    <tr>
-                        <th>Job</th>
-                        <th>Completed</th>
-                        <th>&nbsp;</th>
-                    </tr>
+                      <tr>
+                          <th width="60%">39 <span class="textCompleted">Waiting</span></th>
+                          <th width="30%">&nbsp;</th>
+                          <th width="10%"><omni-icon [svg]="iconsetting" class="profile"></omni-icon></th>
+                      </tr>
+                      <tr>
+                          <th>Job</th>
+                          <th>Completed</th>
+                          <th>&nbsp;</th>
+                      </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let row of dataRunning">
-                        <td>{{ row.name }}</td>
-                        <td>{{ row.status }}</td>
-                        <td><omni-icon [svg]="iconList" class="profile"></omni-icon></td> 
-                    </tr>
+                      <tr *ngFor="let row of dataCompleted">
+                          <td width="60%">{{ row.name }}</td>
+                          <td width="30%">{{ row.status }}</td>
+                          <td width="10%"><omni-icon [svg]="iconList" class="profile"></omni-icon></td>
+                      </tr>
                   </tbody>
-                </table>
+              </table>
+              </div>
             </div>
-        </omni-flex>
-      </omni-container>
-  
-      <!-- Box3 -->
-      <omni-container padding="medium">
-        <omni-flex direction="row" gap="medium">
-            <div class="border-complete border-running">
-                <table cellpadding="0" cellspacing="0" border="0" class="box-table">
+      </omni-flex>
+    </omni-container>
+
+    <!-- Box3 -->
+    <omni-container padding="medium">
+      <omni-flex>
+          <div class="border-complete border-running">
+              <div class="table-wrapper">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" class="box-table">
                   <thead>
-                    <tr>
-                        <th>23 <span class="textCompleted textRunning">Running</span> </th>
-                        <th>&nbsp;</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    <tr>
-                        <th>Job</th>
-                        <th>Completed</th>
-                        <th>&nbsp;</th>
-                    </tr>
+                      <tr>
+                          <th width="60%">23 <span class="textCompleted">Running</span></th>
+                          <th width="30%">&nbsp;</th>
+                          <th width="10%">&nbsp;</th>
+                      </tr>
+                      <tr>
+                          <th>Job</th>
+                          <th>Completed</th>
+                          <th>&nbsp;</th>
+                      </tr>
                   </thead>
                   <tbody>
-                     <tr *ngFor="let row of dataWaiting">
-                        <td>{{ row.name }}</td>
-                        <td>{{ row.status }}</td>
-                        <td>&nbsp;</td> 
-                    </tr>
+                      <tr *ngFor="let row of dataCompleted">
+                          <td width="60%">{{ row.name }}</td>
+                          <td width="30%">{{ row.status }}</td>
+                          <td width="10%">&nbsp;</td>
+                      </tr>
                   </tbody>
-                </table>
+              </table>
+              </div>
             </div>
-        </omni-flex>
-      </omni-container>
-  
-      <!-- Box4 -->
-      <omni-container padding="medium">
-        <omni-flex direction="row" gap="medium">
-            <div class="border-complete border-failed">
-                <table cellpadding="0" cellspacing="0" border="0" class="box-table">
+      </omni-flex>
+    </omni-container>
+
+    <!-- Box4 -->
+    <omni-container padding="medium">
+      <omni-flex>
+          <div class="border-complete border-failed">
+              <div class="table-wrapper">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" class="box-table">
                   <thead>
-                    <tr>
-                        <th>25 <span class="textCompleted textFailed">Failed</span> </th>
-                        <th>&nbsp;</th>
-                        <th><omni-icon [svg]="iconsetting" class="profile"></omni-icon> </th>
-                    </tr>
-                    <tr>
+                      <tr>
+                          <th width="60%">25 <span class="textCompleted">Failed</span></th>
+                          <th width="30%">&nbsp;</th>
+                          <th width="10%">&nbsp;</th>
+                      </tr>
+                      <tr>
                         <th>Job</th>
                         <th>Completed</th>
                         <th>&nbsp;</th>
-                    </tr>
+                      </tr>
                   </thead>
-                    <tbody>
-                    <tr *ngFor="let row of dataFailed">
-                        <td>{{ row.name }}</td>
-                        <td>{{ row.status }}</td>
-                        <td><omni-icon [svg]="iconList" class="profile"></omni-icon></td> 
-                    </tr>
+                  <tbody>
+                      <tr *ngFor="let row of dataFailed">
+                          <td width="60%">{{ row.name }}</td>
+                          <td width="30%">{{ row.status }}</td>
+                          <td width="10%"> <omni-icon [svg]="iconList" class="profile"></omni-icon> </td>
+                      </tr>
                   </tbody>
-                </table>
+              </table>
+              </div>
             </div>
-        </omni-flex>
-      </omni-container>
-  
-  
-    </omni-row>
-  </omni-container>  
-  
+      </omni-flex>
+    </omni-container>
+
+  </omni-row>
+</omni-container>  
