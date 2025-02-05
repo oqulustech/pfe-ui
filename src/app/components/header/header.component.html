@@ -12,6 +12,21 @@
              <option *ngFor="let option of options" [value]="option">{{ option }}</option> 
             </omni-select>
         </div>
+
+        <div class="flex-items">
+          <ul class="header-nav">
+            <li> <a routerLink="/dashboard" routerLinkActive="active"> 
+              <span> <img src="./Outline.svg" alt="Outline" title="Outline" width="16" height="16" /></span> Dashboard 
+            </a> </li>
+            <li> <a routerLink="/job-monitor" routerLinkActive="active"> 
+              <span> <img src="./Outline1.svg" alt="Outline" title="Outline" width="16" height="16" /></span> Table Viewer 
+            </a> </li>
+            <li> <a routerLink="/home" routerLinkActive="active"> 
+              <span> <img src="./Outline2.svg" alt="Outline" title="Outline" width="16" height="16" /></span> Log File Browser 
+            </a> </li>
+          </ul>
+        </div>
+        
       </div>
     </div>
     <div class="flex-items">
