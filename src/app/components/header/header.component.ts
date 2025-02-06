@@ -40,4 +40,19 @@ export class HeaderComponent {
         this.router.navigate(['dashboard'])
       }
      }
+
+     gotoHome () {
+      this.router.navigate(['home']); 
+     }
+
+     gotoDashboard () {
+      this.router.navigate(['dashboard']); 
+     }
+
+     gotoTableView () {
+      this.router.navigate(['job-monitor']); 
+     }
+
+     
+    
 }
