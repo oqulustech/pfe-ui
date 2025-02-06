@@ -33,7 +33,7 @@
                   </thead>
                   <tbody>
                       <tr *ngFor="let row of dataCompleted">
-                          <td width="60%">{{ row.name }}</td>
+                          <td width="60%" class ="txtUnderline">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%">&nbsp;</td>
                       </tr>
@@ -58,15 +58,15 @@
                       </tr>
                       <tr>
                           <th>Job</th>
-                          <th>Completed</th>
+                          <th>Waiting</th>
                           <th>&nbsp;</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr *ngFor="let row of dataCompleted">
-                          <td width="60%">{{ row.name }}</td>
+                          <td width="60%" class ="txtUnderline">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
-                          <td width="10%"><omni-icon [svg]="iconList" class="profile"></omni-icon></td>
+                          <td width="10%">&nbsp;</td>
                       </tr>
                   </tbody>
               </table>
@@ -89,15 +89,15 @@
                       </tr>
                       <tr>
                           <th>Job</th>
-                          <th>Completed</th>
-                          <th>&nbsp;</th>
+                          <th>Running</th>
+                          <th>Action</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr *ngFor="let row of dataCompleted">
-                          <td width="60%">{{ row.name }}</td>
+                          <td width="60%" class ="txtUnderline">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
-                          <td width="10%">&nbsp;</td>
+                          <td width="10%"><omni-icon [svg]="iconList" class="profile"></omni-icon></td>
                       </tr>
                   </tbody>
               </table>
@@ -120,13 +120,13 @@
                       </tr>
                       <tr>
                         <th>Job</th>
-                        <th>Completed</th>
-                        <th>&nbsp;</th>
+                        <th>Failed</th>
+                        <th>Action</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr *ngFor="let row of dataFailed">
-                          <td width="60%">{{ row.name }}</td>
+                          <td width="60%" class ="txtUnderline">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%"> <omni-icon [svg]="iconList" class="profile"></omni-icon> </td>
                       </tr>
