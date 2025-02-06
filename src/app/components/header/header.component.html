@@ -2,7 +2,7 @@
   <div class="flex-container">
     <div class="flex-items">
       <div class="flex-container">
-      <div class="flex-items">
+      <div class="flex-items" onclick="gotoHome()">
         <img src="./CORE.svg" alt="logo" class="log" title="logo" width="80" height="40" />
       </div>
 
@@ -15,10 +15,10 @@
 
         <div class="flex-items">
           <ul class="header-nav">
-            <li> <a routerLink="/dashboard" routerLinkActive="active"> 
+            <li> <a onclick="gotoDashboard()"> 
               <span><img src="./dashboard.svg" alt="Outline" title="Outline" width="24" height="24" /> </span> <span>Dashboard </span> 
             </a> </li>
-            <li> <a routerLink="/job-monitor" routerLinkActive="active"> 
+            <li> <a onclick="gotoTableView()"> 
               <span> <img src="./table-viewer.svg" alt="Outline" title="Outline" width="24" height="24" /></span> <span>Table Viewer</span>  
             </a> </li>
             <li> <a routerLink="/home" routerLinkActive="active"> 
