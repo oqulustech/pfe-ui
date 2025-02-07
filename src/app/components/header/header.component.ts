@@ -53,6 +53,7 @@ export class HeaderComponent {
       this.router.navigate(['job-monitor']); 
      }
 
-     
-    
+     gotoLogFile () {
+      this.router.navigate(['log-file']); 
+     }
 }
