@@ -27,6 +27,7 @@ export class HeaderComponent {
     'Issue Log',
     'DBMS PgBlazor'
   ];
+  selectedLink: string = '';
   constructor(private router: Router) {}
 
   onChange() { 
@@ -45,15 +46,18 @@ export class HeaderComponent {
       this.router.navigate(['home']); 
      }
 
-     gotoDashboard (str) {
+     gotoDashboard (link:string) {
+      this.selectedLink = link;
       this.router.navigate(['dashboard']); 
      }
 
-     gotoTableView (str) {
+     gotoTableView (link:string) {
+      this.selectedLink = link;
       this.router.navigate(['job-monitor']); 
      }
 
-     gotoLogFile (str) {
+     gotoLogFile (link:string) {
+      this.selectedLink = link;
       this.router.navigate(['log-file']); 
      }
 }

@@ -113,7 +113,7 @@ body  {
     margin: 0 8px 0 0;
   }
 
-  .header-nav li a:active {
+  .header-nav li a.active {
     text-decoration: underline;
   }
 
