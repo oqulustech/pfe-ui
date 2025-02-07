@@ -113,6 +113,15 @@ body  {
     margin: 0 8px 0 0;
   }
 
+  .header-nav li a:active {
+    text-decoration: underline;
+  }
+
+  .header-nav li a:hover {
+    text-decoration: underline;
+  }
+
+
   .breadcrumb {
     padding: 8px;
     margin: 0px;

@@ -45,15 +45,15 @@ export class HeaderComponent {
       this.router.navigate(['home']); 
      }
 
-     gotoDashboard () {
+     gotoDashboard (str) {
       this.router.navigate(['dashboard']); 
      }
 
-     gotoTableView () {
+     gotoTableView (str) {
       this.router.navigate(['job-monitor']); 
      }
 
-     gotoLogFile () {
+     gotoLogFile (str) {
       this.router.navigate(['log-file']); 
      }
 }
