@@ -39,6 +39,10 @@ body  {
   width: 100%;
 }
 
+.homepage {
+  padding-top: 5rem;
+}
+
 #homepage .omni-178zswc {
   font-size: 24px;
   font-weight: normal;
@@ -69,9 +73,14 @@ body  {
     color: #141414;
 }
 
+.box-home{
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  padding-bottom: 40px;
+}
 
-  #header img {
-    margin-right: 60px;
+
+  #header .logo {
+    margin: 10px 55px 0 0;
   }
   #header .omni-2lzp0v select{
     border: 5px solid #007F98;
@@ -94,26 +103,32 @@ body  {
     color: #007F98;
   }
 
-  .header-nav {
-    padding: 8px;
-    margin: 0px;
+  #header .header-nav{
+    padding: 0px 20px;
+    margin-left: 20px;
   }
   .header-nav li{
     margin: 0px;
-    display: inline-block;
+    padding: 0px;
+    display: inline-block; 
+    text-align: left;
+    cursor: pointer;
   }
   .header-nav li a{
     text-decoration: none;
     color: #fff;
-    font-size: 14px;
-    padding: 0 15px;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0 20px;
   }
   .header-nav li a span{
     display: inline-block;
     margin: 0 8px 0 0;
+    line-height: 28px;
+    float: left;
   }
 
-  .header-nav li a.active {
+  .header-nav li .active span {
     text-decoration: underline;
   }
 
@@ -121,13 +136,12 @@ body  {
     text-decoration: underline;
   }
 
-
   .breadcrumb {
     padding: 8px;
     margin: 0px;
     background: #E1F5FF;
     width: 100%;
-    border-left: 3px  solid #0276B1;
+    border-left: 4px  solid #0276B1;
   }
   .breadcrumb li{
     padding: 0 15px;
@@ -138,6 +152,7 @@ body  {
     text-decoration: underline;
     color: #000;
     font-size: 14px;
+
   }
 
   /*------------ Section for Table css ------------*/
@@ -146,16 +161,18 @@ body  {
   background-color: #fff;
   padding-left: 10px;
   overflow-y: scroll;
-  height: 440px;
+  height: 475px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  padding-right: 5px;
 }
 .border-waiting {
-  border-left: 3px  solid #00AFD4;
+  border-left: 4px  solid #00AFD4;
 }
 .border-running {
-  border-left: 3px  solid #E8AD11;
+  border-left: 4px  solid #E8AD11;
 }
 .border-failed {
-  border-left: 3px  solid #CC2427;
+  border-left: 4px  solid #CC2427;
 }
 #dashboard .omni-854m7t {
   display: block;
@@ -168,7 +185,7 @@ body  {
 }
 
 .table-wrapper {
-  max-height: 425px;  /* Set the height for scrolling */
+  max-height: 460px;  /* Set the height for scrolling */
   overflow-y: auto;
   display: block;
 }
@@ -183,11 +200,21 @@ body  {
   text-align: left;
 }
 
+.box-table tr:nth-child(2) th{
+  text-transform: uppercase;
+  padding-top: 35px;
+}
+
+.box-table td.txtUnderline{
+  text-decoration: underline;
+}
+
 .box-table th span.textCompleted {
   background-color: #1F7D08;
   color: #ffffff;
   text-align: left;
   padding: 5px 10px;
+  margin-left: 10px;
   border-radius: 3px;
 }
 .box-table th span.textWaiting {
