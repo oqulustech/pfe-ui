@@ -1,105 +1,53 @@
-<omni-container variant="light" id = "homepage" [padding]="['medium', 'huge', 'giant']">
-  <omni-row [childWidth]="[1, 1 / 5]" class="homepage">  
+<omni-app-header variant="dark" id="header">
+  <div class="flex-container">
+    <div class="flex-items">
+      <div class="flex-container">
+      <div class="flex-items">
+        <img src="./Logo.svg" alt="logo" class="logo" title="logo" />
+      </div>
 
-    <!-- Job Monitor Container -->
-    <omni-container padding="medium">
-      <omni-flex direction="row" gap="medium" class="box-home">
-        <omni-status-container width="100%" status="information" variant="white" padding="medium">
-          <omni-column gap="medium">
-            <omni-title-action title="Job Monitor"></omni-title-action>
-            <omni-container>
-              <omni-text-label class="homeBoxTxt">Job monitor is a tool for overseeing the execution of scheduled jobs, scripts, and automated tasks critical to generating LMCRO Risk Reports</omni-text-label>
-              <omni-text-metric stack="medium" padding="medium">
-                <img src="./Maintainence.svg" alt="logo" title="logo" width="50" height="50" />
-              </omni-text-metric>
-              <omni-flex direction="row" justifyContent="space-between">
-                <omni-text-body><a href="javascript:void(0)"> Launch Job Monitor > </a></omni-text-body>
-              </omni-flex>
-            </omni-container>                    
-          </omni-column>
-        </omni-status-container>
-      </omni-flex>
-    </omni-container>
+        <div class="flex-items">
+          <omni-select [(ngModel)]="selectedValue" (change)="onChange()">
+             <option value="Select The Pfe Module">Select The Pfe Module</option> 
+             <option *ngFor="let option of options" [value]="option">{{ option }}</option> 
+            </omni-select>
+        </div>
 
-    <!-- Risk Reports Container -->
-    <omni-container padding="medium">
-      <omni-flex direction="row" gap="medium" class="box-home">
-        <omni-status-container width="100%" status="information" variant="white" padding="medium">
-          <omni-column gap="medium">
-            <omni-title-action title="Risk Reports"></omni-title-action>
-            <omni-container>
-              <omni-text-label class="homeBoxTxt">Provides detailed reports on potential future exposure depending on the selected trading desk</omni-text-label>
-              <omni-text-metric stack="medium" padding="medium">
-                <img src="./Statements.svg" alt="logo" title="logo" width="50" height="50" />
-              </omni-text-metric>
-              <omni-flex direction="row" justifyContent="space-between">
-                <omni-text-body><a href="javascript:void(0)"> Launch Risk Reports > </a></omni-text-body>
-              </omni-flex>
-            </omni-container>                    
-          </omni-column>
-        </omni-status-container>
-      </omni-flex>
-    </omni-container>
+        <div class="flex-items">
+          <ul class="header-nav">
+            <li> 
+              <a 
+                (click)="gotoDashboard('dashboard')" 
+                [class.active]="selectedLink === 'dashboard'">
+                <span><img src="./dashboard.svg" alt="Outline" title="Outline" width="24" height="24" /></span> 
+                <span>Dashboard</span> 
+              </a> 
+            </li>
+            <li> 
+              <a 
+                (click)="gotoTableView('table-viewer')" 
+                [class.active]="selectedLink === 'table-viewer'">
+                <span><img src="./table-viewer.svg" alt="Outline" title="Outline" width="24" height="24" /></span> 
+                <span>Table Viewer</span>  
+              </a> 
+            </li>
+            <li> 
+              <a 
+                (click)="gotoLogFile('log-file')" 
+                [class.active]="selectedLink === 'log-file'">
+                <span><img src="./log-file.svg" alt="Outline" title="Outline" width="24" height="24" /></span> 
+                <span>Log File Browser</span> 
+              </a> 
+            </li>
+          </ul>
+        </div>
+        
 
-    <!-- Package Tracker Container -->
-    <omni-container padding="medium">
-      <omni-flex direction="row" gap="medium" class="box-home">
-        <omni-status-container width="100%" status="information" variant="white" padding="medium">
-          <omni-column gap="medium">
-            <omni-title-action title="Package Tracker"></omni-title-action>
-            <omni-container>
-              <omni-text-label class="homeBoxTxt">Provides functionality to monitor and control the deployment lifecycle of Risk Reports</omni-text-label>
-              <omni-text-metric stack="medium" padding="medium">
-                <img src="./Review.svg" alt="logo" title="logo" width="50" height="50" />
-              </omni-text-metric>
-              <omni-flex direction="row" justifyContent="space-between">
-                <omni-text-body><a href="javascript:void(0)"> Launch Package Tracker > </a></omni-text-body>
-              </omni-flex>
-            </omni-container>                    
-          </omni-column>
-        </omni-status-container>
-      </omni-flex>
-    </omni-container>
-
-    <!-- Issue Log Container -->
-    <omni-container padding="medium">
-      <omni-flex direction="row" gap="medium" class="box-home">
-        <omni-status-container width="100%" status="information" variant="white" padding="medium">
-          <omni-column gap="medium">
-            <omni-title-action title="Issue Log"></omni-title-action>
-            <omni-container>
-              <omni-text-label class="homeBoxTxt">A centralized system for documenting, tracking, and resolving PFE system issues</omni-text-label>
-              <omni-text-metric stack="medium" padding="medium">
-                <img src="./Caution.svg" alt="logo" title="logo" width="50" height="50" />
-              </omni-text-metric>
-              <omni-flex direction="row" justifyContent="space-between">
-                <omni-text-body><a href="javascript:void(0)"> Launch Issue Log > </a></omni-text-body>
-              </omni-flex>
-            </omni-container>                    
-          </omni-column>
-        </omni-status-container>
-      </omni-flex>
-    </omni-container>
-
-    <!-- Additional Section -->
-    <omni-container padding="medium">
-      <omni-flex direction="row" gap="medium" class="box-home">
-        <omni-status-container width="100%" status="information" variant="white" padding="medium">
-          <omni-column gap="medium">
-            <omni-title-action title="DBMS PgBlazer"></omni-title-action>
-            <omni-container>
-              <omni-text-label class="homeBoxTxt">Database management tool</omni-text-label>
-              <omni-text-metric stack="medium" padding="medium">
-                <img src="./Migration.svg" alt="logo" title="logo" width="50" height="50" />
-              </omni-text-metric>
-              <omni-flex direction="row" justifyContent="space-between">
-                <omni-text-body><a href="javascript:void(0)"> Launch DBMS PgBlazer > </a></omni-text-body>
-              </omni-flex>
-            </omni-container>                    
-          </omni-column>
-        </omni-status-container>
-      </omni-flex>
-    </omni-container>
-
-  </omni-row>
-</omni-container>  
+      </div>
+    </div>
+    <div class="flex-items">
+          Welcome Rosalind! 
+          <omni-icon [svg]="iconInfo" class="profile"></omni-icon>
+      </div>
+    </div>
+</omni-app-header>
