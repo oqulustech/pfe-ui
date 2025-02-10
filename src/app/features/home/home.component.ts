@@ -38,7 +38,7 @@ export class HeaderComponent {
       } else if (this.selectedValue === 'Job Monitor') { 
         this.router.navigate(['dashboard']); 
       } 
-     }
+     } 
 
      gotoHome () {
       this.router.navigate(['home']); 
