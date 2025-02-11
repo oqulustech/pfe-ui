@@ -57,7 +57,7 @@
                           <th width="10%">
                             <div class="relative">
                                 <omni-icon [svg]="iconsetting" class="profile setting" (click)="toggleMenu()"></omni-icon>
-                                <div class="action-menu">
+                                <div class="action-menu" *ngIf="">
                                     <ul>
                                         <li *ngFor="let action of actions" (click)="action.action()">
                                             {{ action.label }}

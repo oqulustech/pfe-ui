@@ -1,4 +1,4 @@
-import { Component , HostListener} from '@angular/core';
+import { Component, OnInit, HostListener} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OmniNgModule } from '@cof/omni-ng';
 import { OmniContainerModule } from '@cof/omni-ng';
@@ -101,6 +101,14 @@ export class DashboardComponent{
     { label: 'Waiting', action: () => this.performAction('Waiting') },
     { label: 'Ready', action: () => this.performAction('Ready') }
   ];
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
+    
+  }
+
   // Toggles the menu open/close
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
