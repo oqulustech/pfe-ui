@@ -30,7 +30,7 @@ import * as icons from '@cof/omni-gravity-icons-templates'
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent{
+export class DashboardComponent implements OnInit{
   iconList = icons.UiListLinedSmall;
   iconsetting = icons.UiSettingsLined;
   iconInfo = icons.UiInfoLined;
@@ -95,7 +95,7 @@ export class DashboardComponent{
     { name: "RISK_COMPUTE_JOB", status: "40 seconds ago", action: "" }
   ];
 
-  isMenuOpen = false;
+  isMenuOpen = true;
   actions = [
     { label: 'Initiated', action: () => this.performAction('Initiated') },
     { label: 'Waiting', action: () => this.performAction('Waiting') },
