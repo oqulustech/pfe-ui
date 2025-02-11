@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , HostListener} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OmniNgModule } from '@cof/omni-ng';
 import { OmniContainerModule } from '@cof/omni-ng';
@@ -94,6 +94,31 @@ export class DashboardComponent{
     { name: "RISK_RESULTS", status: "10 seconds ago", action: "" },
     { name: "RISK_COMPUTE_JOB", status: "40 seconds ago", action: "" }
   ];
+
+  isMenuOpen = false;
+  actions = [
+    { label: 'Initiated', action: () => this.performAction('Initiated') },
+    { label: 'Waiting', action: () => this.performAction('Waiting') },
+    { label: 'Ready', action: () => this.performAction('Ready') }
+  ];
+  // Toggles the menu open/close
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    console.log ("Hello World",this.isMenuOpen)
+  }
+  // Close the menu if clicked outside
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent) {
+    const clickedInside = (event.target as HTMLElement).closest('.container');
+    if (!clickedInside) {
+      this.isMenuOpen = false;
+    }
+  }
+  // Perform an action
+  performAction(action: string) {
+    console.log(`${action} action performed`);
+    this.isMenuOpen = false; // Close menu after action
+  }
   
   
 }
