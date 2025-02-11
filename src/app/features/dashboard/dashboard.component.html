@@ -54,7 +54,18 @@
                       <tr>
                           <th width="60%">39 <span class="textCompleted textWaiting">Waiting</span></th>
                           <th width="30%">&nbsp;</th>
-                          <th width="10%"><omni-icon [svg]="iconsetting" class="profile setting"></omni-icon></th>
+                          <th width="10%">
+                            <div class="relative">
+                                <omni-icon [svg]="iconsetting" class="profile setting" (click)="toggleMenu()"></omni-icon>
+                                <div class="action-menu">
+                                    <ul>
+                                        <li *ngFor="let action of actions" (click)="action.action()">
+                                            {{ action.label }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </th>
                       </tr>
                       <tr>
                           <th>Job</th>
