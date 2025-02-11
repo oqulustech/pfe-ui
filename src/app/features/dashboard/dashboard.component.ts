@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectorRef } from '@angular/core';
 import { OmniNgModule } from '@cof/omni-ng';
 import { OmniContainerModule } from '@cof/omni-ng';
 import {
@@ -30,7 +31,7 @@ import * as icons from '@cof/omni-gravity-icons-templates'
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent implements OnInit{
+export class DashboardComponent{
   iconList = icons.UiListLinedSmall;
   iconsetting = icons.UiSettingsLined;
   iconInfo = icons.UiInfoLined;
@@ -95,24 +96,27 @@ export class DashboardComponent implements OnInit{
     { name: "RISK_COMPUTE_JOB", status: "40 seconds ago", action: "" }
   ];
 
-  isMenuOpen = true;
+  isMenuOpen = false;
   actions = [
     { label: 'Initiated', action: () => this.performAction('Initiated') },
     { label: 'Waiting', action: () => this.performAction('Waiting') },
     { label: 'Ready', action: () => this.performAction('Ready') }
   ];
 
-  constructor() {
-  }
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     
   }
 
   // Toggles the menu open/close
-  toggleMenu() {
+  toggleMenu(event?: MouseEvent): void {
+    if (event) {
+      event.stopPropagation();
+    }
     this.isMenuOpen = !this.isMenuOpen;
-    console.log ("Hello World",this.isMenuOpen)
+    console.log('Menu state:', this.isMenuOpen);
+    this.cdr.detectChanges();
   }
   // Close the menu if clicked outside
   @HostListener('document:click', ['$event'])

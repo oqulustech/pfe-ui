@@ -10,9 +10,13 @@
      right: 10px; 
      background-color: #C0E7F3; 
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 10000; 
+     z-index: 10000; 
      width: 150px; 
+     display: none;
     } 
+    .action-menu.open {
+        display: block;
+      }
      .action-menu ul { 
         list-style-type: none; 
         margin: 0; 
