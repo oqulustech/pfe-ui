@@ -118,15 +118,14 @@ export class DashboardComponent implements OnInit{
 
   menuStates: { [key: string]: boolean } = {
     menu1: false,
-    menu2: false,
-    menu3: false
+    menu2: false
   };
-
+  menuFailedStates: boolean[] = [];
   constructor(private cdr: ChangeDetectorRef) {}
 
 
   ngOnInit(): void {
-    
+    this.menuFailedStates = new Array(this.dataCompleted.length).fill(false);
   }
 
   // Toggles the menu open/close
@@ -142,19 +141,55 @@ export class DashboardComponent implements OnInit{
     this.menuStates[menuId] = !this.menuStates[menuId];
     this.cdr.detectChanges();
   }
+
+  toggleMenuData(event: MouseEvent, index: number): void {
+    event.stopPropagation();
+    
+    // Close all static menus
+    Object.keys(this.menuStates).forEach(key => {
+      this.menuStates[key] = false;
+    });
+    
+    // Toggle the clicked menu and close others
+    this.menuFailedStates = this.menuFailedStates.map((state, i) => i === index ? !state : false);
+    
+    this.cdr.detectChanges();
+  }
+
   // Close the menu if clicked outside
   @HostListener('document:click', ['$event'])
-  onClick(event: MouseEvent) {
-    const clickedInside = (event.target as HTMLElement).closest('.container');
-    if (!clickedInside) {
-      this.isMenuOpen = false;
+    onDocumentClick(event: MouseEvent) {
+      const target = event.target as HTMLElement;
+      
+      // If click is not on menu trigger or menu itself, close all menus
+      if (!target.closest('.textWaiting') && !target.closest('.action-menu')) {
+        // Close static menus
+        Object.keys(this.menuStates).forEach(key => {
+          this.menuStates[key] = false;
+        });
+  
+        // Close dynamic menus
+        this.menuFailedStates = this.menuFailedStates.map(() => false);
+        
+        this.cdr.detectChanges();
+      }
     }
-  }
+
   // Perform an action
-  performAction(action: string) {
-    console.log(`${action} action performed`);
-    this.isMenuOpen = false; // Close menu after action
-  }
+  performAction(action: string, index?: number) {
+      console.log(`${action} action performed`);
+      
+      // Close all menus
+      Object.keys(this.menuStates).forEach(key => {
+        this.menuStates[key] = false;
+      });
+      
+      if (index !== undefined) {
+        this.menuFailedStates[index] = false;
+      }
+      
+      this.cdr.detectChanges();
+    }
   
   
 }
