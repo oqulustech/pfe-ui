@@ -31,7 +31,7 @@ import * as icons from '@cof/omni-gravity-icons-templates'
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent implements OnInit{
+export class DashboardComponent{
   iconList = icons.UiListLinedSmall;
   iconsetting = icons.UiSettingsLined;
   iconInfo = icons.UiInfoLined;
@@ -97,31 +97,32 @@ export class DashboardComponent implements OnInit{
   ];
 
   isMenuOpen = false;
-  actionswaiting = [
+  actions = [
     { label: 'Initiated', action: () => this.performAction('Initiated') },
     { label: 'Waiting', action: () => this.performAction('Waiting') },
     { label: 'Ready', action: () => this.performAction('Ready') }
   ];
-  actionsfailed = [
-    { label: 'Errored', action: () => this.performAction('Errored') },
-    { label: 'Timed out', action: () => this.performAction('Timed out') },
-    { label: 'Killed', action: () => this.performAction('Killed') }
-  ];
-
+  menuStates: { [key: string]: boolean } = {
+    menu1: false,
+    menu2: false
+  };
   constructor(private cdr: ChangeDetectorRef) {}
-
 
   ngOnInit(): void {
     
   }
 
   // Toggles the menu open/close
-  toggleMenu(event?: MouseEvent): void {
-    if (event) {
-      event.stopPropagation();
-    }
-    this.isMenuOpen = !this.isMenuOpen;
-    console.log('Menu state:', this.isMenuOpen);
+  toggleMenu(event: MouseEvent, menuId: string): void {
+    event.stopPropagation();
+    // Close all other menus
+    Object.keys(this.menuStates).forEach(key => {
+      if (key !== menuId) {
+        this.menuStates[key] = false;
+      }
+    });
+    // Toggle the clicked menu
+    this.menuStates[menuId] = !this.menuStates[menuId];
     this.cdr.detectChanges();
   }
   // Close the menu if clicked outside
