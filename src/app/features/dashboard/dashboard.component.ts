@@ -31,7 +31,7 @@ import * as icons from '@cof/omni-gravity-icons-templates'
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent{
+export class DashboardComponent implements OnInit{
   iconList = icons.UiListLinedSmall;
   iconsetting = icons.UiSettingsLined;
   iconInfo = icons.UiInfoLined;
@@ -97,13 +97,19 @@ export class DashboardComponent{
   ];
 
   isMenuOpen = false;
-  actions = [
+  actionswaiting = [
     { label: 'Initiated', action: () => this.performAction('Initiated') },
     { label: 'Waiting', action: () => this.performAction('Waiting') },
     { label: 'Ready', action: () => this.performAction('Ready') }
   ];
+  actionsfailed = [
+    { label: 'Errored', action: () => this.performAction('Errored') },
+    { label: 'Timed out', action: () => this.performAction('Timed out') },
+    { label: 'Killed', action: () => this.performAction('Killed') }
+  ];
 
   constructor(private cdr: ChangeDetectorRef) {}
+
 
   ngOnInit(): void {
     
