@@ -31,7 +31,7 @@ import * as icons from '@cof/omni-gravity-icons-templates'
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent{
+export class DashboardComponent implements OnInit{
   iconList = icons.UiListLinedSmall;
   iconsetting = icons.UiSettingsLined;
   iconInfo = icons.UiInfoLined;
@@ -97,16 +97,33 @@ export class DashboardComponent{
   ];
 
   isMenuOpen = false;
-  actions = [
+  headerActionsWaiting = [
     { label: 'Initiated', action: () => this.performAction('Initiated') },
     { label: 'Waiting', action: () => this.performAction('Waiting') },
     { label: 'Ready', action: () => this.performAction('Ready') }
   ];
+  headerActionsFailed = [
+    { label: 'Errored', action: () => this.performAction('Errored') },
+    { label: 'Timed out', action: () => this.performAction('Timed out') },
+    { label: 'Killed', action: () => this.performAction('Killed') }
+  ];
+  dataActionsRunning = [
+    { label: 'Kill', action: () => this.performAction('Kill') },
+    { label: 'Complete', action: () => this.performAction('Complete') }
+  ];
+  dataActionsFailed = [
+    { label: 'Log', action: () => this.performAction('Log') },
+    { label: 'Return', action: () => this.performAction('Return') }
+  ];
+
   menuStates: { [key: string]: boolean } = {
     menu1: false,
-    menu2: false
+    menu2: false,
+    menu3: false
   };
+
   constructor(private cdr: ChangeDetectorRef) {}
+
 
   ngOnInit(): void {
     

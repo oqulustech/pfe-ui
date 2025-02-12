@@ -56,14 +56,14 @@
                           <th width="30%">&nbsp;</th>
                           <th width="10%">
                             <div class="relative">
-                                <omni-icon [svg]="iconsetting" class="profile setting" (click)="toggleMenu($event, 'menu2')"></omni-icon>
-                                <div class="action-menu" [ngClass]="{'open': menuStates['menu2']}">
-                                    <ul>
-                                        <li *ngFor="let action of actions" (click)="action.action()">
-                                            {{ action.label }}
-                                        </li>
-                                    </ul>
-                                </div>
+                              <omni-icon [svg]="iconsetting" class="profile setting" (click)="toggleMenu($event, 'menu1')"></omni-icon>
+                              <div class="action-menu" [ngClass]="{'open': menuStates['menu1']}">
+                                  <ul>
+                                      <li *ngFor="let action of headerActionsWaiting" (click)="action.action()">
+                                          {{ action.label }}
+                                      </li>
+                                  </ul>
+                              </div>
                             </div>
                         </th>
                       </tr>
@@ -127,7 +127,18 @@
                       <tr>
                           <th width="60%">25 <span class="textCompleted textFailed">Failed</span></th>
                           <th width="30%">&nbsp;</th>
-                          <th width="10%"><omni-icon [svg]="iconsetting" class="profile setting"></omni-icon></th>
+                          <th width="10%">
+                            <div class="relative">
+                              <omni-icon [svg]="iconsetting" class="profile setting" (click)="toggleMenu($event, 'menu2')"></omni-icon>
+                              <div class="action-menu" [ngClass]="{'open': menuStates['menu2']}">
+                                  <ul>
+                                      <li *ngFor="let action of headerActionsFailed" (click)="action.action()">
+                                          {{ action.label }}
+                                      </li>
+                                  </ul>
+                              </div>
+                            </div>
+                        </th>
                       </tr>
                       <tr>
                         <th>Job</th>
@@ -139,7 +150,18 @@
                       <tr *ngFor="let row of dataFailed">
                           <td width="60%" class ="txtUnderline">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
-                          <td width="10%"> <omni-icon [svg]="iconList" class="profile"></omni-icon> </td>
+                          <td width="10%">                   
+                            <div class="relative">
+                              <omni-icon [svg]="iconList" class="profile" (click)="toggleMenu($event, 'menu3')"></omni-icon>
+                              <div class="action-menu" [ngClass]="{'open': menuStates['menu3']}">
+                                  <ul>
+                                      <li *ngFor="let action of dataActionsFailed" (click)="action.action()">
+                                          {{ action.label }}
+                                      </li>
+                                  </ul>
+                              </div>
+                            </div>
+                          </td>
                       </tr>
                   </tbody>
               </table>
