@@ -152,7 +152,7 @@
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%">                   
                             <div class="relative">
-                              <omni-icon [svg]="iconList" class="profile" (click)="toggleMenuData($event, i)"></omni-icon>
+                              <omni-icon [svg]="iconList" class="profile" (click)="toggleActionMenu($event, i)"></omni-icon>
                               <div class="action-menu" [ngClass]="{'open': menuFailedStates[i]}">
                                   <ul>
                                       <li *ngFor="let action of dataActionsFailed" (click)="action.action()">

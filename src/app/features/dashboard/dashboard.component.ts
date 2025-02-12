@@ -142,7 +142,7 @@ export class DashboardComponent implements OnInit{
     this.cdr.detectChanges();
   }
 
-  toggleMenuData(event: MouseEvent, index: number): void {
+  toggleActionMenu(event: MouseEvent, index: number): void {
     event.stopPropagation();
     
     // Close all static menus
