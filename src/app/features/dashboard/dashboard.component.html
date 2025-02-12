@@ -105,10 +105,21 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr *ngFor="let row of dataCompleted">
+                      <tr *ngFor="let row of dataCompleted; let i = index">
                           <td width="60%" class ="txtUnderline">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
-                          <td width="10%"><omni-icon [svg]="iconList" class="profile"></omni-icon></td>
+                          <td width="10%">           
+                            <omni-icon [svg]="iconList" class="profile" (click)="toggleActionMenu($event, i)"></omni-icon>        
+                            <div class="relative">
+                              <div class="action-menu top-15" [ngClass]="{'open': menuRunningStates[i]}">
+                                  <ul>
+                                      <li *ngFor="let action of dataActionsRunning" (click)="action.action()">
+                                          {{ action.label }} abc
+                                      </li>
+                                  </ul>
+                              </div>
+                            </div>
+                          </td>
                       </tr>
                   </tbody>
               </table>

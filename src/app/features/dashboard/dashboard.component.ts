@@ -119,13 +119,16 @@ export class DashboardComponent implements OnInit{
   menuStates: { [key: string]: boolean } = {
     menu1: false,
     menu2: false,
-    menu3: false
   };
+  
+  menuRunningStates: boolean[] = [];
   menuFailedStates: boolean[] = [];
+  
   constructor(private cdr: ChangeDetectorRef) {}
 
 
   ngOnInit(): void {
+    this.menuRunningStates = new Array(this.dataCompleted.length).fill(false); 
     this.menuFailedStates = new Array(this.dataCompleted.length).fill(false); 
   }
 
@@ -152,8 +155,8 @@ export class DashboardComponent implements OnInit{
     });
     
     // Toggle the clicked menu and close others
+    this.menuRunningStates = this.menuRunningStates.map((state, i) => i === index ? !state : false);
     this.menuFailedStates = this.menuFailedStates.map((state, i) => i === index ? !state : false);
-    
     this.cdr.detectChanges();
   }
 
@@ -170,8 +173,8 @@ export class DashboardComponent implements OnInit{
         });
   
         // Close dynamic menus
+        this.menuRunningStates = this.menuRunningStates.map(() => false);
         this.menuFailedStates = this.menuFailedStates.map(() => false);
-        
         this.cdr.detectChanges();
       }
     }
@@ -186,6 +189,7 @@ export class DashboardComponent implements OnInit{
       });
       
       if (index !== undefined) {
+        this.menuRunningStates[index] = false;
         this.menuFailedStates[index] = false;
       }
       
