@@ -118,14 +118,15 @@ export class DashboardComponent implements OnInit{
 
   menuStates: { [key: string]: boolean } = {
     menu1: false,
-    menu2: false
+    menu2: false,
+    menu3: false
   };
   menuFailedStates: boolean[] = [];
   constructor(private cdr: ChangeDetectorRef) {}
 
 
   ngOnInit(): void {
-    this.menuFailedStates = new Array(this.dataCompleted.length).fill(false);
+    this.menuFailedStates = new Array(this.dataCompleted.length).fill(false); 
   }
 
   // Toggles the menu open/close
@@ -190,7 +191,6 @@ export class DashboardComponent implements OnInit{
       
       this.cdr.detectChanges();
     }
-  
   
 }
 

@@ -81,6 +81,7 @@ body  {
 
   #header .logo {
     margin: 10px 55px 0 0;
+    cursor: pointer;
   }
   #header .omni-2lzp0v select{
     border: 5px solid #007F98;
@@ -98,9 +99,11 @@ body  {
  
   #header .profile {
     margin: 5px 0 0 5px;
+    cursor: pointer;
   }
-  .setting svg {
+  .setting svg, .profile svg  {
     color: #007F98;
+    cursor: pointer;
   }
 
   #header .header-nav{
@@ -230,7 +233,7 @@ body  {
 .box-table thead  {   
   border-bottom: 1px solid #ddd;
 }
-.box-table thead th {
+.box-table thead  {
   position: sticky;
   top: 0;
   background-color: #fff;  /* You can choose a color */
@@ -282,3 +285,6 @@ body  {
   .footer{
     text-align: center;
   }
+
+
+  

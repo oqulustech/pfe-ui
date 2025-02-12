@@ -147,13 +147,13 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr *ngFor="let row of dataFailed; let i = index">
+                    <tr *ngFor="let row of dataFailed; let i = index">
                           <td width="60%" class ="txtUnderline">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
-                          <td width="10%">                   
+                          <td width="10%">           
+                            <omni-icon [svg]="iconList" class="profile" (click)="toggleActionMenu($event, i)"></omni-icon>        
                             <div class="relative">
-                              <omni-icon [svg]="iconList" class="profile" (click)="toggleActionMenu($event, i)"></omni-icon>
-                              <div class="action-menu" [ngClass]="{'open': menuFailedStates[i]}">
+                              <div class="action-menu top-15" [ngClass]="{'open': menuFailedStates[i]}">
                                   <ul>
                                       <li *ngFor="let action of dataActionsFailed" (click)="action.action()">
                                           {{ action.label }}
