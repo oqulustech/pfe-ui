@@ -33,7 +33,7 @@
                   </thead>
                   <tbody>
                       <tr *ngFor="let row of dataCompleted">
-                          <td width="60%" class ="txtUnderline">{{ row.name }}</td>
+                          <td width="60%" class ="txtUnderline" (click)="openModal()">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%">&nbsp;</td>
                       </tr>
@@ -109,12 +109,12 @@
                           <td width="60%" class ="txtUnderline">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%">           
-                            <omni-icon [svg]="iconList" class="profile" (click)="toggleActionMenu($event, i)"></omni-icon>        
+                            <omni-icon [svg]="iconList" class="profile" (click)="toggleActionRunning($event, i)"></omni-icon>        
                             <div class="relative">
                               <div class="action-menu top-15" [ngClass]="{'open': menuRunningStates[i]}">
                                   <ul>
                                       <li *ngFor="let action of dataActionsRunning" (click)="action.action()">
-                                          {{ action.label }} abc
+                                          {{ action.label }} 
                                       </li>
                                   </ul>
                               </div>
@@ -167,7 +167,7 @@
                               <div class="action-menu top-15" [ngClass]="{'open': menuFailedStates[i]}">
                                   <ul>
                                       <li *ngFor="let action of dataActionsFailed" (click)="action.action()">
-                                          {{ action.label }} abc
+                                          {{ action.label }}
                                       </li>
                                   </ul>
                               </div>
@@ -183,3 +183,23 @@
 
   </omni-row>
 </omni-container>  
+
+
+      <omni-modal
+        [visible]="open"
+        *ngIf="open"
+        closeOnClickOutside="true"
+        (closedByClickOutside)="closeModal()"
+      >
+        <omni-dialog padding="large">
+          <omni-column gap="medium" alignItems="flex-start">
+            <p omniTextBody>Modal Dialog Example</p>
+            <p omniTextBody>
+              Click outside the Modal to close this Dialog.
+            </p>
+            <button omniButton type="button" (click)="closeModal()">
+              Close Modal
+            </button>
+          </omni-column>
+        </omni-dialog>
+      </omni-modal>

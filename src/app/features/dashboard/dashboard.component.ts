@@ -10,7 +10,8 @@ import {
   OmniLayoutModule,
   OmniTextModule,
   OmniTitleActionModule,
-  OmniMenuButtonModule, OmniIconModule
+  OmniMenuButtonModule, OmniIconModule, 
+  OmniModalModule, OmniDialogModule
 } from '@cof/omni-ng'
 import * as icons from '@cof/omni-gravity-icons-templates'
 
@@ -26,13 +27,14 @@ import * as icons from '@cof/omni-gravity-icons-templates'
     OmniTitleActionModule, 
     OmniNgModule, 
     OmniContainerModule, 
-    OmniMenuButtonModule, OmniIconModule
+    OmniMenuButtonModule, OmniIconModule,
+    OmniModalModule, OmniDialogModule
     ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit{
-  iconList = icons.UiListLinedSmall;
+  iconList = icons.UiMenuLinedSmall;
   iconsetting = icons.UiSettingsLined;
   iconInfo = icons.UiInfoLined;
     
@@ -155,8 +157,19 @@ export class DashboardComponent implements OnInit{
     });
     
     // Toggle the clicked menu and close others
-    this.menuRunningStates = this.menuRunningStates.map((state, i) => i === index ? !state : false);
     this.menuFailedStates = this.menuFailedStates.map((state, i) => i === index ? !state : false);
+    this.cdr.detectChanges();
+  }
+  toggleActionRunning(event: MouseEvent, index: number): void {
+    event.stopPropagation();
+    
+    // Close all static menus
+    Object.keys(this.menuStates).forEach(key => {
+      this.menuStates[key] = false;
+    });
+    
+    // Toggle the clicked menu and close others
+    this.menuRunningStates = this.menuRunningStates.map((state, i) => i === index ? !state : false);
     this.cdr.detectChanges();
   }
 
@@ -195,6 +208,17 @@ export class DashboardComponent implements OnInit{
       
       this.cdr.detectChanges();
     }
+
+  open = false
+
+  openModal() {
+    this.open = true
+  }
+
+  closeModal() {
+    this.open = false
+  }
+
   
 }
 
