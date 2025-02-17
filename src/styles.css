@@ -257,6 +257,28 @@ body  {
   z-index: 1;
 }
 
+.risk-table thead {
+  position: static;
+  text-transform: uppercase;
+}
+.risk-table th, .risk-table td {
+  padding: 10px 5px;
+  text-align: left;
+  font-size: 16px;
+}
+.risk-table tr:nth-child(2) th{
+  text-transform: uppercase;
+  padding-top: 6px;
+  border-top: 1px solid #ddd;
+}
+
+/* Section: Font Sixe */
+.font-24{ font-size: 24px; }
+
+/* Section: Text Alignment */
+.text-center, .box-table td.text-center { text-align: center; }
+.text-right, .box-table td.text-right { text-align: right; }
+
 /* Section: Text colors */
 .color-danger{ color: #BA2629; }
 .color-success{ color: #008140; }

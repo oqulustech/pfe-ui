@@ -1,18 +1,53 @@
 <div *ngIf="showModal" class="modal-overlay">
-    <div class="modal" [ngStyle]="{'width': modalWidth + 'px'}">
-      <div class="modal-header">
-        <h2>{{ title }}</h2>
-        <span class="closeTop" (click)="close()">X</span>
-      </div>
-      <div class="modal-body" [ngStyle]="{'height': modalHeight + 'px'}">
-        <p>{{ data }}</p>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-      </div>
-      <div class="modal-footer">
-        <span class="closeButton" (click)="close()">Close</span>
-      </div>
+  <div class="modal" [ngStyle]="{'width': modalWidth + 'px'}">
+    <div class="modal-header">
+      <h2>{{ title }}</h2>
+      <span class="closeTop" (click)="close()">X</span>
+    </div>
+    <div class="modal-body" [ngStyle]="{'height': modalHeight + 'px'}">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" class="box-table risk-table">
+          <thead>
+              <tr>
+                  <th>
+                      <span  class="font-24"> {{data.value[0].name}} </span> 
+                  </th>
+                  <th>
+                      <b class="font-24">{{data.key[0].jobid}} : </b> <span class="font-24"> {{data.value[0].jobid}} </span>
+                  </th>
+              </tr>
+              <tr>
+                  <th>
+                      <b>{{data.key[0].jobgroup}} : </b> {{data.value[0].jobgroup}}
+                  </th>
+                  <th>
+                      <b>{{data.key[0].status}} : </b> <span class="color-danger">  {{data.value[0].status}}</span> 
+                  </th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="text-center" colspan="2"><b>{{data.key[0].startTime}} : </b> {{data.value[0].startTime}}</td>
+              </tr>
+              <tr>
+                  <td class="text-center" colspan="2"><b>{{data.key[0].endTime}} : </b> {{data.value[0].endTime}}</td>
+              </tr>
+              <tr>
+                  <td class="text-center" colspan="2"><b>{{data.key[0].jobAsset}} : </b> {{data.value[0].jobAsset}}</td>
+              </tr>
+              <tr>
+                  <td class="text-center" colspan="2"><b>{{data.key[0].jobMetric}} : </b> {{data.value[0].jobMetric}}</td>
+              </tr>
+              <tr>
+                  <td class="text-center" colspan="2"><b>{{data.key[0].command}} : </b> {{data.value[0].command}}</td>
+              </tr>
+              <tr>
+                  <td class="text-center" colspan="2"><b>{{data.key[0].jobHistoryRecorded}} : </b> <span class="color-success"> {{data.value[0].jobHistoryRecorded}} </span></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+      <span class="closeButton" (click)="close()">Close</span>
     </div>
   </div>
-  
+</div>
