@@ -209,7 +209,7 @@ export class DashboardComponent implements OnInit{
       this.cdr.detectChanges();
     }
 
-  open = false
+  open: boolean = false;
 
   openModal() {
     this.open = true
