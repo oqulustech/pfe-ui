@@ -46,8 +46,10 @@
           </tbody>
         </table>
     </div>
-    <div class="modal-footer">
+    
+    <div class="modal-footer" *ngIf="showfooter">
       <span class="closeButton" (click)="close()">Close</span>
     </div>
   </div>
 </div>
+  

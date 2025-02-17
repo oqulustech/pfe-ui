@@ -14,6 +14,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   @Input() title: string = ''; // Modal title
   @Input() data: any; // Modal data
   @Input() showModal: boolean = false; // Control modal visibility
+  @Input() showfooter: boolean = false; // Control modal visibility
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter(); // Event to close modal
 
   ngOnInit() {

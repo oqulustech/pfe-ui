@@ -2,6 +2,7 @@ showModal = false;
 modalWidth: number = 514;
 modalHeight: number = 200;
 modalTitle = 'Modal Title';
+showfooter:boolean = false;
 sharedata:any;
 tableKey = [
   {
