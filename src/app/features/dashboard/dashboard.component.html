@@ -75,7 +75,7 @@
                   </thead>
                   <tbody>
                       <tr *ngFor="let row of dataCompleted">
-                          <td width="60%" class ="txtUnderline">{{ row.name }}</td>
+                          <td width="60%" class ="txtUnderline" (click)="openModal()">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%">&nbsp;</td>
                       </tr>
@@ -106,7 +106,7 @@
                   </thead>
                   <tbody>
                       <tr *ngFor="let row of dataCompleted; let i = index">
-                          <td width="60%" class ="txtUnderline">{{ row.name }}</td>
+                        <td width="60%" class ="txtUnderline" (click)="openModal()">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%">           
                             <omni-icon [svg]="iconList" class="profile" (click)="toggleActionRunning($event, i)"></omni-icon>        
@@ -159,7 +159,7 @@
                   </thead>
                   <tbody>
                     <tr *ngFor="let row of dataFailed; let i = index">
-                          <td width="60%" class ="txtUnderline">{{ row.name }}</td>
+                          <td width="60%" class ="txtUnderline" (click)="openModal()">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%">           
                             <omni-icon [svg]="iconList" class="profile" (click)="toggleActionMenu($event, i)"></omni-icon>        
@@ -175,7 +175,7 @@
                           </td>
                       </tr>
                   </tbody>
-                </table>
+              </table>
               </div>
             </div>
       </omni-flex>
@@ -185,21 +185,12 @@
 </omni-container>  
 
 
-      <omni-modal
-        [visible]="open"
-        *ngIf="open"
-        closeOnClickOutside="true"
-        (closedByClickOutside)="closeModal()"
-      >
-        <omni-dialog padding="large">
-          <omni-column gap="medium" alignItems="flex-start">
-            <p omniTextBody>Modal Dialog Example</p>
-            <p omniTextBody>
-              Click outside the Modal to close this Dialog.
-            </p>
-            <button omniButton type="button" (click)="closeModal()">
-              Close Modal
-            </button>
-          </omni-column>
-        </omni-dialog>
-      </omni-modal>
+<app-modal 
+    [title]="modalTitle" 
+    [modalWidth]="modalWidth"
+    [modalHeight]="modalHeight"
+    [data]="sharedata" 
+    [showModal]="showModal" 
+    [showfooter]="showfooter"
+    (closeModal)="closeModal($event)">
+</app-modal>

@@ -13,8 +13,8 @@ import {
   OmniMenuButtonModule, OmniIconModule, 
   OmniModalModule, OmniDialogModule
 } from '@cof/omni-ng'
-import * as icons from '@cof/omni-gravity-icons-templates'
-
+import * as icons from '@cof/omni-gravity-icons-templates';
+import { ModalComponent } from '../../components/modal/modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -28,7 +28,8 @@ import * as icons from '@cof/omni-gravity-icons-templates'
     OmniNgModule, 
     OmniContainerModule, 
     OmniMenuButtonModule, OmniIconModule,
-    OmniModalModule, OmniDialogModule
+    OmniModalModule, OmniDialogModule,
+    ModalComponent
     ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
@@ -125,13 +126,53 @@ export class DashboardComponent implements OnInit{
   
   menuRunningStates: boolean[] = [];
   menuFailedStates: boolean[] = [];
+
+  /* section :modal variables*/ 
+  showModal = false;
+  modalWidth: number = 514;
+  modalHeight: number = 380;
+  modalTitle = '';
+  showfooter:boolean = false;
+  sharedata:any;
+  tableKey = [
+    {
+      name: "Risk Results",
+      jobid: "Job Id",
+      jobgroup: "Job group",
+      status: "Status",
+      startTime: "Start Time",
+      endTime: "End Time",
+      jobAsset: "Job Asset",
+      jobMetric: "job Metric",
+      command: "Command",
+      jobHistoryRecorded: "Job History Recorded"     
+    }
+  ]
+  tableValue = [
+    {
+      name: "Risk Results",
+      jobid: 234,
+      jobgroup: "Risk Results",
+      status: "Failed",
+      startTime: "12/19/2024 2:01:14 AM",
+      endTime: "12/19/2024 2:01:14 AM",
+      jobAsset: "ABS",
+      jobMetric: "VaR",
+      command: "start/d°C:\\R1\\ABS\" Job Executor.exe",
+      jobHistoryRecorded: true     
+    }
+  ]
   
   constructor(private cdr: ChangeDetectorRef) {}
 
 
   ngOnInit(): void {
     this.menuRunningStates = new Array(this.dataCompleted.length).fill(false); 
-    this.menuFailedStates = new Array(this.dataCompleted.length).fill(false); 
+    this.menuFailedStates = new Array(this.dataCompleted.length).fill(false);
+    this.sharedata = {
+      key: this.tableKey,
+      value: this.tableValue
+    } 
   }
 
   // Toggles the menu open/close
@@ -209,16 +250,15 @@ export class DashboardComponent implements OnInit{
       this.cdr.detectChanges();
     }
 
-  open: boolean = false;
-
-  openModal() {
-    this.open = true
-  }
-
-  closeModal() {
-    this.open = false
-  }
-
+    // Method to open modal
+    openModal() {
+      this.showModal = true;
+    }
+    
+    // Method to close modal
+    closeModal(close: boolean) {
+      this.showModal = close;
+    }
   
 }
 
