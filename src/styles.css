@@ -274,6 +274,7 @@ body  {
 
 /* Section: Font Sixe */
 .font-24{ font-size: 24px; }
+.txt-600 { font-weight: bold; text-transform: uppercase; }
 
 /* Section: Text Alignment */
 .text-center, .box-table td.text-center { text-align: center; }
