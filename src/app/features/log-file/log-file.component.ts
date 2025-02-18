@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-
+import { OmniTableModule } from '@cof/omni-ng'
 @Component({
   selector: 'app-log-file',
   standalone: true,
-  imports: [],
+  imports: [OmniTableModule],
   templateUrl: './log-file.component.html',
   styleUrl: './log-file.component.scss'
 })
