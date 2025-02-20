@@ -13,7 +13,7 @@
                 <img src="./Maintainence.svg" alt="logo" title="logo" width="50" height="50" />
               </omni-text-metric>
               <omni-flex direction="row" justifyContent="space-between">
-                <omni-text-body><a href="javascript:void(0)"> Launch Job Monitor > </a></omni-text-body>
+                <omni-text-body><a href="javascript:void(0)" (click)="gotoDashboard()"> Launch Job Monitor > </a></omni-text-body>
               </omni-flex>
             </omni-container>                    
           </omni-column>
@@ -33,7 +33,7 @@
                 <img src="./Statements.svg" alt="logo" title="logo" width="50" height="50" />
               </omni-text-metric>
               <omni-flex direction="row" justifyContent="space-between">
-                <omni-text-body><a href="javascript:void(0)"> Launch Risk Reports > </a></omni-text-body>
+                <omni-text-body><a href="javascript:void(0)" (click)="gotoTableView()"> Launch Risk Reports > </a></omni-text-body>
               </omni-flex>
             </omni-container>                    
           </omni-column>
@@ -73,7 +73,7 @@
                 <img src="./Caution.svg" alt="logo" title="logo" width="50" height="50" />
               </omni-text-metric>
               <omni-flex direction="row" justifyContent="space-between">
-                <omni-text-body><a href="javascript:void(0)"> Launch Issue Log > </a></omni-text-body>
+                <omni-text-body><a href="javascript:void(0)" (click)="gotoLogFile()"> Launch Issue Log > </a></omni-text-body>
               </omni-flex>
             </omni-container>                    
           </omni-column>

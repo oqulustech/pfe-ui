@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { OmniNgModule } from '@cof/omni-ng';
 import { OmniContainerModule } from '@cof/omni-ng';
 import {
@@ -35,5 +36,17 @@ import { IssuesLogComponent } from '../issues-log/issues-log.component';{}
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  constructor(private router: Router) {}
 
+  gotoDashboard (link:string) {
+    this.router.navigate(['dashboard']); 
+   }
+
+   gotoTableView (link:string) {
+    this.router.navigate(['job-monitor']); 
+   }
+
+   gotoLogFile (link:string) {x
+    this.router.navigate(['log-file']); 
+   }
 }
