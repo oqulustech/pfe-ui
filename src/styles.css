@@ -230,6 +230,7 @@ body  {
 
 .box-table td.txtUnderline{
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .box-table th span.textCompleted {
