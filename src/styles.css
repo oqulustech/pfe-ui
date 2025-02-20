@@ -79,6 +79,7 @@ body  {
 .box-home{
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
   padding-bottom: 40px;
+  border-left: 1px solid #ddd;
 }
 
 
