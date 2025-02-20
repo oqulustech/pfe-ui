@@ -193,9 +193,6 @@ export class DashboardComponent implements OnInit{
     this.cdr.detectChanges();
   }
 
-  routeToActionPage() {
-    this.router.navigate(['job-monitor']); 
-  }
 
   toggleActionMenu(event: MouseEvent, index: number): void {
     event.stopPropagation();
@@ -256,6 +253,14 @@ export class DashboardComponent implements OnInit{
       }
       
       this.cdr.detectChanges();
+    }
+
+    routeToActionPage() {
+      this.router.navigate(['job-monitor']); 
+    }
+
+    routeLogFilePage() {
+      this.router.navigate(['log-file']); 
     }
 
     // Method to open modal

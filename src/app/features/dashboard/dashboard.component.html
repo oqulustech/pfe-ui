@@ -113,7 +113,7 @@
                             <div class="relative">
                               <div class="action-menu top-15" [ngClass]="{'open': menuRunningStates[i]}">
                                   <ul>
-                                      <li *ngFor="let action of dataActionsRunning" (click)="action.action()">
+                                      <li *ngFor="let action of dataActionsRunning" (click)="routeLogFilePage()">
                                           {{ action.label }} 
                                       </li>
                                   </ul>
@@ -143,7 +143,7 @@
                               <omni-icon [svg]="iconsetting" class="profile setting" (click)="toggleMenu($event, 'menu2')"></omni-icon>
                               <div class="action-menu" [ngClass]="{'open': menuStates['menu2']}">
                                   <ul>
-                                      <li *ngFor="let action of headerActionsFailed" (click)="action.action()">
+                                      <li *ngFor="let action of headerActionsFailed"(click)="routeToActionPage()">
                                           {{ action.label }}
                                       </li>
                                   </ul>
@@ -166,7 +166,7 @@
                             <div class="relative">
                               <div class="action-menu top-15" [ngClass]="{'open': menuFailedStates[i]}">
                                   <ul>
-                                      <li *ngFor="let action of dataActionsFailed" (click)="action.action()">
+                                      <li *ngFor="let action of dataActionsFailed" (click)="routeLogFilePage()">
                                           {{ action.label }}
                                       </li>
                                   </ul>
