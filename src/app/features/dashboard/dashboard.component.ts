@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 import { OmniNgModule } from '@cof/omni-ng';
 import { OmniContainerModule } from '@cof/omni-ng';
@@ -163,7 +164,10 @@ export class DashboardComponent implements OnInit{
     }
   ]
   
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(
+    private router: Router,
+    private cdr: ChangeDetectorRef
+    ) {}
 
 
   ngOnInit(): void {
@@ -196,7 +200,7 @@ export class DashboardComponent implements OnInit{
     Object.keys(this.menuStates).forEach(key => {
       this.menuStates[key] = false;
     });
-    
+    this.router.navigate(['job-monitor']); 
     // Toggle the clicked menu and close others
     this.menuFailedStates = this.menuFailedStates.map((state, i) => i === index ? !state : false);
     this.cdr.detectChanges();
@@ -208,7 +212,7 @@ export class DashboardComponent implements OnInit{
     Object.keys(this.menuStates).forEach(key => {
       this.menuStates[key] = false;
     });
-    
+    this.router.navigate(['log-file']); 
     // Toggle the clicked menu and close others
     this.menuRunningStates = this.menuRunningStates.map((state, i) => i === index ? !state : false);
     this.cdr.detectChanges();
