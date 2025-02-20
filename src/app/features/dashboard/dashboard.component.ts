@@ -193,6 +193,10 @@ export class DashboardComponent implements OnInit{
     this.cdr.detectChanges();
   }
 
+  routeToActionPage() {
+    this.router.navigate(['job-monitor']); 
+  }
+
   toggleActionMenu(event: MouseEvent, index: number): void {
     event.stopPropagation();
     

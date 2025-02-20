@@ -59,7 +59,7 @@
                               <omni-icon [svg]="iconsetting" class="profile setting" (click)="toggleMenu($event, 'menu1')"></omni-icon>
                               <div class="action-menu" [ngClass]="{'open': menuStates['menu1']}">
                                   <ul>
-                                      <li *ngFor="let action of headerActionsWaiting" (click)="action.action()">
+                                      <li *ngFor="let action of headerActionsWaiting" (click)="routeToActionPage()">
                                           {{ action.label }}
                                       </li>
                                   </ul>
