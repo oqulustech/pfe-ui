@@ -1,61 +1,39 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { OmniNgModule } from '@cof/omni-ng';
-import { OmniFormsModule, OmniMenuButtonModule, OmniIconModule } from '@cof/omni-ng';
-import * as icons from '@cof/omni-gravity-icons-templates'
-
+import { OmniContainerModule } from '@cof/omni-ng';
+import {
+  OmniAttributeModule,
+  OmniAppModule,
+  OmniFormsModule,
+  OmniLayoutModule,
+  OmniTextModule,
+  OmniTitleActionModule,
+} from '@cof/omni-ng'
+import { JobMonitorComponent } from '../job-monitor/job-monitor.component';
+import { RiskReportComponent } from '../risk-report/risk-report.component';
+import { PackageTrackerComponent } from '../package-tracker/package-tracker.component';
+import { IssuesLogComponent } from '../issues-log/issues-log.component';{}
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-home',
   standalone: true,
-  imports: [FormsModule, OmniNgModule, OmniFormsModule,OmniMenuButtonModule, OmniIconModule ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  imports: [CommonModule, OmniAttributeModule,
+    OmniAppModule,
+    OmniFormsModule,
+    OmniLayoutModule,
+    OmniTextModule,
+    OmniTitleActionModule, 
+    OmniNgModule, 
+    OmniContainerModule, 
+    JobMonitorComponent, 
+    RiskReportComponent, 
+    PackageTrackerComponent, 
+    IssuesLogComponent],
+  
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
-export class HeaderComponent {
-  value: string = '';
-  selectedValue = 'Select The Pfe Module';
+export class HomeComponent {
 
-  iconInfo = icons.UiInfoLined
-  iconHeart = icons.UiHeartLined
-  iconStar = icons.UiStarLined
-  options: string[] = [
-    'Job Monitor',
-    'Risk Reports',
-    'Package Tracker',
-    'Issue Log',
-    'DBMS PgBlazor'
-  ];
-  selectedLink: string = '';
-  constructor(private router: Router) {}
-
-  onChange() { 
-    // Handle the change event 
-    console.log('Selected value:', this.selectedValue); 
-      if (this.selectedValue === 'Select The Pfe Module') { 
-        this.router.navigate(['home']); 
-      } else if (this.selectedValue === 'Job Monitor') { 
-        this.router.navigate(['dashboard']); 
-      } 
-     } 
-
-     gotoHome () {
-      this.router.navigate(['home']); 
-     }
-
-     gotoDashboard (link:string) {
-      this.selectedLink = link;
-      this.router.navigate(['dashboard']); 
-     }
-
-     gotoTableView (link:string) {
-      this.selectedLink = link;
-      this.router.navigate(['job-monitor']); 
-     }
-
-     gotoLogFile (link:string) {
-      this.selectedLink = link;
-      this.router.navigate(['log-file']); 
-     }
 }

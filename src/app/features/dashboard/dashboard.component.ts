@@ -150,16 +150,16 @@ export class DashboardComponent implements OnInit{
   ]
   tableValue = [
     {
-      name: "Risk Results",
+      name: "Risk_Results",
       jobid: 234,
-      jobgroup: "Risk Results",
+      jobgroup: "Risk_Results",
       status: "Failed",
       startTime: "12/19/2024 2:01:14 AM",
       endTime: "12/19/2024 2:01:14 AM",
       jobAsset: "ABS",
       jobMetric: "VaR",
-      command: "start/d°C:\\R1\\ABS\" Job Executor.exe",
-      jobHistoryRecorded: true     
+      command: "start/d°C:\\R1\\ABS\" Job_Executor.exe",
+      jobHistoryRecorded: "TRUE"     
     }
   ]
   

@@ -13,6 +13,9 @@ body  {
     color: #141414;
     background: #FFF;
 }
+.underline{
+  text-decoration: underline;
+}
 
 #apppage .omni-gqydin, #apppage .omni-ysufa2 {
     padding-left: 0px;
@@ -248,7 +251,7 @@ body  {
 }
 
 .box-table thead  {   
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #6E6E6E;
 }
 .box-table thead  {
   position: sticky;
@@ -269,15 +272,16 @@ body  {
 .risk-table tr:nth-child(2) th{
   text-transform: uppercase;
   padding-top: 6px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6E6E6E;
 }
-.risk-table tr th.capitalize{
+.risk-table tr th .capitalize{
   text-transform: capitalize;
 }
 
 /* Section: Font Sixe */
 .font-24{ font-size: 24px; }
 .txt-600 { font-weight: bold; text-transform: uppercase; }
+
 
 /* Section: Text Alignment */
 .text-center, .box-table td.text-center { text-align: center; }
