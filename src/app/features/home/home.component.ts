@@ -38,15 +38,15 @@ import { IssuesLogComponent } from '../issues-log/issues-log.component';{}
 export class HomeComponent {
   constructor(private router: Router) {}
 
-  gotoDashboard (link:string) {
+  gotoDashboard () {
     this.router.navigate(['dashboard']); 
    }
 
-   gotoTableView (link:string) {
+   gotoTableView () {
     this.router.navigate(['job-monitor']); 
    }
 
-   gotoLogFile (link:string) {x
+   gotoLogFile () {
     this.router.navigate(['log-file']); 
    }
 }

@@ -1,1 +1,262 @@
-<p>job-monitor works!</p>
+<omni-container variant="content" padding="huge">
+    <omni-row width="100%" alignItems="center">
+        <button theme="light" background="1" omniIconButton [icon]="iconFilter" [iconSmall]="iconFilterSmall"
+            size="default" rank="primary" variant="action" shape="button" (click)="toggleFilters()">
+            {{filterButtonLabel}}
+        </button>
+        <button theme="light" class="reset-table" omniButton variant="action" size="default" rank="secondary"
+            (click)="resetTable()">
+            Reset Table
+        </button>
+        <div class="action-tag-container">
+            <omni-tag *ngFor="let status of availableStatuses" [label]="status.label"
+                [ngClass]="{'action-tag': status.isStatusSelected}"></omni-tag>
+        </div>
+    </omni-row>
+
+    <div *ngIf="showAllFilters">
+        <div class="filter-container">
+            <div class="select-container">
+                <div class="select-item">
+                    <label omniTextLabel>Job Name</label>
+                    <omni-select [value]="selectedFilters.jobName" name="jobName"
+                        (change)="onFilterSelectionChange($event)">
+                        <option value="" disabled>Select</option>
+                        <option *ngFor="let jName of dropdownOptions.jobName" value={{jName.value}}>{{jName.label}}
+                        </option>
+                    </omni-select>
+                </div>
+                <div class="select-item">
+                    <label omniTextLabel>Status</label>
+                    <omni-multiselect [closeOnMenuSelect]="false" [items]="dropdownOptions.status"
+                        (itemRemove)="onStatusRemove($event)" (itemSelect)="onStatusSelect($event)"></omni-multiselect>
+                </div>
+            </div>
+
+            <div class="select-container">
+                <div class="select-item">
+                    <label omniTextLabel>Job Group</label>
+                    <omni-select [value]="selectedFilters.jobGroup" name="jobGroup"
+                        (change)="onFilterSelectionChange($event)">
+                        <option value="" disabled>Select</option>
+                        <option *ngFor="let jobGroup of dropdownOptions.jobGroup" value={{jobGroup.value}}>
+                            {{jobGroup.label}}
+                        </option>
+                    </omni-select>
+                </div>
+                <div class="select-item">
+                    <label omniTextLabel>Job Asset</label>
+                    <omni-select [value]="selectedFilters.jobAsset" name="jobAsset"
+                        (change)="onFilterSelectionChange($event)">
+                        <option value="" disabled>Select</option>
+                        <option *ngFor="let jobAsset of dropdownOptions.jobAsset" value={{jobAsset.value}}>
+                            {{jobAsset.label}}
+                        </option>
+                    </omni-select>
+                </div>
+            </div>
+
+            <div class="select-container">
+                <div class="select-item">
+                    <label omniTextLabel>Job Metric</label>
+                    <omni-select [value]="selectedFilters.jobMetric" name="jobMetric"
+                        (change)="onFilterSelectionChange($event)">
+                        <option value="" disabled>Select</option>
+                        <option *ngFor="let jobMetric of dropdownOptions.jobMetric" value={{jobMetric.value}}>
+                            {{jobMetric.label}}</option>
+                    </omni-select>
+                </div>
+                <div class="select-item">
+                    <label omniTextLabel>Job ID</label>
+                    <omni-select [value]="selectedFilters.jobId" name="jobId"
+                        (change)="onFilterSelectionChange($event)">
+                        <option value="" disabled>Select</option>
+                        <option *ngFor="let jobId of dropdownOptions.jobId" value={{jobId.value}}>{{jobId.label}}
+                        </option>
+                    </omni-select>
+                </div>
+            </div>
+
+            <div class="select-container">
+                <div class="select-item">
+                    <label omniTextLabel>Start After</label>
+                    <omni-select [value]="selectedFilters.startTime" name="startTime"
+                        (change)="onFilterSelectionChange($event)">
+                        <option value="" disabled>Select</option>
+                        <option *ngFor="let startTime of dropdownOptions.startTime" value={{startTime.value}}>
+                            {{startTime.label}}</option>
+                    </omni-select>
+                </div>
+                <div class="select-item">
+                    <label omniTextLabel>Start Before</label>
+                    <omni-select [value]="selectedFilters.endTime" name="endTime"
+                        (change)="onFilterSelectionChange($event)">
+                        <option value="" disabled>Select</option>
+                        <option *ngFor="let endTime of dropdownOptions.endTime" value={{endTime.value}}>
+                            {{endTime.label}}
+                        </option>
+                    </omni-select>
+                </div>
+            </div>
+
+            <div class="select-container">
+                <div class="select-item">
+                    <label omniTextLabel>Command</label>
+                    <omni-select [value]="selectedFilters.command" name="command"
+                        (change)="onFilterSelectionChange($event)">
+                        <option value="" disabled>Select</option>
+                        <option *ngFor="let command of dropdownOptions.command" value={{command.value}}>
+                            {{command.label}}
+                        </option>
+                    </omni-select>
+                </div>
+                <div class="select-item">
+                    <label omniTextLabel>Job History Recorded</label>
+                    <omni-select [value]="selectedFilters.jobHistoryRecorded" name="jobHistoryRecorded"
+                        (change)="onFilterSelectionChange($event)">
+                        <option value="" disabled>Select</option>
+                        <option *ngFor="let jobHistoryRecorded of dropdownOptions.jobHistoryRecorded"
+                            value={{jobHistoryRecorded.value}}>{{jobHistoryRecorded.label}}</option>
+                    </omni-select>
+                </div>
+            </div>
+        </div>
+        <div class="selected-filter-container">
+            Selected Filters :
+            <div *ngFor="let selectedFilter of selectedFilters | keyvalue">
+                <omni-tag class="selected-filter" theme="light" label={{selectedFilter.value}}
+                    (tagClose)="removeSelectedFilter(selectedFilter.key)"></omni-tag>
+            </div>
+            <div *ngFor="let multiselectOption of multiSelectStatusOptions">
+                <omni-tag class="selected-filter" theme="light" label={{multiselectOption}}></omni-tag>
+            </div>
+        </div>
+    </div>
+
+    <omni-table-layout class="table-layout">
+        <table omniTable>
+            <thead omniThead>
+                <tr omniTr cellBorder="cell">
+                    <th omniTh *ngFor="let col of columns" (click)="sortByObjectKey(col.key)">{{col.label}}
+                        <omni-sort-indicator [direction]="col.sortDirection"></omni-sort-indicator>
+                    </th>
+                </tr>
+            </thead>
+            <tbody omniTbody>
+                <tr omniTr cellBorder="cell" *ngFor="let job of filteredData" class="table-row">
+                    <td omniTd class="job-id" (click)="openJobDetailModal(job)">{{job.jobName}}</td>
+                    <td omniTd (click)="openChangeStatusModal()" class="status"
+                        [ngClass]="{'complete': job.status === 'Complete', 'error': job.status === 'Error', 'ready': job.status === 'Ready', 'waiting': job.status === 'Waiting'}">
+                        {{job.status}}</td>
+                    <td omniTd>{{job.jobGroup}}</td>
+                    <td omniTd>{{job.jobAsset}}</td>
+                    <td omniTd>{{job.jobMetric}}</td>
+                    <td omniTd>{{job.startTime}}</td>
+                    <td omniTd>{{job.endTime}}</td>
+                    <td omniTd>{{job.jobId}}</td>
+                    <td omniTd class="job-history-recorded" [ngClass]="{'active': job.jobHistoryRecorded, 'error-history': !job.jobHistoryRecorded}">
+                        {{job.jobHistoryRecorded}}</td>
+                </tr>
+            </tbody>
+            <tfoot omniTfoot>
+                <tr omniTr cellBorder="cell">
+                </tr>
+            </tfoot>
+        </table>
+        <omni-table-footer>
+            <omni-pagination-controls [currentPage]="currentPage" [totalItems]="totalItems"
+                [itemsPerPage]="itemsPerPage"
+                (pageControlsChange)="updateCurrentPage($event)"></omni-pagination-controls>
+        </omni-table-footer>
+    </omni-table-layout>
+</omni-container>
+ 
+<omni-modal [visible]="visible" [closeOnClickOutside]="true" [closeOnKeydownEscape]="true"
+    (closed)="modalClosed()">
+    <omni-dialog [open]="visible" size="small" class="dialog">
+        <omni-dialog-header class="dialog-header">
+            <omni-dialog-header-actions>
+                <div omniDialogHeaderTrailingActions>
+                    <button omniButton type="button" shape="circle" variant="neutral" rank="tertiary" size="small"
+                        aria-label="Close" (click)="closeModal()">
+                        <omni-icon [svg]="iconClose"></omni-icon>
+                    </button>
+                </div>
+            </omni-dialog-header-actions>
+            <div class="dialog-header">
+                <h2 omniTextHeading variant="small" fontWeight="semibold">
+                    <span>{{selectedValues?.jobGroup}}</span>
+                </h2>
+                <h2 omniTextHeading variant="small" fontWeight="semibold">
+                    JOB ID: <span class="job">{{selectedValues?.jobId}}</span>
+                </h2>
+            </div>
+        </omni-dialog-header>
+        <hr width="100%" size="1" noshade>
+        <div class="sub-dialog-header">
+            <span class="sub-headings">JOB GROUP: <span>{{selectedValues?.jobGroup}}</span></span>
+            <span class="sub-headings">STATUS: <span class="status"
+                    [ngClass]="{'complete': selectedValues?.status === 'Complete', 'error': selectedValues?.status === 'Error', 'ready': selectedValues?.status === 'Ready', 'waiting': selectedValues?.status === 'Waiting'}"
+                    (click)="openChangeStatusModal()">{{selectedValues?.status}}</span></span>
+        </div>
+        <hr width="100%" size="1" noshade>
+        <omni-dialog-content class="dialog-content">
+            <div>
+                <div class="sub-headings">START TIME: <span>{{selectedValues?.startTime}}</span></div>
+                <div class="sub-headings">END TIME: <span>{{selectedValues?.endTime}}</span></div>
+                <div class="sub-headings">JOB ASSET: <span>{{selectedValues?.jobAsset}}</span></div>
+                <div class="sub-headings">JOB METRIC: <span>{{selectedValues?.jobMetric}} </span></div>
+                <div class="sub-headings">COMMAND: <span>{{selectedValues?.command}}</span></div>
+                <div class="sub-headings">JOB HISTORY RECORDED: <span
+                        class="job-history-recorded"
+                        [ngClass]="{'active': selectedValues?.jobHistoryRecorded, 'error-history': !selectedValues?.jobHistoryRecorded}">{{selectedValues?.jobHistoryRecorded}}</span>
+                </div>
+            </div>
+        </omni-dialog-content>
+    </omni-dialog>
+</omni-modal>
+<omni-modal [visible]="showChangeStatusModal" (closed)="changeStatusModalClose()">
+    <omni-dialog [open]="showChangeStatusModal" size="small" class="dialog change-status-dialog">
+        <omni-dialog-header class="dialog-header">
+            <omni-dialog-header-actions>
+                <div omniDialogHeaderTrailingActions>
+                    <button omniButton type="button" shape="circle" variant="neutral" rank="tertiary" size="small"
+                        aria-label="Close" (click)="changeStatusModalClose()">
+                        <omni-icon [svg]="iconClose"></omni-icon>
+                    </button>
+                </div>
+            </omni-dialog-header-actions>
+            <div class="dialog-header">
+                <h2 omniTextHeading variant="small" fontWeight="semibold">
+                    Change Status for <span class="job">{{selectedValues?.jobName}}</span>
+                </h2>
+            </div>
+        </omni-dialog-header>
+        <omni-dialog-content style="text-align: left; padding-left: 0;">
+            <div *ngIf="statusChanged else showStatusChangeText" class="mt-20" >
+                Please confirm changing status to <span class="bold-text" >{{temporaryStatusValue}}</span>
+                <div class="actions-row">
+                    <button theme="light" omniButton variant="neutral" size="default" rank="tertiary"
+                        (click)="changeStatusModalClose()">
+                        Cancel
+                    </button>
+                    <button theme="light" background="1" omniButton size="default" rank="primary" variant="action"
+                        shape="button" (click)="changeJobStatus()">
+                        Confirm
+                    </button>
+                </div>
+            </div>
+            <ng-template #showStatusChangeText>
+                <div>
+                    <label omniTextLabel class="change-status-label">Select Status</label>
+                    <omni-select [value]="" name="status" (change)="onChangeJobStatus($event)">
+                        <option value="" disabled>Select</option>
+                        <option *ngFor="let jStatus of changeStatusDropdownOption" value={{jStatus.value}}>
+                            {{jStatus.label}}
+                        </option>
+                    </omni-select>
+                </div>
+            </ng-template>
+        </omni-dialog-content>
+    </omni-dialog>
+</omni-modal>
