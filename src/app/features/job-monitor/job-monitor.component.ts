@@ -98,6 +98,8 @@ export class JobMonitorComponent {
         this.availableStatuses.push({ value: `${el}`, label: `${el} : ${statusCount[el]}`, isStatusSelected: false });
       });
 
+      console.log("#.......",this.availableStatuses)
+
       this.columns = this.columns.map((obj: any) => {
         return { ...obj, sortDirection: "unsorted" }
       })
@@ -140,6 +142,8 @@ export class JobMonitorComponent {
   }
 
   onFilterSelectionChange(eve: any) {
+    console.log("eve----", eve);
+    console.log("eve----", eve.source.name)
     if (this.selectedFilters[eve.source.name]) {
       this.selectedFilters[eve.source.name] = eve.source.value;
     } else {
@@ -227,6 +231,7 @@ export class JobMonitorComponent {
   }
 
   onStatusSelect(statusDropdownValues: any) {
+    console.log("eve----", statusDropdownValues);
     this.multiSelectStatusOptions.push(statusDropdownValues.selectedItem.value);
     this.generateFilteredData();
     this.availableStatuses = this.availableStatuses.map((status: any) => {
