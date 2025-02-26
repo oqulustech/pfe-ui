@@ -1,159 +1,112 @@
 
+<table omniTable variant="box-table">
+  <thead omniThead>
+    <tr omniTr>
+      <th omniTh scope="column"><h3>Log File Browser</h3></th>
+    </tr>
+  </thead>
+  <tbody omniTbody>
+    <tr omniTr>
+      <td omniTd>Cell</td>
+    </tr>
+    <tr omniTr>
+      <td omniTd>
+        <div class="col">
+          <!--!-->
+          <h5 id="files-heading">Files</h5>
+          <button id="export-to-csv-button" class="btn btn-primary">Excel Export</button><!--!-->
+          <input id="file-filter-input" type="text" placeholder="Filter files..." class="form-control my-2 bold-border">
+          <h6></h6>
+          <!--!-->
+          <ul id="files-list" class="list-group">
+             <li class="list-group-item list-group-item-action">entrypoint - 12607640 bytes - Last Modified: 11/15/2024 14:29</li>
+             <li class="list-group-item list-group-item-action">envconsul - 10739864 bytes - Last Modified: 11/14/2024 08:45</li>
+             <li class="list-group-item list-group-item-action">fire - 10711192 bytes - Last Modified: 11/26/2024 15:30</li>
+             <li class="list-group-item list-group-item-action">Bogiefile - 7222 bytes - Last Modified: 02/05/2025 16:30</li>
+             <li class="list-group-item list-group-item-action">JobMonitor - 708584 bytes - Last Modified: 02/05/2025 16:33</li>
+          </ul>
+          <h6>.config</h6>
+          <!--!-->
+          <ul id="files-list" class="list-group">
+             <li class="list-group-item list-group-item-action">web.config - 486 bytes - Last Modified: 02/05/2025 16:33</li>
+          </ul>
+          <h6>.dll</h6>
+          <!--!-->
+          <ul id="files-list" class="list-group">
+             <li class="list-group-item list-group-item-action">AWSSDK.Core.dll - 2175088 bytes - Last Modified: 09/25/2024 18:56</li>
+             <li class="list-group-item list-group-item-action">AWSSDK.SecurityToken.dll - 92784 bytes - Last Modified: 09/25/2024 18:56</li>
+             <li class="list-group-item list-group-item-action">Auth0.AspNetCore.Authentication.dll - 66048 bytes - Last Modified: 01/25/2024 09:20</li>
+             <li class="list-group-item list-group-item-action">BlazorDownloadFile.dll - 68608 bytes - Last Modified: 04/24/2022 18:10</li>
+             <li class="list-group-item list-group-item-action">EnvironmentVariables.dll - 11264 bytes - Last Modified: 12/23/2020 21:25</li>
+             <li class="list-group-item list-group-item-action">JobMonitor.dll - 160768 bytes - Last Modified: 02/05/2025 16:33</li>
+             <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Authentication.OpenIdConnect.dll - 119568 bytes - Last Modified: 11/30/2023 19:08</li>
+             <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Authorization.dll - 51464 bytes - Last Modified: 02/16/2024 22:23</li>
+             <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Components.Forms.dll - 45728 bytes - Last Modified: 02/16/2024 22:22</li>
+             <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Components.Web.dll - 173744 bytes - Last Modified: 02/16/2024 22:23</li>
+             <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Components.dll - 333984 bytes - Last Modified: 02/16/2024 22:22</li>
+             <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Metadata.dll - 16048 bytes - Last Modified: 02/16/2024 22:23</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Configuration.Abstractions.dll - 28440 bytes - Last Modified: 10/29/2024 02:43</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Configuration.Binder.dll - 43800 bytes - Last Modified: 10/29/2024 02:43</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Configuration.dll - 44296 bytes - Last Modified: 10/29/2024 02:43</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.DependencyInjection.Abstractions.dll - 65288 bytes - Last Modified: 10/29/2024 02:41</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.DependencyInjection.dll - 92424 bytes - Last Modified: 10/29/2024 02:42</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Localization.Abstractions.dll - 19616 bytes - Last Modified: 02/16/2024 22:23</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Localization.dll - 31904 bytes - Last Modified: 02/16/2024 22:25</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Logging.Abstractions.dll - 66336 bytes - Last Modified: 10/29/2024 02:48</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Logging.Configuration.dll - 27928 bytes - Last Modified: 10/29/2024 02:49</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Logging.Console.dll - 74504 bytes - Last Modified: 10/29/2024 02:50</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Logging.dll - 51480 bytes - Last Modified: 10/29/2024 02:49</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Options.ConfigurationExtensions.dll - 22792 bytes - Last Modified: 10/29/2024 02:43</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Options.dll - 65296 bytes - Last Modified: 10/29/2024 02:43</li>
+             <li class="list-group-item list-group-item-action">Microsoft.Extensions.Primitives.dll - 44296 bytes - Last Modified: 10/29/2024 02:40</li>
+             <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.Abstractions.dll - 19376 bytes - Last Modified: 11/21/2023 01:54</li>
+             <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.JsonWebTokens.dll - 127520 bytes - Last Modified: 11/21/2023 01:11</li>
+             <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.Logging.dll - 36896 bytes - Last Modified: 11/21/2023 01:14</li>
+             <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.Protocols.OpenIdConnect.dll - 120240 bytes - Last Modified: 11/21/2023 01:30</li>
+             <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.Protocols.dll - 40376 bytes - Last Modified: 11/21/2023 01:17</li>
+             <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.Tokens.dll - 285728 bytes - Last Modified: 11/21/2023 01:23</li>
+             <li class="list-group-item list-group-item-action">Microsoft.JSInterop.dll - 66208 bytes - Last Modified: 02/16/2024 22:23</li>
+             <li class="list-group-item list-group-item-action">MudBlazor.dll - 9253888 bytes - Last Modified: 03/22/2024 11:21</li>
+             <li class="list-group-item list-group-item-action">Newtonsoft.Json.dll - 712464 bytes - Last Modified: 03/08/2023 07:09</li>
+             <li class="list-group-item list-group-item-action">System.Data.SqlClient.dll - 268320 bytes - Last Modified: 10/26/2023 23:27</li>
+             <li class="list-group-item list-group-item-action">System.Diagnostics.DiagnosticSource.dll - 173840 bytes - Last Modified: 10/29/2024 02:47</li>
+             <li class="list-group-item list-group-item-action">System.IO.Pipelines.dll - 77608 bytes - Last Modified: 10/29/2024 02:46</li>
+             <li class="list-group-item list-group-item-action">System.IdentityModel.Tokens.Jwt.dll - 82352 bytes - Last Modified: 11/21/2023 01:10</li>
+             <li class="list-group-item list-group-item-action">System.Text.Encodings.Web.dll - 70960 bytes - Last Modified: 10/29/2024 02:40</li>
+             <li class="list-group-item list-group-item-action">System.Text.Json.dll - 643872 bytes - Last Modified: 10/29/2024 02:47</li>
+          </ul>
+          <h6>.hcl</h6>
+          <!--!-->
+          <ul id="files-list" class="list-group">
+             <li class="list-group-item list-group-item-action">config.hcl - 430 bytes - Last Modified: 02/25/2025 11:58</li>
+          </ul>
+          <h6>.json</h6>
+          <!--!-->
+          <ul id="files-list" class="list-group">
+             <li class="list-group-item list-group-item-action">JobMonitor.deps.json - 69261 bytes - Last Modified: 02/05/2025 16:33</li>
+             <li class="list-group-item list-group-item-action">JobMonitor.runtimeconfig.json - 469 bytes - Last Modified: 02/05/2025 16:33</li>
+             <li class="list-group-item list-group-item-action">appsettings.Development.json - 1418 bytes - Last Modified: 02/05/2025 16:30</li>
+             <li class="list-group-item list-group-item-action">appsettings.QA.json - 1377 bytes - Last Modified: 02/05/2025 16:30</li>
+             <li class="list-group-item list-group-item-action">appsettings.json - 1305 bytes - Last Modified: 02/05/2025 16:30</li>
+          </ul>
+          <h6>.pdb</h6>
+          <!--!-->
+          <ul id="files-list" class="list-group">
+             <li class="list-group-item list-group-item-action">JobMonitor.pdb - 96792 bytes - Last Modified: 02/05/2025 16:33</li>
+          </ul>
+          <h6>.sh</h6>
+          <!--!-->
+          <ul id="files-list" class="list-group">
+             <li class="list-group-item list-group-item-action">entrypoint.sh - 662 bytes - Last Modified: 12/03/2024 04:18</li>
+          </ul>
+          <h6>.yaml</h6>
+          <!--!-->
+          <ul id="files-list" class="list-group">
+             <li class="list-group-item list-group-item-action">secrets.yaml - 153 bytes - Last Modified: 02/05/2025 16:30</li>
+          </ul>
+       </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-<omni-container variant="light" id = "homepage" [padding]="[ 'huge', 'giant']" >
-    <omni-row padding="medium">
-        <table omniTable variant="tableWithBorder">
-            <thead omniThead>
-              <tr omniTr>
-                <th omniTh scope="column">Header</th>
-                <th omniTh scope="column">Header</th>
-              </tr>
-            </thead>
-            <tbody omniTbody>
-              <tr omniTr>
-                <td omniTd>Cell</td>
-                <td omniTd>Cell</td>
-              </tr>
-              <tr omniTr>
-                <td omniTd>Cell</td>
-                <td omniTd>Cell</td>
-              </tr>
-            </tbody>
-          </table>
-
-
-          <div class="main">
-            <div class="top-row px-4">
-               <!--!--><!--!--><!--!--><!--!-->
-               <button id="login-button" type="button" class="mud-button-root mud-button mud-button-text mud-button-text-default mud-button-text-size-medium mud-ripple" style="color: #D03027" _bl_020d5e3c-3ee0-42c3-8c54-9763606fa183="">
-                  <span class="mud-button-label">
-                     <span class="mud-button-icon-start mud-button-icon-size-medium">
-                        <!--!-->
-                        <svg class="mud-icon-root mud-svg-icon mud-icon-size-medium" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                           <!--!-->
-                           <path d="M0 0h24v24H0z" fill="none"></path>
-                           <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path>
-                        </svg>
-                     </span>
-                     <!--!-->
-                     Log in
-                  </span>
-               </button>
-            </div>
-            <!--!-->
-            <div class="content px-4">
-               <!--!--><!--!-->
-               <h3>Log File Browser</h3>
-               <div class="row">
-                  <div class="col">
-                     <!--!-->
-                     <h5 id="directory-heading">Directories</h5>
-                     <button id="navigate-up-button" class="btn btn-primary">Go Up</button><!--!-->
-                     <ul id="directory-list" class="list-group my-2">
-                        <li class="list-group-item list-group-item-action">.aspnet</li>
-                        <li class="list-group-item list-group-item-action">runtimes</li>
-                        <li class="list-group-item list-group-item-action">wwwroot</li>
-                     </ul>
-                  </div>
-                  <!--!-->
-                  <div class="col">
-                     <!--!-->
-                     <h5 id="files-heading">Files</h5>
-                     <button id="export-to-csv-button" class="btn btn-primary">Excel Export</button><!--!-->
-                     <input id="file-filter-input" type="text" placeholder="Filter files..." class="form-control my-2 bold-border">
-                     <h6></h6>
-                     <!--!-->
-                     <ul id="files-list" class="list-group">
-                        <li class="list-group-item list-group-item-action">entrypoint - 12607640 bytes - Last Modified: 11/15/2024 14:29</li>
-                        <li class="list-group-item list-group-item-action">envconsul - 10739864 bytes - Last Modified: 11/14/2024 08:45</li>
-                        <li class="list-group-item list-group-item-action">fire - 10711192 bytes - Last Modified: 11/26/2024 15:30</li>
-                        <li class="list-group-item list-group-item-action">Bogiefile - 7222 bytes - Last Modified: 02/05/2025 16:30</li>
-                        <li class="list-group-item list-group-item-action">JobMonitor - 708584 bytes - Last Modified: 02/05/2025 16:33</li>
-                     </ul>
-                     <h6>.config</h6>
-                     <!--!-->
-                     <ul id="files-list" class="list-group">
-                        <li class="list-group-item list-group-item-action">web.config - 486 bytes - Last Modified: 02/05/2025 16:33</li>
-                     </ul>
-                     <h6>.dll</h6>
-                     <!--!-->
-                     <ul id="files-list" class="list-group">
-                        <li class="list-group-item list-group-item-action">AWSSDK.Core.dll - 2175088 bytes - Last Modified: 09/25/2024 18:56</li>
-                        <li class="list-group-item list-group-item-action">AWSSDK.SecurityToken.dll - 92784 bytes - Last Modified: 09/25/2024 18:56</li>
-                        <li class="list-group-item list-group-item-action">Auth0.AspNetCore.Authentication.dll - 66048 bytes - Last Modified: 01/25/2024 09:20</li>
-                        <li class="list-group-item list-group-item-action">BlazorDownloadFile.dll - 68608 bytes - Last Modified: 04/24/2022 18:10</li>
-                        <li class="list-group-item list-group-item-action">EnvironmentVariables.dll - 11264 bytes - Last Modified: 12/23/2020 21:25</li>
-                        <li class="list-group-item list-group-item-action">JobMonitor.dll - 160768 bytes - Last Modified: 02/05/2025 16:33</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Authentication.OpenIdConnect.dll - 119568 bytes - Last Modified: 11/30/2023 19:08</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Authorization.dll - 51464 bytes - Last Modified: 02/16/2024 22:23</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Components.Forms.dll - 45728 bytes - Last Modified: 02/16/2024 22:22</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Components.Web.dll - 173744 bytes - Last Modified: 02/16/2024 22:23</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Components.dll - 333984 bytes - Last Modified: 02/16/2024 22:22</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.AspNetCore.Metadata.dll - 16048 bytes - Last Modified: 02/16/2024 22:23</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Configuration.Abstractions.dll - 28440 bytes - Last Modified: 10/29/2024 02:43</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Configuration.Binder.dll - 43800 bytes - Last Modified: 10/29/2024 02:43</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Configuration.dll - 44296 bytes - Last Modified: 10/29/2024 02:43</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.DependencyInjection.Abstractions.dll - 65288 bytes - Last Modified: 10/29/2024 02:41</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.DependencyInjection.dll - 92424 bytes - Last Modified: 10/29/2024 02:42</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Localization.Abstractions.dll - 19616 bytes - Last Modified: 02/16/2024 22:23</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Localization.dll - 31904 bytes - Last Modified: 02/16/2024 22:25</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Logging.Abstractions.dll - 66336 bytes - Last Modified: 10/29/2024 02:48</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Logging.Configuration.dll - 27928 bytes - Last Modified: 10/29/2024 02:49</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Logging.Console.dll - 74504 bytes - Last Modified: 10/29/2024 02:50</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Logging.dll - 51480 bytes - Last Modified: 10/29/2024 02:49</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Options.ConfigurationExtensions.dll - 22792 bytes - Last Modified: 10/29/2024 02:43</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Options.dll - 65296 bytes - Last Modified: 10/29/2024 02:43</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.Extensions.Primitives.dll - 44296 bytes - Last Modified: 10/29/2024 02:40</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.Abstractions.dll - 19376 bytes - Last Modified: 11/21/2023 01:54</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.JsonWebTokens.dll - 127520 bytes - Last Modified: 11/21/2023 01:11</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.Logging.dll - 36896 bytes - Last Modified: 11/21/2023 01:14</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.Protocols.OpenIdConnect.dll - 120240 bytes - Last Modified: 11/21/2023 01:30</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.Protocols.dll - 40376 bytes - Last Modified: 11/21/2023 01:17</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.IdentityModel.Tokens.dll - 285728 bytes - Last Modified: 11/21/2023 01:23</li>
-                        <li class="list-group-item list-group-item-action">Microsoft.JSInterop.dll - 66208 bytes - Last Modified: 02/16/2024 22:23</li>
-                        <li class="list-group-item list-group-item-action">MudBlazor.dll - 9253888 bytes - Last Modified: 03/22/2024 11:21</li>
-                        <li class="list-group-item list-group-item-action">Newtonsoft.Json.dll - 712464 bytes - Last Modified: 03/08/2023 07:09</li>
-                        <li class="list-group-item list-group-item-action">System.Data.SqlClient.dll - 268320 bytes - Last Modified: 10/26/2023 23:27</li>
-                        <li class="list-group-item list-group-item-action">System.Diagnostics.DiagnosticSource.dll - 173840 bytes - Last Modified: 10/29/2024 02:47</li>
-                        <li class="list-group-item list-group-item-action">System.IO.Pipelines.dll - 77608 bytes - Last Modified: 10/29/2024 02:46</li>
-                        <li class="list-group-item list-group-item-action">System.IdentityModel.Tokens.Jwt.dll - 82352 bytes - Last Modified: 11/21/2023 01:10</li>
-                        <li class="list-group-item list-group-item-action">System.Text.Encodings.Web.dll - 70960 bytes - Last Modified: 10/29/2024 02:40</li>
-                        <li class="list-group-item list-group-item-action">System.Text.Json.dll - 643872 bytes - Last Modified: 10/29/2024 02:47</li>
-                     </ul>
-                     <h6>.hcl</h6>
-                     <!--!-->
-                     <ul id="files-list" class="list-group">
-                        <li class="list-group-item list-group-item-action">config.hcl - 430 bytes - Last Modified: 02/25/2025 11:58</li>
-                     </ul>
-                     <h6>.json</h6>
-                     <!--!-->
-                     <ul id="files-list" class="list-group">
-                        <li class="list-group-item list-group-item-action">JobMonitor.deps.json - 69261 bytes - Last Modified: 02/05/2025 16:33</li>
-                        <li class="list-group-item list-group-item-action">JobMonitor.runtimeconfig.json - 469 bytes - Last Modified: 02/05/2025 16:33</li>
-                        <li class="list-group-item list-group-item-action">appsettings.Development.json - 1418 bytes - Last Modified: 02/05/2025 16:30</li>
-                        <li class="list-group-item list-group-item-action">appsettings.QA.json - 1377 bytes - Last Modified: 02/05/2025 16:30</li>
-                        <li class="list-group-item list-group-item-action">appsettings.json - 1305 bytes - Last Modified: 02/05/2025 16:30</li>
-                     </ul>
-                     <h6>.pdb</h6>
-                     <!--!-->
-                     <ul id="files-list" class="list-group">
-                        <li class="list-group-item list-group-item-action">JobMonitor.pdb - 96792 bytes - Last Modified: 02/05/2025 16:33</li>
-                     </ul>
-                     <h6>.sh</h6>
-                     <!--!-->
-                     <ul id="files-list" class="list-group">
-                        <li class="list-group-item list-group-item-action">entrypoint.sh - 662 bytes - Last Modified: 12/03/2024 04:18</li>
-                     </ul>
-                     <h6>.yaml</h6>
-                     <!--!-->
-                     <ul id="files-list" class="list-group">
-                        <li class="list-group-item list-group-item-action">secrets.yaml - 153 bytes - Last Modified: 02/05/2025 16:30</li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-  </omni-row>
-  </omni-container>  
-  
