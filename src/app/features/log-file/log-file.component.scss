@@ -1,0 +1,92 @@
+/* Main container styles */
+.col {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header styles */
+  h3 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+  
+  h5#files-heading {
+    color: #34495e;
+    margin-bottom: 15px;
+  }
+  
+  h6 {
+    color: #576574;
+    margin: 20px 0 10px 0;
+    font-weight: 600;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 5px;
+  }
+  
+  /* Button styles */
+  #export-to-csv-button {
+    background-color: #007bff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+  }
+  
+  #export-to-csv-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Input filter styles */
+  #file-filter-input {
+    border: 2px solid #ced4da;
+    border-radius: 4px;
+    padding: 8px 12px;
+    width: 100%;
+    margin: 15px 0;
+    transition: border-color 0.3s ease;
+  }
+  
+  #file-filter-input:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* List styles */
+  .list-group {
+    margin-bottom: 20px;
+  }
+  
+  .list-group-item {
+    border: 1px solid #e9ecef;
+    margin-bottom: 2px;
+    padding: 10px 15px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  
+  .list-group-item:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+  }
+  
+  .list-group-item-action {
+    color: #495057;
+  }
+  
+  .list-group-item-action:hover {
+    transform: translateX(5px);
+  }
+  
+  /* Table styles */
+  [variant="tableWithBorder"] {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid #dee2e6;
+  }
+  
