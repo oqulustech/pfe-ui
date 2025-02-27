@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { OmniNgModule } from '@cof/omni-ng';
 import { OmniFormsModule, OmniMenuButtonModule, OmniIconModule } from '@cof/omni-ng';
@@ -28,7 +28,20 @@ export class HeaderComponent {
     'DBMS PgBlazor'
   ];
   selectedLink: string = '';
-  constructor(private router: Router) {}
+  currentRoute: string = '';
+  constructor(
+    private router: Router, 
+    private activatedRoute: ActivatedRoute
+  ) { }
+
+  ngOnInit(): void {
+    let pathname = window.location.pathname;
+    if(pathname.startsWith("/home")) {
+      console.log("this is home page");
+    } else {
+      console.log("home not found");
+    }
+  }
 
   onChange() { 
     // Handle the change event 
@@ -58,4 +71,16 @@ export class HeaderComponent {
       this.selectedLink = link;
       this.router.navigate(['log-file']); 
      }
+
+      // Variable to control dropdown visibility
+      dropdownVisible: boolean = false;
+      // Function to toggle dropdown visibility
+      toggleDropdown() {
+        this.dropdownVisible = !this.dropdownVisible;
+      }
+      // Function to simulate logout action
+      logout() {
+        alert('You have logged out!');
+        // You can replace this with actual logout logic, such as calling an authentication service
+      }
 }
