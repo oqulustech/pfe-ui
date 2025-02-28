@@ -1,34 +1,46 @@
-.flex-container {
-    display: flex;
-    justify-content: flex-start; /* Align items to the start */
-    width: 100% !important;
-  }
-  
-  .flex-items {
-    padding: 10px; 
-    margin: 5px;
-  }
-  
-  .flex-container .flex-items:last-child {
-    margin-left: auto; /* This pushes the last item to the end */
-  }
-  
-  .group-start, .group-end {
-    display: flex;
-  }
-  
-  .group-end {
-    margin-left: auto; /* Push the second group to the end */
-  }
-  
-  .flex-container-row {
-    display: flex;
-    justify-content: space-evenly; /* Distribute space equally between items */
-  }
-  
-  .flex-grow {
-    padding: 10px;
-    background-color: lightblue;
-    margin: 5px;
-    flex-grow: 1; /* Ensure each item grows equally */
-  }
+/* You can add global styles to this file, and also import other style files */
+@import '@cof/omni-styles/index.scss';
+
+@include omni-Reset;
+@include omni-Optimist;
+/* Styling for the dropdown container */
+.dropdown{
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+}
+.settings-btn {
+    border: 1px solid #e4e4e4;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    cursor: pointer;
+    background: #fff;
+}
+.dropdown-content {
+    display: none;
+}
+/* Class that shows the dropdown */
+.dropdown-content.show {
+    display: block;
+}
+.dropdown-content {
+    position: absolute;
+    background-color: #C0E7F3;
+    min-width: 180px;
+    box-shadow: 0px 2px 3x 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 5px;
+    right: 0;
+    top: 58px;
+}
+#header .dropdown-content a{
+    display: block ;
+    color: #333;
+    padding-left: 10px;
+    text-decoration: none;
+    line-height: 32px;
+}

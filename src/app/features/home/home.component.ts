@@ -12,7 +12,7 @@ import {
   OmniTitleActionModule,
 } from '@cof/omni-ng'
 import { JobMonitorComponent } from '../job-monitor/job-monitor.component';
-import { RiskReportComponent } from '../risk-report/risk-report.component';
+import { RiskReportsComponent } from '../risk-reports/risk-reports.component';
 import { PackageTrackerComponent } from '../package-tracker/package-tracker.component';
 import { IssuesLogComponent } from '../issues-log/issues-log.component';{}
 
@@ -28,7 +28,7 @@ import { IssuesLogComponent } from '../issues-log/issues-log.component';{}
     OmniNgModule, 
     OmniContainerModule, 
     JobMonitorComponent, 
-    RiskReportComponent, 
+    RiskReportsComponent, 
     PackageTrackerComponent, 
     IssuesLogComponent],
   

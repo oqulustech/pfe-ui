@@ -29,17 +29,27 @@ export class HeaderComponent {
   ];
   selectedLink: string = '';
   currentRoute: string = '';
+  isHome: boolean = false;
   constructor(
     private router: Router, 
     private activatedRoute: ActivatedRoute
   ) { }
 
-  ngOnInit(): void {
-    let pathname = window.location.pathname;
-    if(pathname.startsWith("/home")) {
-      console.log("this is home page");
+  ngOnInit() {
+    this.checkIfHome();
+    this.router.events.subscribe(() => {
+      this.checkIfHome();
+    });
+  }
+  private checkIfHome(): void {
+    const pathname = window.location.pathname;
+    if (pathname === '/home') {
+      console.log("On Hpme page ");
+      this.isHome = pathname.startsWith('/home');
+      this.isHome = true;
     } else {
-      console.log("home not found");
+      console.log("Not on home page ");
+      this.isHome = false;
     }
   }
 
@@ -80,7 +90,7 @@ export class HeaderComponent {
       }
       // Function to simulate logout action
       logout() {
-        alert('You have logged out!');
-        // You can replace this with actual logout logic, such as calling an authentication service
+        // alert('You have logged out!');
+        this.router.navigate(['home']); 
       }
 }

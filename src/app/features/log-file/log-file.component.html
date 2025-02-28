@@ -2,13 +2,15 @@
 
 <omni-container variant="light" id = "homepage" [padding]="[ 'huge', 'giant']" >
   <omni-row padding="medium">
-    <h3>Log File Browser</h3>
+    <omni-text-heading variant="medium">
+      Log Details
+    </omni-text-heading>
 <table omniTable variant="tableWithBorder">
   <tbody omniTbody>
     <tr omniTr>
       <td omniTd>
         <div class="col">
-          <button id="export-to-csv-button" class="btn btn-primary">Excel Export</button><!--!-->
+          <button omniButton rank="primary">Excel Export</button> 
           <input id="file-filter-input" type="text" placeholder="Filter files..." class="form-control my-2 bold-border">
          
           <ul id="files-list" class="list-group">

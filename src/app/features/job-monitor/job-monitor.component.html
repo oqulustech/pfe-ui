@@ -9,7 +9,7 @@
             Reset Table
         </button>
         <div class="action-tag-container">
-            <omni-tag *ngFor="let status of availableStatuses" [label]="status.label"
+            <omni-tag *ngFor="let status of availableStatuses" [label]="status.label" (tagClick)="onStatusTagSelect(status.label)"
                 [ngClass]="{'action-tag': status.isStatusSelected}"></omni-tag>
         </div>
     </omni-row>
@@ -31,7 +31,7 @@
                     <omni-multiselect [closeOnMenuSelect]="false" [items]="dropdownOptions.status"
                         (itemRemove)="onStatusRemove($event)" (itemSelect)="onStatusSelect($event)"></omni-multiselect>
                 </div>
-            </div>
+            </div> 
 
             <div class="select-container">
                 <div class="select-item">

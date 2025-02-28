@@ -132,7 +132,11 @@ export class JobMonitorComponent {
 
   resetTable() {
     this.selectedFilters = {};
-    this.generateFilteredData();
+    this.multiSelectStatusOptions = [];
+    this.availableStatuses = this.availableStatuses.map((status: any) => {
+      return { ...status, isStatusSelected: false };
+    })
+    this.generateFilteredData();  
   }
 
   removeSelectedFilter(eve: any) {
@@ -142,8 +146,6 @@ export class JobMonitorComponent {
   }
 
   onFilterSelectionChange(eve: any) {
-    console.log("eve----", eve);
-    console.log("eve----", eve.source.name)
     if (this.selectedFilters[eve.source.name]) {
       this.selectedFilters[eve.source.name] = eve.source.value;
     } else {
@@ -176,7 +178,6 @@ export class JobMonitorComponent {
     const endIndex = startIndex + this.itemsPerPage;
     this.filteredData = this.originalData.slice(startIndex, endIndex);
   }
-
 
   sortByObjectKey(
     key: keyof ApiData
@@ -231,11 +232,25 @@ export class JobMonitorComponent {
   }
 
   onStatusSelect(statusDropdownValues: any) {
-    console.log("eve----", statusDropdownValues);
     this.multiSelectStatusOptions.push(statusDropdownValues.selectedItem.value);
     this.generateFilteredData();
     this.availableStatuses = this.availableStatuses.map((status: any) => {
       if (status.value === statusDropdownValues.selectedItem.value) {
+        return { ...status, isStatusSelected: true };
+      }
+      return status;
+    })
+  }
+
+  onStatusTagSelect(tagStatus: any) {
+    const item =  tagStatus.split(":")[0].trim(); 
+    if(!this.multiSelectStatusOptions.includes(item)){
+      this.multiSelectStatusOptions.push(item);
+    }
+    this.generateFilteredData();
+    this.availableStatuses = this.availableStatuses.map((status: any) => {
+      console.log(status.value);
+      if (status.value === item) {
         return { ...status, isStatusSelected: true };
       }
       return status;
