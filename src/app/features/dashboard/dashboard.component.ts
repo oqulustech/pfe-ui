@@ -197,6 +197,9 @@ export class DashboardComponent implements OnInit{
   toggleActionMenu(event: MouseEvent, index: number): void {
     event.stopPropagation();
     
+    // Close the toggleActionRunning menu if it's open
+    this.menuRunningStates = this.menuRunningStates.map(() => false);
+    
     // Close all static menus
     Object.keys(this.menuStates).forEach(key => {
       this.menuStates[key] = false;
@@ -206,8 +209,12 @@ export class DashboardComponent implements OnInit{
     this.menuFailedStates = this.menuFailedStates.map((state, i) => i === index ? !state : false);
     this.cdr.detectChanges();
   }
+  
   toggleActionRunning(event: MouseEvent, index: number): void {
     event.stopPropagation();
+    
+    // Close the toggleActionMenu if it's open
+    this.menuFailedStates = this.menuFailedStates.map(() => false);
     
     // Close all static menus
     Object.keys(this.menuStates).forEach(key => {
@@ -218,7 +225,10 @@ export class DashboardComponent implements OnInit{
     this.menuRunningStates = this.menuRunningStates.map((state, i) => i === index ? !state : false);
     this.cdr.detectChanges();
   }
+  
 
+  // Close the menu if clicked outside
+  
   // Close the menu if clicked outside
   @HostListener('document:click', ['$event'])
     onDocumentClick(event: MouseEvent) {
