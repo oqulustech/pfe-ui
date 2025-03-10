@@ -270,9 +270,11 @@ export class DashboardComponent implements OnInit{
     }
 
     routeToActionPage(str: string) {
-      console.log("obj--", str)
-      //this.router.navigate(['job-monitor']);
       this.router.navigate(['/job-monitor'], { queryParams: { param1: str } }); 
+    }
+
+    routeToActionMetricPage(str: string) {
+      this.router.navigate(['/job-monitor'], { queryMetric: { param1: str } }); 
     }
 
     routeLogFilePage() {

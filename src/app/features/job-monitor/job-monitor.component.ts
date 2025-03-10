@@ -78,6 +78,7 @@ export class JobMonitorComponent {
   changeStatusDropdownOption = statusDropdownOptions;
   selectedValues : any = {};
   paramValue: string = "";
+  paramMetricValue: string = "";
 
   constructor(
     private changeDetectionRef: ChangeDetectorRef, 
@@ -91,26 +92,35 @@ export class JobMonitorComponent {
     this.getJobs()
     
     let currentPath = this.router.url;
-    console.log('Current path:', this.activatedRoute.queryParams);
     if (this.activatedRoute?.queryParams != undefined){
       this.activatedRoute.queryParams.subscribe(params => {
         this.paramValue = params['param1'];
-       console.log(params['param1']);
+        // console.log(params['param1']);
       });
     }
-    
+    if (this.activatedRoute?.queryMetric != undefined){
+      this.activatedRoute.queryMetric.subscribe(params => {
+        this.paramMetricValue = params['param1'];
+        // console.log(params['param1']);
+      });
+    }
   }
 
   getJobs() {
     this.http.get("http://localhost:8080/jobs").subscribe((data: any) => {
       this.originalData = data;
-      console.log (this.paramValue)
+      
       if (this.paramValue != undefined){
         this.originalData = this.originalData.filter((job: any) => { 
-          // console.log("job--", job); 
-          return job.status.toLowerCase() === this.paramValue.toLowerCase(); // Return the filter condition 
+          return job.status.toLowerCase() === this.paramValue.toLowerCase(); 
           });
       }
+      if (this.paramMetricValue != undefined){
+        this.originalData = this.originalData.filter((job: any) => { 
+          return job.jobMetric.toLowerCase() === this.paramMetricValue.toLowerCase(); 
+          });
+      }
+
       this.totalItems = this.originalData.length;
       this.filteredData = this.originalData.slice(0, this.itemsPerPage);
       this.dropdownOptions = this.generateDropdownOptions(this.originalData);
