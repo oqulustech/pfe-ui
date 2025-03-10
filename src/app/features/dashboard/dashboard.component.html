@@ -4,10 +4,10 @@
   <omni-row padding="medium">
     <ul class="breadcrumb">
       <li><omni-icon [svg]="iconInfo" class="profile"></omni-icon></li>
-        <li><a href="#"> Forex: <span>98%</span> </a> </li>
-        <li><a href="#"> Commodities: <span>89%</span> </a> </li>
-        <li><a href="#"> Interest Rates: <span>97%</span> </a> </li>
-        <li><a href="#"> All: <span>85%</span> </a> </li>
+        <li><a href="javascripit:void(0)" (click)="routeToActionPage('Forex')"> Forex: <span>98%</span> </a> </li>
+        <li><a href="javascripit:void(0)" (click)="routeToActionPage('Commodities')"> Commodities: <span>89%</span> </a> </li>
+        <li><a href="javascripit:void(0)" (click)="routeToActionPage('Interest Rates')"> Interest Rates: <span>97%</span> </a> </li>
+        <li><a href="javascripit:void(0)" (click)="routeToActionPage('All')"> All: <span>85%</span> </a> </li>
     </ul> 
 </omni-row>
 
@@ -33,7 +33,7 @@
                   </thead>
                   <tbody>
                       <tr *ngFor="let row of dataCompleted">
-                          <td width="60%" class ="txtUnderline" (click)="openModal()">{{ row.name }}</td>
+                          <td width="60%" class ="txtUnderline" (click)="openModal('Complete')">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%">&nbsp;</td>
                       </tr>
@@ -59,7 +59,7 @@
                               <omni-icon [svg]="iconsetting" class="profile setting" (click)="toggleMenu($event, 'menu1')"></omni-icon>
                               <div class="action-menu" [ngClass]="{'open': menuStates['menu1']}">
                                   <ul>
-                                      <li *ngFor="let action of headerActionsWaiting" (click)="routeToActionPage()">
+                                      <li *ngFor="let action of headerActionsWaiting" (click)="routeToActionPage(action.label)">
                                           {{ action.label }}
                                       </li>
                                   </ul>
@@ -75,7 +75,7 @@
                   </thead>
                   <tbody>
                       <tr *ngFor="let row of dataCompleted">
-                          <td width="60%" class ="txtUnderline" (click)="openModal()">{{ row.name }}</td>
+                          <td width="60%" class ="txtUnderline" (click)="openModal('Waiting')">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%">&nbsp;</td>
                       </tr>
@@ -106,7 +106,7 @@
                   </thead>
                   <tbody>
                       <tr *ngFor="let row of dataCompleted; let i = index">
-                        <td width="60%" class ="txtUnderline" (click)="openModal()">{{ row.name }}</td>
+                        <td width="60%" class ="txtUnderline" (click)="openModal('Running')">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%">           
                             <omni-icon [svg]="iconList" class="profile" (click)="toggleActionRunning($event, i)"></omni-icon>        
@@ -143,7 +143,7 @@
                               <omni-icon [svg]="iconsetting" class="profile setting" (click)="toggleMenu($event, 'menu2')"></omni-icon>
                               <div class="action-menu" [ngClass]="{'open': menuStates['menu2']}">
                                   <ul>
-                                      <li *ngFor="let action of headerActionsFailed"(click)="routeToActionPage()">
+                                      <li *ngFor="let action of headerActionsFailed"(click)="routeToActionPage(action.label)">
                                           {{ action.label }}
                                       </li>
                                   </ul>
@@ -159,7 +159,7 @@
                   </thead>
                   <tbody>
                     <tr *ngFor="let row of dataFailed; let i = index">
-                          <td width="60%" class ="txtUnderline" (click)="openModal()">{{ row.name }}</td>
+                          <td width="60%" class ="txtUnderline" (click)="openModal('Failed')">{{ row.name }}</td>
                           <td width="30%">{{ row.status }}</td>
                           <td width="10%">           
                             <omni-icon [svg]="iconList" class="profile" (click)="toggleActionMenu($event, i)"></omni-icon>        

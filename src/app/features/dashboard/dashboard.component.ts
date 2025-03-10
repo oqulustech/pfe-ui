@@ -16,6 +16,7 @@ import {
 } from '@cof/omni-ng'
 import * as icons from '@cof/omni-gravity-icons-templates';
 import { ModalComponent } from '../../components/modal/modal.component';
+import { statusDropdownOptions } from '../job-monitor/constants';
 
 @Component({
   selector: 'app-dashboard',
@@ -117,7 +118,7 @@ export class DashboardComponent implements OnInit{
   ];
   dataActionsFailed = [
     { label: 'Log', action: () => this.performAction('Log') },
-    { label: 'Return', action: () => this.performAction('Return') }
+    { label: 'Rerun', action: () => this.performAction('Rerun') }
   ];
 
   menuStates: { [key: string]: boolean } = {
@@ -163,6 +164,9 @@ export class DashboardComponent implements OnInit{
       jobHistoryRecorded: "TRUE"     
     }
   ]
+  currentStatus: string = '';
+  changeStatusDropdownOption = statusDropdownOptions;
+  statusChanged: boolean = false;
   
   constructor(
     private router: Router,
@@ -265,8 +269,10 @@ export class DashboardComponent implements OnInit{
       this.cdr.detectChanges();
     }
 
-    routeToActionPage() {
-      this.router.navigate(['job-monitor']); 
+    routeToActionPage(str: string) {
+      console.log("obj--", str)
+      //this.router.navigate(['job-monitor']);
+      this.router.navigate(['/job-monitor'], { queryParams: { param1: str } }); 
     }
 
     routeLogFilePage() {
@@ -274,13 +280,20 @@ export class DashboardComponent implements OnInit{
     }
 
     // Method to open modal
-    openModal() {
+    openModal(str:string) {
+      this.currentStatus = str;
+      this.tableValue[0].status = str;
       this.showModal = true;
     }
     
     // Method to close modal
     closeModal(close: boolean) {
       this.showModal = close;
+    }
+
+    onChangeJobStatus(job: any) {
+      this.statusChanged = true;
+      // this.temporaryStatusValue = job.value;
     }
   
 }

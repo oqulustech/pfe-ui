@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OmniButtonModule, OmniFormsModule, OmniModalModule, OmniDialogModule, OmniIconButtonModule, OmniButtonGroupModule, OmniSelectModule, OmniStatusBadgeModule, OmniIconModule, OmniInputSearchModule, OmniLayoutModule, OmniNgModule, OmniPaginationModule, OmniTableModule, OmniTextModule, OmniThemeModule, OmniTagModule } from '@cof/omni-ng'
 import {
   UiCloseLined,
@@ -11,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { SortDirection } from '@cof/omni-styles';
 import { statusDropdownOptions } from './constants';
+
 
 @Component({
   selector: 'app-job-monitor',
@@ -75,17 +77,40 @@ export class JobMonitorComponent {
   temporaryStatusValue : any;
   changeStatusDropdownOption = statusDropdownOptions;
   selectedValues : any = {};
+  paramValue: string = "";
 
-  constructor(private changeDetectionRef: ChangeDetectorRef, private http: HttpClient) {
+  constructor(
+    private changeDetectionRef: ChangeDetectorRef, 
+    private http: HttpClient,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+  ) {
   }
 
   ngOnInit() {
-    this.getJobs();
+    this.getJobs()
+    
+    let currentPath = this.router.url;
+    console.log('Current path:', this.activatedRoute.queryParams);
+    if (this.activatedRoute?.queryParams != undefined){
+      this.activatedRoute.queryParams.subscribe(params => {
+        this.paramValue = params['param1'];
+       console.log(params['param1']);
+      });
+    }
+    
   }
 
   getJobs() {
     this.http.get("http://localhost:8080/jobs").subscribe((data: any) => {
       this.originalData = data;
+      console.log (this.paramValue)
+      if (this.paramValue != undefined){
+        this.originalData = this.originalData.filter((job: any) => { 
+          // console.log("job--", job); 
+          return job.status.toLowerCase() === this.paramValue.toLowerCase(); // Return the filter condition 
+          });
+      }
       this.totalItems = this.originalData.length;
       this.filteredData = this.originalData.slice(0, this.itemsPerPage);
       this.dropdownOptions = this.generateDropdownOptions(this.originalData);
