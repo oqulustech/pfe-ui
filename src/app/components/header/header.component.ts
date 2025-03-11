@@ -53,15 +53,15 @@ export class HeaderComponent {
     }
   }
 
-  onChange() { 
-    // Handle the change event 
-    console.log('Selected value:', this.selectedValue); 
+    onChange() { 
       if (this.selectedValue === 'Select The Pfe Module') { 
         this.router.navigate(['home']); 
       } else if (this.selectedValue === 'Job Monitor') { 
         this.router.navigate(['dashboard']); 
+      } else if (this.selectedValue === 'Package Tracker') { 
+        this.router.navigate(['package-tracker']); 
       } 
-     }
+    }
 
      gotoHome () {
       this.router.navigate(['home']); 
@@ -80,6 +80,11 @@ export class HeaderComponent {
      gotoLogFile (link:string) {
       this.selectedLink = link;
       this.router.navigate(['log-file']); 
+     }
+
+     gotoLogPackageTracker (link:string) {
+      this.selectedLink = link;
+      this.router.navigate(['package-tracker']); 
      }
 
       // Variable to control dropdown visibility
