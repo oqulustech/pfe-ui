@@ -1,0 +1,80 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.dialog {
+    height: 530px;
+    width: 650px;
+}
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.send-email-button {
+    text-align: end;
+}
+
+textarea {
+    height: 130px;
+}
+
+label {
+color: #121212;
+margin-bottom: 5px;
+}
+
+.button {
+    margin-top: 20px;
+}
+
+.date-picker {
+    width: 160px;
+}
+
+hr {
+    border-width: 0.1px;
+    border-color: #CDD1D5;;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+.main-hr {
+    border-width: 1px;
+    border-color: #6E6E6E;
+
+}
+
+.bold-text {
+   font-weight: 600 !important;
+}
+
+.selected {
+    background-color: #0070A8 !important;
+    color: #FFFFFF !important;
+}
+
+.success-message {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-bottom: 20px;
+}
+
+.success-dialog {
+    height: 150px;
+}
+
