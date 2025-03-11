@@ -95,12 +95,8 @@ export class JobMonitorComponent {
     if (this.activatedRoute?.queryParams != undefined){
       this.activatedRoute.queryParams.subscribe(params => {
         this.paramValue = params['param1'];
-        // console.log(params['param1']);
-      });
-    }
-    if (this.activatedRoute?.queryMetric != undefined){
-      this.activatedRoute.queryMetric.subscribe(params => {
-        this.paramMetricValue = params['param1'];
+        this.paramMetricValue = params['param2'];
+
         // console.log(params['param1']);
       });
     }

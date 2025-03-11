@@ -274,7 +274,7 @@ export class DashboardComponent implements OnInit{
     }
 
     routeToActionMetricPage(str: string) {
-      this.router.navigate(['/job-monitor'], { queryMetric: { param1: str } }); 
+      this.router.navigate(['/job-monitor'], { queryParams: { param2: str } }); 
     }
 
     routeLogFilePage() {
