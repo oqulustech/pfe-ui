@@ -1,1 +1,90 @@
-<p>risk-report works!</p>
+<omni-flex-container direction="column" variant="white" padding="giant" gap="large" height="100%">
+    <div class="main">
+        <div class="main">
+            <omni-date-picker *ngIf="selectedMode === 'history'" class="date-picker" inputId="date-picker"
+                [clearable]="true" [date]="currentDate"
+                (dateSelected)="handleDatePickerDateCalendarClick($event)"></omni-date-picker>
+            <omni-select [value]="" name="status" (change)="onChangeTradingDesk($event)">
+                <option value="">SELECT TRADING DESK</option>
+                <option *ngFor="let jStatus of tradingDeskData" value={{jStatus.id}}>
+                    {{jStatus.deskName}}
+                </option>
+            </omni-select>
+        </div>
+        <div>
+            <button theme="light" background="1" omniButton size="default" rank="secondary" variant="action"
+                shape="button" (click)="selectMode('staging')" [ngClass]="{'selected': selectedMode === 'staging'}"
+                class="button-style">
+                Staging
+            </button>
+            <button theme="light" background="1" omniButton size="default" rank="secondary" variant="action"
+                shape="button" (click)="selectMode('history')" [ngClass]="{'selected': selectedMode === 'history'}"
+                class="button-style">
+                History
+            </button>
+        </div>
+    </div>
+    <div *ngIf="selectedTradingTopic.label == ''">
+        <p class="bold-text">Please select a Trading Desk and Date</p>
+        <hr width="100%" class="main-hr" size="1.5" noshade>
+    </div>
+
+    <div *ngIf="selectedTradingTopic.label !== ''">
+        <omni-checkbox [checked]="selectedTradingTopic.checked"
+            class="bold-text">{{selectedTradingTopic.label}}</omni-checkbox>
+        <hr width="100%" class="main-hr" noshade>
+    </div>
+    <div *ngFor="let option of coreReportsOptions">
+        <omni-checkbox (change)="onReportSelection(option.reportId, $event)"
+            [value]="option.reportId">{{option.name}}</omni-checkbox>
+        <hr width="100%" size="0.5" noshade>
+    </div>
+    <div class="button-group" *ngIf="selectedTradingTopic.label !== ''">
+        <button theme="light" background="1" omniButton size="default" rank="primary" variant="action" shape="button"
+            (click)="openEmail()">
+            Email
+        </button>
+        <button theme="light" background="1" omniButton size="default" rank="primary" variant="action" shape="button"
+            (click)="onView()">
+            View
+        </button>
+    </div>
+</omni-flex-container>
+
+<omni-modal [visible]="visible" [closeOnClickOutside]="true" [closeOnKeydownEscape]="true" (closed)="modalClosed()">
+    <omni-dialog [open]="visible" size="small"
+        [ngClass]="{'success-dialog': sentEmailSuccessfully, 'dialog':!sentEmailSuccessfully}">
+        <omni-dialog-header class="dialog-header">
+            <omni-dialog-header-actions>
+                <div omniDialogHeaderTrailingActions>
+                    <button omniButton type="button" shape="circle" variant="neutral" rank="tertiary" size="small"
+                        aria-label="Close" (click)="closeModal()">
+                        <omni-icon [svg]="iconClose"></omni-icon>
+                    </button>
+                </div>
+            </omni-dialog-header-actions>
+            <div *ngIf="!sentEmailSuccessfully" class="dialog-header">
+                <h2 omniTextHeading variant="small" fontWeight="semibold">
+                    <span>Email Selected Report(s)</span>
+                </h2>
+            </div>
+            <div *ngIf="sentEmailSuccessfully" class="success-message">
+                <h2>Email sent successfully!</h2>
+            </div>
+        </omni-dialog-header>
+        <omni-dialog-content *ngIf="!sentEmailSuccessfully" class="dialog-content">
+            <label omniTextLabel as="label" id="label-2"> Recipient Email</label>
+            <input omniInput aria-labelledby="label-2" [(ngModel)]="email" />
+            <label omniTextLabel as="label" id="label-2">Subject</label>
+            <input omniInput aria-labelledby="label-2" [(ngModel)]="subject" />
+            <label omniTextLabel for="omni-textarea" style="color: #141414;">Message</label>
+            <textarea size="medium" omniTextarea id="omni-textarea" [(ngModel)]="message"></textarea>
+            <div class="send-email-button">
+                <button theme="light" background="1" omniButton size="medium" rank="primary" variant="action"
+                    class="button" shape="button" (click)="sendEmail()">
+                    Send Email
+                </button>
+            </div>
+        </omni-dialog-content>
+    </omni-dialog>
+</omni-modal>
