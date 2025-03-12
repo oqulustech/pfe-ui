@@ -56,6 +56,10 @@ export class PackageTrackerComponent {
   subject: string = "";
   message: string = "";
   statusModal = false;
+
+  currentPage = 0;
+  itemsPerPage: any = 10;
+  totalItems: any;
   columns: any = [{ label: "Package Name", key: "packageName" }, { label: "Status", key: "status" }, { label: "Group Name", key: "groupName" }];
   filteredData:Array<any> = [
     {
@@ -186,6 +190,14 @@ export class PackageTrackerComponent {
 
   openChangeStatusModal() {
     this.visible = false;
+  }
+
+  updateCurrentPage(e: any) {
+    this.currentPage = e.page !== undefined ? e.page : e.currentPage
+    this.itemsPerPage = e.itemsPerPage
+    const startIndex = this.currentPage * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+   // this.filteredData = this.originalData.slice(startIndex, endIndex);
   }
 
 }
