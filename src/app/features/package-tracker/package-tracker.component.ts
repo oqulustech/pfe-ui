@@ -56,7 +56,39 @@ export class PackageTrackerComponent {
   subject: string = "";
   message: string = "";
   statusModal = false;
-
+  columns: any = [{ label: "Package Name", key: "packageName" }, { label: "Status", key: "status" }, { label: "Group Name", key: "groupName" }];
+  filteredData:Array<any> = [
+    {
+      packageName: "Commercial Commodity - Customer Derivatives",
+      status: "Awaiting Release",
+      groupName: "Derivative"
+    },
+    {
+      packageName: "Capital Markets Product Control",
+      status: "Awaiting 2nd",
+      groupName: "TS"
+    },
+    {
+      packageName: "Commercial Capital Markets Bridge Portfolio ",
+      status: "Complete",
+      groupName: "DCM"
+    },
+    {
+      packageName: "Treasury Rates - Customer Derivatives ",
+      status: "Complete",
+      groupName: "Derivative"
+    },
+    {
+      packageName: "Commodity Flash PnL Sign-Off ",
+      status: "Awaiting 1st",
+      groupName: "Treasury FX"
+    },
+    {
+      packageName: "Other Trading Activity Metrics",
+      status: "Awaiting 1st",
+      groupName: "Derivative"
+    }
+  ];
   constructor(private http: HttpClient) {
   }
 
@@ -141,4 +173,19 @@ export class PackageTrackerComponent {
         this.sentEmailSuccessfully = true;
       });
   }
+
+  //========================
+
+  sortByObjectKey(key: any) {
+    
+  };
+
+  openJobDetailModal (job:any) {
+    this.visible = true;
+  }
+
+  openChangeStatusModal() {
+    this.visible = false;
+  }
+
 }

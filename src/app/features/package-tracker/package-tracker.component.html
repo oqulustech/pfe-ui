@@ -51,6 +51,38 @@
     </div>
 </omni-flex-container>
 
+<omni-flex-container>
+    <omni-table-layout class="table-layout">
+        <table omniTable>
+            <thead omniThead>
+                <tr omniTr cellBorder="cell">
+                    <th omniTh *ngFor="let col of columns" (click)="sortByObjectKey(col.key)">{{col.label}}
+                        <omni-sort-indicator [direction]="col.sortDirection"></omni-sort-indicator>
+                    </th>
+                </tr>
+            </thead>
+            <tbody omniTbody>
+                <tr omniTr cellBorder="cell" *ngFor="let job of filteredData" class="table-row">
+                    <td omniTd class="job-id" (click)="openJobDetailModal(job)">{{job.packageName}}</td>
+                    <td omniTd (click)="openChangeStatusModal()" class="status"
+                        [ngClass]="{'complete': job.status === 'Complete', 'error': job.status === 'Error', 'ready': job.status === 'Ready', 'waiting': job.status === 'Waiting'}">
+                        {{job.status}}</td>
+                    <td omniTd>{{job.groupName}}</td>
+                </tr>
+            </tbody>
+            <tfoot omniTfoot>
+                <tr omniTr cellBorder="cell">
+                </tr>
+            </tfoot>
+        </table>
+        <omni-table-footer>
+            <omni-pagination-controls [currentPage]="currentPage" [totalItems]="totalItems"
+                [itemsPerPage]="itemsPerPage"
+                (pageControlsChange)="updateCurrentPage($event)"></omni-pagination-controls>
+        </omni-table-footer>
+    </omni-table-layout>
+</omni-flex-container>
+
 <omni-modal [visible]="visible" [closeOnClickOutside]="true" [closeOnKeydownEscape]="true" (closed)="modalClosed()">
     <omni-dialog [open]="visible" size="small"
         [ngClass]="{'success-dialog': sentEmailSuccessfully, 'dialog':!sentEmailSuccessfully}">
