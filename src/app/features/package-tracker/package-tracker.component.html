@@ -13,42 +13,33 @@
         </div>
         <div>
             <button theme="light" background="1" omniButton size="default" rank="secondary" variant="action"
-                shape="button" (click)="selectMode('staging')" [ngClass]="{'selected': selectedMode === 'staging'}"
+                shape="button" (click)="filterData('all')" [ngClass]="{'selected': selectedMode === 'all'}"
                 class="button-style">
-                Staging
+                All <span>(0)</span>
             </button>
             <button theme="light" background="1" omniButton size="default" rank="secondary" variant="action"
-                shape="button" (click)="selectMode('history')" [ngClass]="{'selected': selectedMode === 'history'}"
+                shape="button" (click)="filterData('Pending')" [ngClass]="{'selected': selectedMode === 'Pending'}"
                 class="button-style">
-                History
+                Pending <span>(0)</span>
+            </button>
+            <button theme="light" background="1" omniButton size="default" rank="secondary" variant="action"
+                shape="button" (click)="filterData('Pending')" [ngClass]="{'selected': selectedMode === 'In Progress'}"
+                class="button-style">
+                In Progress <span>(0)</span>
+            </button>
+            <button theme="light" background="1" omniButton size="default" rank="secondary" variant="action"
+                shape="button" (click)="filterData('Pending')" [ngClass]="{'selected': selectedMode === 'Past Due'}"
+                class="button-style">
+                Past Due <span>(0)</span>
+            </button>
+            <button theme="light" background="1" omniButton size="default" rank="secondary" variant="action"
+                shape="button" (click)="filterData('Pending')" [ngClass]="{'selected': selectedMode === 'Complete'}"
+                class="button-style">
+                Complete <span>(0)</span>
             </button>
         </div>
     </div>
-    <div *ngIf="selectedTradingTopic.label == ''">
-        <p class="bold-text">Please select a Trading Desk and Date</p>
-        <hr width="100%" class="main-hr" size="1.5" noshade>
-    </div>
-
-    <div *ngIf="selectedTradingTopic.label !== ''">
-        <omni-checkbox [checked]="selectedTradingTopic.checked"
-            class="bold-text">{{selectedTradingTopic.label}}</omni-checkbox>
-        <hr width="100%" class="main-hr" noshade>
-    </div>
-    <div *ngFor="let option of coreReportsOptions">
-        <omni-checkbox (change)="onReportSelection(option.reportId, $event)"
-            [value]="option.reportId">{{option.name}}</omni-checkbox>
-        <hr width="100%" size="0.5" noshade>
-    </div>
-    <div class="button-group" *ngIf="selectedTradingTopic.label !== ''">
-        <button theme="light" background="1" omniButton size="default" rank="primary" variant="action" shape="button"
-            (click)="openEmail()">
-            Email
-        </button>
-        <button theme="light" background="1" omniButton size="default" rank="primary" variant="action" shape="button"
-            (click)="onView()">
-            View
-        </button>
-    </div>
+    
 </omni-flex-container>
 
 <omni-flex-container>

@@ -141,43 +141,6 @@ export class PackageTrackerComponent {
     this.coreReportsOptions = data.coreReports;
   }
 
-  onReportSelection(id: any, event: any): void {
-    if (event.checked) {
-      this.selectedReportIds.push(id);
-    } else {
-      this.selectedReportIds = this.selectedReportIds.filter(
-        (selectedReportId: number) => selectedReportId !== id
-      );
-    }
-  }
-
-  onView() {
-    this.selectedDate = new Date(this.selectedDate)?.toISOString().split("T")[0].split("/").join("-");
-    this.selectedReportIds.forEach((selectedReportId: number) => {
-      const url = `http://localhost:8080/riskreport/history?reportid=${selectedReportId}&analysisdate=${this.selectedDate}&type=${this.selectedMode}`;
-      window.open(url, '_blank');
-    });
-  }
-
-
-  sendEmail() {
-    const payload = {
-      "subject": this.subject,
-      "email": this.email,
-      "message": this.message,
-      "reports": this.selectedReportIds.map((selectedReportId: number) => ({
-        reportId: selectedReportId,
-        analysisDate: new Date(this.selectedDate)?.toISOString().split("T")[0].split("/").join("-"),
-        type: this.selectedMode,
-      }))
-    }
-    this.http
-      .post('http://localhost:8080/riskreport/email', payload)
-      .subscribe((data: any) => {
-        this.sentEmailSuccessfully = true;
-      });
-  }
-
   //========================
 
   sortByObjectKey(key: any) {
@@ -198,6 +161,13 @@ export class PackageTrackerComponent {
     const startIndex = this.currentPage * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
    // this.filteredData = this.originalData.slice(startIndex, endIndex);
+  }
+
+  filterData (str:string){
+    this.selectedMode = str;
+    this.filteredData = this.filteredData.filter((row: any) => { 
+      return row.status.toLowerCase() === str; 
+    });
   }
 
 }
