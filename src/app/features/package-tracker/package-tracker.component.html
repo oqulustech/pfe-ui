@@ -38,8 +38,7 @@
                 Complete <span>(0)</span>
             </button>
         </div>
-    </div>
-    
+    </div>    
 </omni-flex-container>
 
 <omni-flex-container>
@@ -86,28 +85,9 @@
                     </button>
                 </div>
             </omni-dialog-header-actions>
-            <div *ngIf="!sentEmailSuccessfully" class="dialog-header">
-                <h2 omniTextHeading variant="small" fontWeight="semibold">
-                    <span>Email Selected Report(s)</span>
-                </h2>
-            </div>
-            <div *ngIf="sentEmailSuccessfully" class="success-message">
-                <h2>Email sent successfully!</h2>
-            </div>
         </omni-dialog-header>
         <omni-dialog-content *ngIf="!sentEmailSuccessfully" class="dialog-content">
-            <label omniTextLabel as="label" id="label-2"> Recipient Email</label>
-            <input omniInput aria-labelledby="label-2" [(ngModel)]="email" />
-            <label omniTextLabel as="label" id="label-2">Subject</label>
-            <input omniInput aria-labelledby="label-2" [(ngModel)]="subject" />
-            <label omniTextLabel for="omni-textarea" style="color: #141414;">Message</label>
-            <textarea size="medium" omniTextarea id="omni-textarea" [(ngModel)]="message"></textarea>
-            <div class="send-email-button">
-                <button theme="light" background="1" omniButton size="medium" rank="primary" variant="action"
-                    class="button" shape="button">
-                    Send Email
-                </button>
-            </div>
+            <div> Content Here </div>
         </omni-dialog-content>
     </omni-dialog>
 </omni-modal>
