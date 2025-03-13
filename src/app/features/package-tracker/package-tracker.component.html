@@ -23,17 +23,17 @@
                 Pending <span>(0)</span>
             </button>
             <button theme="light" background="1" omniButton size="default" rank="secondary" variant="action"
-                shape="button" (click)="filterData('Pending')" [ngClass]="{'selected': selectedMode === 'In Progress'}"
+                shape="button" (click)="filterData('In Progress')" [ngClass]="{'selected': selectedMode === 'In Progress'}"
                 class="button-style">
                 In Progress <span>(0)</span>
             </button>
             <button theme="light" background="1" omniButton size="default" rank="secondary" variant="action"
-                shape="button" (click)="filterData('Pending')" [ngClass]="{'selected': selectedMode === 'Past Due'}"
+                shape="button" (click)="filterData('Past Due')" [ngClass]="{'selected': selectedMode === 'Past Due'}"
                 class="button-style">
                 Past Due <span>(0)</span>
             </button>
             <button theme="light" background="1" omniButton size="default" rank="secondary" variant="action"
-                shape="button" (click)="filterData('Pending')" [ngClass]="{'selected': selectedMode === 'Complete'}"
+                shape="button" (click)="filterData('Complete')" [ngClass]="{'selected': selectedMode === 'Complete'}"
                 class="button-style">
                 Complete <span>(0)</span>
             </button>
@@ -104,7 +104,7 @@
             <textarea size="medium" omniTextarea id="omni-textarea" [(ngModel)]="message"></textarea>
             <div class="send-email-button">
                 <button theme="light" background="1" omniButton size="medium" rank="primary" variant="action"
-                    class="button" shape="button" (click)="sendEmail()">
+                    class="button" shape="button">
                     Send Email
                 </button>
             </div>

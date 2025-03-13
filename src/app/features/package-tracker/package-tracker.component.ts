@@ -61,20 +61,21 @@ export class PackageTrackerComponent {
   itemsPerPage: any = 10;
   totalItems: any;
   columns: any = [{ label: "Package Name", key: "packageName" }, { label: "Status", key: "status" }, { label: "Group Name", key: "groupName" }];
+  private originalData: any[] = [];
   filteredData:Array<any> = [
     {
       packageName: "Commercial Commodity - Customer Derivatives",
-      status: "Awaiting Release",
+      status: "Pending",
       groupName: "Derivative"
     },
     {
       packageName: "Capital Markets Product Control",
-      status: "Awaiting 2nd",
+      status: "In Progress",
       groupName: "TS"
     },
     {
       packageName: "Commercial Capital Markets Bridge Portfolio ",
-      status: "Complete",
+      status: "Past Due",
       groupName: "DCM"
     },
     {
@@ -84,16 +85,17 @@ export class PackageTrackerComponent {
     },
     {
       packageName: "Commodity Flash PnL Sign-Off ",
-      status: "Awaiting 1st",
+      status: "Pending",
       groupName: "Treasury FX"
     },
     {
       packageName: "Other Trading Activity Metrics",
-      status: "Awaiting 1st",
+      status: "In Progress",
       groupName: "Derivative"
     }
   ];
   constructor(private http: HttpClient) {
+    this.originalData = [...this.filteredData];
   }
 
   ngOnInit() {
@@ -165,8 +167,9 @@ export class PackageTrackerComponent {
 
   filterData (str:string){
     this.selectedMode = str;
-    this.filteredData = this.filteredData.filter((row: any) => { 
-      return row.status.toLowerCase() === str; 
+    console.log("Hello ----", this.selectedMode, )
+    this.filteredData = this.originalData.filter((row: any) => { 
+      return row.status.toLowerCase() === str.toLowerCase(); 
     });
   }
 
